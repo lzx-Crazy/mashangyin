@@ -1,0 +1,21 @@
+<script>
+  $(function(){
+    $(".cc-zfBtn").on("click",function(){
+      console.log(111)
+      $(".cc-alert-zfbox").css({display:"block"})
+    })
+
+
+    
+  })
+  // 拒绝开票
+  function yyalert(){
+    var str = "<div class='yyalert'><textarea></textarea><p><i class='gtIcon'></i>温馨提示：收到异议后，马上银会在1个工作日内处理。</p></div>"
+    showConfirm(str,function(){
+      showTips("请输入异议原因")
+    },function(){
+
+    },undefined,'拒绝开票')
+  }
+
+</script>

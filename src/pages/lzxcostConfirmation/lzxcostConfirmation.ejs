@@ -1,0 +1,144 @@
+<div class="cost-confimation">
+  <!-- 提示  -->
+  <div class="cc-header">
+    <div class="cch-name"><i class="gtIcon"></i><span>温馨提示：</span> </div>
+    <div class="cch-txt">请向下滑动查看详情信息。</div>
+  </div>
+  <div class="cc-section">
+    <%= tcm({str:'码单结算',more:false,num:false}) %>
+    <ul class="cc-list-box">
+      <li>
+        <span>订单重量</span>
+        <input type="text" unselectable="on" onfocus="this.blur()" readonly value="400.0000kg">
+      </li>
+      <li>
+        <span>码单重量</span>
+        <input type="text" unselectable="on" onfocus="this.blur()" readonly value="391.2856kg">
+      </li>
+      <li>
+        <span>合同的单价</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="3652元/kg">
+      </li>
+      <li>
+        <span>合同签订金额</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="1450586.43元">
+      </li>
+      <li>
+        <span>订单实际金额</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="1430256.43元">
+      </li>
+      <li>
+        <span>已支付的金额</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="1430256.43元">
+      </li>
+        <li class="cc-cjBox">
+        <span>
+            <em class="ccc-name">差价</em>
+            <em class="ccl-red"><i class="gtIcon"></i>提示：差价=码单的重量*合同单价-已支付的金额 </em>
+        </span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="0.00元">
+      </li>
+        <li>
+        <span>小计</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="0.00元">
+      </li>
+    </ul>
+    <%= tcm({str:'仓储费结算',more:false,num:false}) %>
+    <ul class="cc-list-box">
+      <li>
+        <span>是否支付仓储费</span>
+        <input type="text" unselectable="on" onfocus="this.blur()" readonly value="线下未付款">
+      </li>
+      <li>
+        <span>仓储费用</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="100.00元">
+      </li>
+      <li>
+        <span>小计</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="100.00元">
+      </li>
+    </ul>
+    <%= tcm({str:'其他费用结算',more:false,num:false}) %>
+    <ul class="cc-list-box">
+      <li>
+        <span>金额</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="80.00元">
+      </li>
+      <li>
+        <span>备注</span>
+        <input type="text" unselectable="on" onfocus="this.blur()" readonly value="监管费">
+      </li>
+      <li>
+        <span>小计</span>
+        <input class="ccl-red" type="text" unselectable="on" onfocus="this.blur()" readonly value="80.00元">
+      </li>
+    </ul>
+    <%= tcm({str:'退款费用',more:false,num:false}) %>
+    <ul class="cc-list-box">
+      <li class="cclb-img-box">
+        <span>第一次退款流凭证</span>
+        <div>
+          <div class="cclbi-img">
+              <img src="http://placehold.it/180x140/14ccf3/fff.png" alt="">
+          </div>
+          <a href="javascript::;">请点击图片放大</a>
+        </div>
+      </li>
+      <li>
+        <span>第一次退款流水号</span>
+        <input type="text" readonly unselectable="on" onfocus="this.blur()" value="010233211">
+      </li>
+      <li class="cclb-img-box">
+        <span>第一次退款流凭证</span>
+        <div>
+          <div class="cclbi-img">
+              <img src="http://placehold.it/180x140/14ccf3/fff.png" alt="">
+          </div>
+          <a href="javascript::;">请点击图片放大</a>
+        </div>
+      </li>
+      <li>
+        <span>第二次退款流水号</span>
+        <input type="text" readonly unselectable="on" onfocus="this.blur()" value="021233211">
+      </li>
+      <li>
+        <span>总退款金额</span>
+        <input class="ccl-red" type="text" readonly unselectable="on" onfocus="this.blur()" value="80.00元">
+      </li>
+      <li>
+        <span>小计</span>
+        <input class="ccl-red" type="text" readonly unselectable="on" onfocus="this.blur()" value="80.00元">
+      </li>
+    </ul>
+  </div>
+  <div class="cc-foot">
+    <div class="ccf-head">
+      <span>合计：<em>180.00元</em></span>
+      <span>已支付：<em>0.00元</em></span>
+    </div>
+    <div class="ccf-section">
+      <div>
+        <span>需支付：</span>
+        <em>180.00元</em>
+      </div>
+      <a href="javascript:;;" onclick="yyalert()">有异议？</a>
+    </div>
+    <a href="javascript:;;" class="cc-zfBtn">支付</a>
+  </div>
+  <!-- 选择支付 -->
+  <div class="cc-alert-zfbox">
+    <div class="ps-xuanze">
+      <span>请选择支付方式</span>
+    </div>
+    <div class="ps-zfbxo">
+      <a href="javascript:;;">
+        <div class="psz-pa"><img src="./front/images/icon/pinan.png" alt=""></div>
+        <p>平安现货交易通</p>
+      </a>
+      <a href="javascript:;;">
+        <div class="psz-xx"><img src="./front/images/icon/xianxia.png" alt=""></div>
+        <p>线下支付</p>
+      </a>
+    </div>
+  </div>
+</div>

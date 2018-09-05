@@ -1,0 +1,53 @@
+@import './base'
+
+.delive-confirmation
+  .dc-header
+    background-color #feecbf
+    padding Rem(5) Rem(15)
+    display: flex
+    justify-content: flex-start
+    line-height Rem(15)
+    color #666
+    font-size: Rem(10)
+    .dcd-name
+      >span
+        display inline-block
+        vertical-align middle
+        padding-left Rem(5)
+    .dcd-txt
+      flex 1
+      text-align left
+  .dc-section
+    color #999
+    li
+      height Rem(45)
+      line-height: Rem(45)
+      display flex
+      justify-content: space-between
+      align-items: center
+      font-size Rem(12)
+      botLine()
+      padding 0 Rem(10)
+      background-color #fff
+      >span
+        display block
+        min-width: Rem(85)
+      >input 
+        color: #666
+        flex 1
+        height Rem(45)
+        border: 0
+        text-align right
+      &.dcs-tiems
+        toMore()
+        padding-right Rem(25)
+      .dcs-red
+        color $theme-color
+  .dc-foot
+    padding Rem(10) 0
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    >a
+      bigBtn()

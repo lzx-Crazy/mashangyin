@@ -1,0 +1,165 @@
+@import './base'
+
+.cost-confimation
+  .cc-header
+      background-color #feecbf
+      padding Rem(5) Rem(15)
+      display: flex
+      justify-content: flex-start
+      line-height Rem(15)
+      color #666
+      font-size: Rem(10)
+      .cch-name
+        >span
+          display inline-block
+          vertical-align middle
+          padding-left Rem(5)
+      .cch-txt
+        flex 1
+        text-align left
+  .cc-section
+    margin-bottom Rem(170)
+  .cc-list-box
+    color #999
+    margin-bottom Rem(5)
+    li
+      height Rem(45)
+      line-height: Rem(45)
+      display flex
+      justify-content: space-between
+      align-items: center
+      font-size Rem(12)
+      botLine()
+      padding 0 Rem(10)
+      background-color #fff
+      &.cc-cjBox
+        line-height Rem(15)
+        >span
+          width Rem(280)
+        em
+          font-size: Rem(10)
+          i
+            margin-right Rem(5)
+        .ccc-name
+          display block
+          font-size: Rem(14)
+      >span
+        display block
+        min-width: Rem(85)
+      >input 
+        color: #666
+        flex 1
+        height Rem(45)
+        border: 0
+        text-align right
+      .ccl-red
+        color $theme-color
+      &.cclb-img-box
+        height auto
+        padding Rem(10)
+        align-items: flex-start
+        line-height Rem(18)
+        text-align: center
+        a
+          color #999
+          font-size: Rem(10)
+        .cclbi-img
+          width Rem(90)
+          height Rem(70)
+          display flex
+          justify-content: center
+          align-items: center
+          >img
+            width 100%
+            height 100%
+  .cc-foot
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    background-color #fff
+    box-shadow: 0 0 4px #ccc
+    padding-bottom Rem(10)
+    .ccf-head
+      height Rem(45)
+      line-height Rem(45)
+      margin 0 Rem(10)
+      botLine()
+      display flex
+      justify-content: space-between
+      align-items: center
+      color #666
+      font-size: Rem(12)
+      em
+        color $theme-color
+        font-size: Rem(14)
+    .ccf-section
+      height Rem(70)
+      line-height Rem(70)
+      display flex
+      justify-content: space-between
+      align-items: center
+      padding 0 Rem(10)
+      >div
+        flex 1
+        text-align: center
+        em
+          color $theme-color
+          font-size: Rem(24)
+      a
+        color $theme-color
+        font-size: Rem(12)
+    .cc-zfBtn
+      bigBtn()
+  .cc-alert-zfbox
+    display none
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    background-color #fff
+    box-shadow 0 0 4px #ccc
+    .ps-xuanze
+      position relative
+      border-top 1px solid #eee
+      width 80%
+      margin Rem(30) auto
+      >span
+        position: absolute
+        width: Rem(140)
+        left 50%
+        margin-left Rem(-70)
+        top Rem(-8)
+        background-color #fff
+        text-align center
+        color #666
+    .ps-zfbxo
+      display flex
+      justify-content: center
+      align-items: center
+      padding Rem(10) 0 Rem(30)
+      >a
+        font-size: Rem(12)
+        text-align center
+        color #666
+        width 40%
+        height Rem(70)
+        .psz-pa
+          height Rem(40)
+        .psz-xx
+          height Rem(50)
+          margin-top Rem(-10)
+        img
+          max-height 100%
+        p
+          padding-top Rem(10)
+.yyalert
+  width 100%
+  textarea
+    width 100%
+    height Rem(80)
+    background-color #eee
+    border 1px solid #ccc
+    border-radius: Rem(4)
+  p
+    font-size: Rem(10)
