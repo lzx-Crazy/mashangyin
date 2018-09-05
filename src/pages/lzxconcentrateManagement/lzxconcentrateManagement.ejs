@@ -1,0 +1,75 @@
+<div class="concentrate-management">
+    <!-- 筛选条件菜单 -->
+    <ul class="cp-xu-list">
+      <li  onclick="checkXuList(this)">白银</li>
+      <li class="active" onclick="checkXuList(this,1)">精矿</li>
+    </ul>
+    <!-- 白银-->
+    <div class="cp-section ">
+      <div class="cp-fixtop">
+        <div class="cpf-mult active"><span>全部</span></div>
+        <div class="cpf-mult"><span>未完成</span></div>
+        <div class="cpf-mult"><span>已完成</span></div>
+        <div class="cpf-mult"><span>已撤销</span></div>
+      </div>
+    </div>
+    <!-- 精矿 -->
+    <div class="cp-jksection active">
+      <div class="cp-fixtop cp-zd">
+        <div class="cm-rightzd"><span>整单</span><i class="cpf-xlIcon"></i></div>
+        <div class="cpf-mult active"><span>全部</span></div>
+        <div class="cpf-mult"><span>未完成</span></div>
+        <div class="cpf-mult"><span>已完成</span></div>
+        <div class="cpf-mult cmzx"><span>已撤销</span></div>
+      </div>
+      <!-- 产品品名 -->
+      <ul class="cpf-multlist" >
+        <li>整单</li>
+        <li>子单</li>
+      </ul>
+    </div>
+
+    <!-- 内容列表 -->
+    <div class="cm-sec-box">
+      <ul class="cmsb-list">
+        <%for(var i=0;i<5;i++){%>
+        <li>
+          <div class="cmsb-title">
+            <div>
+                <span class="cmsb-tips">一口价</span>
+                <span>湖南马上银工业互联网平台</span>
+            </div>
+            <span class="cmsb-times">2017-10-21   10:31:11</span>
+          </div>
+          <div class="cmsb-body">
+            <div class="cmsbb-left">铅精矿</div>
+            <div class="cmsbb-right">
+              <div class="cmsbr-page">
+                <em>订单编号</em>
+                <span>QJKXS1807230005</span>
+              </div>
+              <div class="cmsbr-page-two">
+                <em class="cmst-sl">数量</em>
+                <span class="cmst-slnum">50000.0000T</span>
+                <em class="cmst-js">结算<br/>方式</em>
+                <span class="cmst-jsyue">月结算</span>
+              </div>
+              <div class="cmsbr-page">
+                <em>申请时间</em>
+                <span class="csms-txt-left">2018-07-23 17:39:22</span>
+              </div>
+              <div class="cmsbr-page">
+                <em>当前状态</em>
+                <span class="csms-txt-left">待审核</span>
+              </div>
+              <div class="cmsbr-page-btnbox">
+                <button class="cmsbr-ck">确认合同</button>
+                <button class="cmsbr-ck bai">查看合同</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+</div>

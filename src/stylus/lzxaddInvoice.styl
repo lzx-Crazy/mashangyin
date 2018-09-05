@@ -1,0 +1,39 @@
+@import './base'
+
+.add-invoice
+  .ai-listbox
+    margin-bottom Rem(50)
+    li
+      display flex
+      justify-content: space-between
+      align-items: center
+      botLine()
+      height Rem(45)
+      line-height Rem(45)
+      background-color #fff
+      padding 0 Rem(15)
+      color: #999
+      font-size: Rem(12)
+      >div
+        width 70%
+        input
+          width 100%
+          text-align: right 
+          color: #666
+          border: 0
+          height Rem(45)
+      &.ail-tip
+        background-color #eeeeee
+        color: $theme-color
+        font-size: Rem(10)
+        line-height Rem(16)
+        .alit-page
+          width 100%
+  .ai-foot
+    position fixed
+    bottom 0
+    width 100%
+    left 0
+  .aif-bigbtn
+    bigBtn()
+    margin Rem(10) auto

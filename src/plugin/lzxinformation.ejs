@@ -1,0 +1,134 @@
+<script>
+  // TAB切换
+  $(function(){
+    var pageData = {
+      data:{
+        status:0,
+        currPage: 0,
+      }
+    }
+    $(".li-menuBox li").each(function(i,el){
+      $(el).on("click",function(){
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".li-pagebox").eq($(el).data("status")).addClass("active").siblings().removeClass("active");
+        
+        if($(el).data("status") === 1){
+          $(".li-pagebox .linqide").html('');// 清空下方容器
+          onReachBottom.hasNextPage = true;// 将上拉加载的判断变为true
+          pageData.data.status = $(el).data("status"); // 将全局变量pagedata中的状态改为当前选中状态
+          pageData.data.currPage = 0; // 将页数变为第一页
+          console.log('当前加载的是第'+ pageData.data.status +'个状态的，第'+ pageData.data.currPage +'页数据')
+          getDataByAjax(pageData) // 调用加载方法 加载当前状态的第一页数据
+        }else if($(el).data("status") === 2){
+          $(".li-pagebox .ggqide").html('');// 清空下方容器
+          onReachBottom.hasNextPage = true;// 将上拉加载的判断变为true
+          pageData.data.status = $(el).data("status"); // 将全局变量pagedata中的状态改为当前选中状态
+          pageData.data.currPage = 0; // 将页数变为第一页
+          getDataByAjax(pageData) // 调用加载方法 加载当前状态的第一页数据
+        }
+        
+      })
+    })
+    function getDataByAjax(res){
+      showLoading() // 显示中间加载提示
+      $.ajax({
+        url: './front/mockdata/lzxinformation.json',
+        type: 'GET',
+        success: function (res) {
+          console.log(res)
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            // 循环拼接DOM
+            // $(".linqide").append("111")
+            $(".lipzx-list").append(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();// 关闭上拉加载提示
+          hideLoading();// 关闭中间加载提示
+          onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+          pageData.currPage = res.currPage; //获取当前页数
+          if (!onReachBottom.hasNextPage || res.pages.length <= 0) {
+            // 当接口返回无下一页数据，或者当前页数据为0时，显示无数据dom
+            showNullReach($(".lipzx-list"))
+          }
+        }
+      })
+    }
+    // 公告
+    function getGgByAjax(res){
+      showLoading() // 显示中间加载提示
+      $.ajax({
+        url: './front/mockdata/lzxinformation_1.json',
+        type: 'GET',
+        success: function (res) {
+          console.log(res)
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            // 循环拼接DOM
+            $(".ggqide").append(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();// 关闭上拉加载提示
+          hideLoading();// 关闭中间加载提示
+          onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+          pageData.currPage = res.currPage; //获取当前页数
+          if (!onReachBottom.hasNextPage || res.pages.length <= 0) {
+            // 当接口返回无下一页数据，或者当前页数据为0时，显示无数据dom
+            showNullReach($(".ggqide"))
+          }
+        }
+      })
+    }
+  })
+
+  
+
+  // 行情信息
+  // 上拉添加html
+  function getHtmlTemp(res){
+    var _html = '<a href="'+res.link+'" class="hqlist-link">'+
+      '<div class="lipzx-img">'+
+          '<img src="'+res.pic+'" alt="">'+
+          '</div>'+
+          '<div class="lipzx-txt">'+
+            '<h3>'+res.title+'</h3>'+
+            '<p class="lipzx-miaoshu">'+res.miaoshu+'</p>'+
+            '<p class="lipzx-time">'+res.times+'</p>'+
+          '</div>'+
+      '</a>';
+    return _html
+  }
+  $(function(){
+    // 初始化上拉加载
+    onReachBottom.init('#zxListbox',function () {
+      $.ajax({
+        url: './front/mockdata/lzxinformation.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $("#zxListbox .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          hideLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($("#zxListbox"))
+          }
+        }
+      })
+    })
+  })
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.li-pagebox', function () {
+      getDataByAjax(pageData)
+    })
+  })
+  // 切换白银黄金铂金
+  function hqList(idx){
+    $(".lipt-box").removeClass("active")
+    $(".lipt-box").eq(idx).addClass("active")
+  }
+  
+</script>

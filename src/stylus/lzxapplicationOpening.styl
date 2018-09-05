@@ -1,0 +1,59 @@
+@import './base'
+
+.aplication-opening
+  .ao-title-times
+    height Rem(50)
+    line-height Rem(50)
+    background-color #fff
+    display flex
+    justify-content: space-between
+    align-items: center
+    padding 0 Rem(10)
+    input
+      border: 0
+      text-align right
+  .ao-tips
+    font-size: Rem(10)
+    color: $theme-color
+    padding Rem(5) Rem(10)
+    span
+      display inline-block
+      vertical-align middle
+      padding-left Rem(2)
+  .ao-list
+    li
+      input
+        border: 0
+        text-align right 
+        color: #666
+    .slc-boxpage
+      position relative
+      .slc-box
+        margin-right Rem(80)
+        input
+          width Rem(70)
+          height Rem(30)
+          line-height Rem(30)
+          border 1px solid #ddd
+          padding 0 Rem(5)
+          text-align center
+          border-radius: Rem(4)
+          -webkit-appearance: none;appearance: none;
+        .slc-list
+          li
+            height Rem(20)
+            border-bottom 0
+            display block
+      .slc-smallbtn
+        position absolute
+        right 0
+        top Rem(6)
+        smallBtn()
+        height Rem(28)
+        line-height Rem(28)
+  .ao-foot
+    background-color #fff
+    position fixed
+    bottom 0
+    left 0
+    width 100%

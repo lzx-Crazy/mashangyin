@@ -1,0 +1,25 @@
+<% if(typeof(islink) != 'undefined'){ %>
+  <a class="item-with-pic" href="">
+<% }else{ %>
+  <div class="item-with-pic">
+<% } %>
+  <div class="iwp-img"><img src="http://placehold.it/260x180/09f/fff.png"></div>
+  <div class="iwp-info">
+    <h3><%= (typeof(str) != 'undefined' ? true : false) ? str : '徒步向导：美丽丽江、向导全程陪同服务、品位慢生活' %></h3>
+    <%= (typeof(price) != 'undefined' ? price : false) ? '<p class="price-normal"><span><em>￥</em>98<em>起</em></span></p>' : '' %>
+    
+    <% if(typeof(isRecord) == 'undefined'){ %>
+      <%= (typeof(date) != 'undefined' ? date : false) ? '<p class="i-date">2018-07-25 16:58:29</p>' : '' %>
+      <%= (typeof(addrs) != 'undefined' ? addrs : false) ? '<p class="i-addrs">大理</p>' : '' %>
+    <% }else{ %>
+      <div>
+        <%= (typeof(date) != 'undefined' ? date : false) ? '<p class="i-date">2018-07-25 16:58:29</p>' : '' %>
+        <%= (typeof(addrs) != 'undefined' ? addrs : false) ? '<p class="i-addrs">大理</p>' : '' %>
+      </div>
+    <% } %>
+  </div>
+<% if(typeof(islink) != 'undefined'){ %>
+  </a>
+<% }else{ %>
+  </div>
+<% } %>

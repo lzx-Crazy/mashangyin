@@ -1,0 +1,53 @@
+
+@import './base'
+
+.market-information
+  .mi-section
+    background-color #fff
+    .mis-cimenu
+      padding Rem(25/2)
+      font-size: 0
+      margin-left -1.33%
+      li 
+        font-size: Rem(10)
+        display inline-block
+        vertical-align middle
+        height Rem(45)
+        padding Rem(5) 0
+        border: 1px solid #eee
+        width 30%
+        margin-left 2.33%
+        text-align center
+        line-height Rem(16)
+        margin-bottom Rem(10)
+        overflow hidden
+        &.active
+          border 1px solid $theme-color
+        span
+          margin 0 Rem(5)
+        .mis-lv
+          color: #80c269
+        .mis-red
+          color: $theme-color
+  .mi-destail
+    margin Rem(10) 0
+    .mid-list
+      background-color #fff
+      padding Rem(5) Rem(15)
+      li
+        height Rem(75/2)
+        line-height Rem(75/2)
+        botLine()
+        display flex
+        justify-content: space-between
+        align-items: center
+        color: #999
+        font-size: Rem(12)
+        &:last-child
+          border-bottom 0
+        span
+          color: #666
+          &.midl-lv
+            color: #80c269
+          &.midl-red
+            color: $theme-color

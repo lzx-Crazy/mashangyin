@@ -1,0 +1,23 @@
+
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+// 初始化滑动
+  var mySwiper = new Swiper('.swiper-container', {
+    autoplay: false,
+    pagination: {
+      el: '.swiper-pagination',
+      bulletElement: 'li',
+    },
+  });   
+  
+  $(function(){
+    // 切换职位
+    $(".rs-resbox a").each(function(i,el){
+      $(el).on("click",function(){
+        $(el).addClass("active").siblings().removeClass("active");
+        console.log('切换')
+      })
+    })
+  })
+</script>

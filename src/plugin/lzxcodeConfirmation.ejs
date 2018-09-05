@@ -1,0 +1,35 @@
+<script>
+   // 上拉加载html拼接方法
+   function getHtmlTemp(res) {
+    var _html = '<li>'+
+        '<p>new</p>'+
+        '<p>JG170927001</p>'+
+        '<p>15656.3</p>'+
+      '</li>'
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.cc-bm-list',function () {
+      $.ajax({
+        url: './front/mockdata/lzxcontrolInvoices.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          console.log(pages.length)
+          for (var i = 0; i < pages.length; i++) {
+            $(".cc-bm-list").append(getHtmlTemp(pages[i]))
+          }
+          // hideReachLoading();
+          hideLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".cc-bm-list"))
+          }
+        }
+      })
+    })
+  })
+</script>

@@ -1,0 +1,64 @@
+<div class="se-list">
+    <div class="se-top">
+        <div class="se-topl">
+            <img src="./front/images/l-manpage01.png">
+            <span class="se-toplsa">三日游</span>
+        </div>
+        <div class="se-topr">
+            <h3 class="se-toprh">徒步向导：美丽丽江、向导全程陪同服务、品位慢生活</h3>
+            <p class="se-toprpa"><span>¥</span>4848.00</p>
+            <p class="se-toprpb">
+                <span>丽江</span>
+                <span>产品编号：XLW123456</span>
+            </p>
+        </div>
+    </div>
+    <div class="se-bottom">
+        <p class="se-btp">
+            <span class="se-btpl">出发地：深圳</span>
+            <% if(type!="ck"){ %>
+            <span class="se-btpr">组团人数：20人</span>
+            <% } %>
+        </p>
+        <p class="se-btp">
+            <span class="se-btpl">合销商户：小鹿网旅游</span>
+            <% if(type!="ck"){ %>
+            <span class="se-btpr">出团时间：8月12日</span>
+            <% } %>
+        </p>
+    </div>
+    <% if(type=="group"){ %>
+        <div class="se-sj">
+            <span class="se-sjspa">上架时间：2018年4月20日</span>
+            <div class="se-sjr">
+                <a href="javascript:void(0)">编辑</a>
+                <a href="javascript:void(0)">下架</a>
+            </div>
+        </div>
+    <% } %>
+    <% if(type=="ck"){ %>
+        <div class="se-sj">
+            <span class="se-sjspa">添加时间：2018年4月20日</span>
+            <div class="se-sjr">
+                <a href="javascript:void(0)">申请出团</a>
+            </div>
+        </div>
+    <% } %>
+    <% if(type=="check"){ %>
+        <div class="se-sj">
+            <span class="se-sjspa">提交时间：2018年4月20日</span>
+            <div class="se-sjr">
+                <span>审核中</span>
+                <a href="javascript:void(0)">取消审核</a>
+            </div>
+        </div>
+    <% } %>
+    <% if(type=="record"){ %>
+        <div class="se-sj">
+            <span class="se-sjspa">上架时间：2018年4月20日</span>
+            <div class="se-sjr">
+                <a href="javascript:void(0)">已完成</a>
+            </div>
+        </div>
+    <% } %>
+</div>

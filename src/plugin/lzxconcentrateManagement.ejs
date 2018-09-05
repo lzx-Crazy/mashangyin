@@ -1,0 +1,148 @@
+<script>
+
+  $(function(){
+    $(".cpf-mult").on("click", function (e) {
+      $(this).addClass("active").siblings().removeClass("active");
+    })
+   
+    $(".cm-rightzd").on("click", function (e) {
+      if ($(".cpf-multlist").is(":hidden")) {
+        // $(this).addClass("active").siblings().removeClass("active");
+        $(".cpf-multlist").fadeOut();
+        if($(".cp-section").is(":hidden")){
+          $(".cp-jksection .cpf-multlist").eq($(this).index()).fadeIn();
+        }else {
+          $(".cp-section .cpf-multlist").eq($(this).index()).fadeIn();
+        }
+        
+      } else {
+        $(".cpf-mult").removeClass("active");
+        $(".cpf-multlist").fadeOut();
+      }
+      e.stopPropagation();
+      $(document).on("click", function (e) {
+        $(".cpf-multlist").fadeOut();
+        e.stopPropagation();
+      });
+    })
+    $(".cpf-multlist").on('click', function (e) {
+      e.preventDefault()
+    })
+    $(".cpf-multlist li").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".cm-rightzd span").text($(el).text());
+        $(".cpf-multlist").fadeOut();
+        // $(".cpf-mult").removeClass("active");
+        // 选择结束
+        // do something
+        if($(this).index() == 1){
+          $(this).parent().parent().find(".cp-fixtop").removeClass("cp-zd")
+          $(".cmzx").addClass("hides")
+        }else{
+          $(this).parent().parent().find(".cp-fixtop").addClass("cp-zd")
+          $(".cmzx").removeClass("hides")
+        }
+      })
+    })
+  })
+  // 切换
+  function checkXuList(e,ix){
+    $(e).addClass("active").siblings().removeClass("active")
+    if(ix == 1){
+      $(".cp-section").removeClass("active")
+      $(".cp-jksection").addClass("active")
+      // 调用ajax
+      $(".mizn-listbox").html('')
+      // getjkData()
+    } else {
+      $(".cp-section").addClass("active")
+      $(".cp-jksection").removeClass("active")
+      // 调用ajax
+      $(".mizn-listbox").html('')
+      // getData()
+    }
+  }
+
+
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<li>'+
+          '<div class="cmsb-title">'+
+            '<div>'+
+                '<span class="cmsb-tips">一口价</span>'+
+                '<span>new湖南马上银工业互联网平台</span>'+
+            '</div>'+
+            '<span class="cmsb-times">2017-10-21   10:31:11</span>'+
+          '</div>'+
+          '<div class="cmsb-body">'+
+            '<div class="cmsbb-left">铅精矿</div>'+
+            '<div class="cmsbb-right">'+
+              '<div class="cmsbr-page">'+
+                '<em>订单编号</em>'+
+                '<span>QJKXS1807230005</span>'+
+              '</div>'+
+              '<div class="cmsbr-page-two">'+
+                '<em class="cmst-sl">数量</em>'+
+                '<span class="cmst-slnum">50000.0000T</span>'+
+                '<em class="cmst-js">结算<br/>方式</em>'+
+                '<span class="cmst-jsyue">月结算</span>'+
+              '</div>'+
+              '<div class="cmsbr-page">'+
+                '<em>申请时间</em>'+
+                '<span class="csms-txt-left">2018-07-23 17:39:22</span>'+
+              '</div>'+
+              '<div class="cmsbr-page">'+
+                '<em>当前状态</em>'+
+                '<span class="csms-txt-left">待审核</span>'+
+              '</div>'+
+              '<div class="cmsbr-page-btnbox">'+
+                '<button class="cmsbr-ck">确认合同</button>'+
+                '<button class="cmsbr-ck bai">查看合同</button>'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+        '</li>'
+    return _html;
+  }
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.cmsb-list',function () {
+      getData()
+    })
+  })
+  function getData(){
+    $.ajax({
+      url: './front/mockdata/lzxinvoiceExpress.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".cmsb-list").append(getHtmlTemp(pages[i]))
+        }
+        // hideReachLoading();
+        hideLoading();
+        onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+        onReachBottom.currPage = res.currPage;//获取当前页数
+        if(!onReachBottom.hasNextPage){
+          showNullReach($(".cmsb-list"))
+        }
+      }
+    })
+  }
+  
+  $(function(){
+    // 销售采购切换
+    $(".p-switch").on("click",function(){
+      if($(".p-switch").is(':checked')){
+        console.log("true")
+        $(".switch-txt").html("采购")
+      }else{
+        console.log("false")
+        $(".switch-txt").html("销售")
+      }
+    })
+    
+  })
+</script>

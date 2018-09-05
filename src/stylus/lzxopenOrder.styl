@@ -1,0 +1,77 @@
+@import './base'
+
+.open-order
+  .oo-top-tip
+    background-color #feecbf
+    color #999
+    padding Rem(10) Rem(15)
+    font-size: Rem(10)
+    position fixed
+    top Rem(45)
+    left 0
+    width 100%
+    z-index 9
+    span
+      display inline-block
+      vertical-align middle
+  .oo-list
+    margin-top Rem(40)
+    margin-bottom Rem(155)
+    padding Rem(0) Rem(5)
+    li
+      background-color #fff
+      border-radius: Rem(4)
+      padding Rem(25) Rem(10) Rem(10) Rem(15) 
+      font-size: Rem(12)
+      color: #999
+      line-height Rem(22)
+      margin-bottom Rem(5)
+      position relative
+      .ool-page
+        display flex
+        justify-content: space-between
+        align-items: center
+        >div
+          width 50%
+          text-align left
+      em
+        color: $theme-color
+        &.ool-money
+          font-size: Rem(20)
+      span
+        color: #333
+      .ool-btnbox
+        text-align right 
+        margin-top Rem(5)
+        >a
+          display inline-block
+          vertical-align middle
+          text-align center
+          width Rem(60)
+          height Rem(20)
+          line-height Rem(20)
+          border: 1px solid $theme-color
+          background-color #fff
+          color: $theme-color
+          border-radius: Rem(4)
+          margin-left Rem(10)
+          font-size: Rem(10)
+          &.on
+            background-color $theme-color
+            color: #fff
+  .oo-footbox
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    background-color #fff
+    .oof-tips
+      background-color #feecbf
+      color: #999
+      font-size: Rem(10)
+      padding Rem(10) Rem(15)
+      .oof-nrbox
+        width 95%
+        display inline-block
+        vertical-align top
+        line-height Rem(14)

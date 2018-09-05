@@ -1,0 +1,34 @@
+
+<script>
+  $(function(){
+    // 编辑
+    $(document).on("click", ".nav-xiu", function(){
+      $(this).addClass("btn-string")
+      $(this).removeClass("nav-xiu");
+      $(this).html("移出清单")
+    })
+    // 移出清单
+    $(document).on("click", ".btn-string", function(){
+      $(this).addClass("nav-xiu")
+      $(this).removeClass("btn-string")
+      $(".kk-zzpage").remove()
+      $(this).html("编辑")
+    })
+    // 选择订单
+    var _htmls = '<div class="kk-zzpage"></div>'
+    $(document).on("click", ".kk-list li", function(){
+      if($(".rt-btn-box button").hasClass("btn-string")){
+        if($(this).find("div").hasClass("kk-zzpage")){
+          $(this).removeClass("active")
+          $(this).find(".kk-zzpage").remove()
+        } else {
+          $(this).addClass("active")
+          $(this).append(_htmls)
+        }
+      }else{
+        console.log(22)
+        return;
+      }
+    })
+  })
+</script>

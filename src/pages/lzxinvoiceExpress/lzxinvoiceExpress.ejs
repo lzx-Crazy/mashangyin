@@ -1,0 +1,106 @@
+
+<div class="invoice-management">
+  <div class="im-section">
+    <%for(var i=0;i<3;i++){%>
+      <div class="ims-page">
+        <p>今天 08:30</p>
+        <div class="imsp-box">
+          <div>
+            <span>发票系统编号：</span>
+            <em class="im-bh">FP1807240001</em>
+          </div>
+          <div>
+            <span>快递信息：</span>
+            <em class="im-name">/</em>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>快递号码：</span>
+                <em class="im-haoma">/</em>
+            </div>
+            <div class="imsp-small">
+                <span>当前状态：</span>
+                <em>未完成</em>
+            </div>
+          </div>
+          <div class="imsp-btnbox">
+            <a href="javascript:;;" class="im-add" onclick="addxx(this)">填写快递信息</a>
+          </div>
+        </div>
+      </div>
+      <div class="ims-page">
+        <p>2017-12-01 08:30:10</p>
+        <div class="imsp-box">
+          <div>
+            <span>发票系统编号：</span>
+            <em class="im-bh">FP1807240002</em>
+          </div>
+          <div>
+            <span>快递信息：</span>
+            <em class="im-name">顺丰快递</em>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>快递号码：</span>
+                <em class="im-haoma">821453649964</em>
+            </div>
+            <div class="imsp-small">
+                <span>当前状态：</span>
+                <em>已完成</em>
+            </div>
+        </div>
+        <div class="imsp-btnbox">
+          <a href="javascript:;;" class="im-update" onclick="updatexx(this)">修改快递信息</a>
+        </div>
+      </div>
+    <%}%>
+  </div>
+  <!-- 搜索 -->
+  <div class="imss-bj"></div>
+  <div class="im-suosou">
+    <ul class="imss-box">
+      <li>
+        <p>发票系统编号</p>
+        <input type="text" placeholder="请输入发票编号">
+      </li>
+      <li>
+        <p>快递名称</p>
+        <input type="text" placeholder="请输入申请人姓名">
+      </li>
+      <li class="imsall-btnbox">
+        <span>全部</span>
+        <span>未完成</span>
+        <span>已完成</span>
+      </li>
+    </ul>
+    <div class="imss-footbox">
+      <div class="imssbtn-box">
+        <a href="javascript:;;" onclick="imReset()">重置</a>
+        <a href="javascript:;;" class="imss-wcbtn">完成</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新增弹窗 -->
+  <div class="alert-box">
+    <div class="alert-section">
+      <p>添加快递信息</p>
+      <div class="as-page">
+        <span>发票编号：</span>
+        <span class="as-bh">FP1807240001</span>
+      </div>
+      <div class="as-page">
+        <span>快递公司：</span>
+        <div><input type="text" class="as-gs" placeholder="请输入快递公司"></div>
+      </div>
+      <div class="as-page">
+        <span>快递号码：</span>
+        <div><input type="text" class="as-hm" placeholder="请输入快递号码"></div>
+      </div>
+      <div class="as-footbtn">
+        <a href="javascript:;;" onclick="closeas()">取消</a>
+        <a href="javascript:;;" class="active">确定</a>
+      </div>
+    </div>
+  </div>
+</div>

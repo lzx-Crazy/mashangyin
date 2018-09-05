@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+$(function () {
+
+    $(".mizb-btn").on('click',function(){
+        console.log(2123)
+    })
+
+
+  // 初始化轮播
+  var mySwiper = new Swiper('.swiper-container', {
+    autoplay: true,
+    pagination: {
+      el: '.swiper-pagination',
+      bulletElement: 'li',
+    },
+  });
+
+  var mySwiper1 = new Swiper('.swiper-heng', {
+    autoplay: true,
+    slidesPerView : 3,
+    slidesPerGroup : 1,
+  });
+
+  
+  // 资讯滚动
+  function notice(ul){
+    var li = ul.find('li').eq(0).html();
+    var hi = $(".notice-txt li").height();
+    ul.append('<li>'+li+'</li>');
+    var num = 0;
+    setInterval(function(){
+        num ++;
+        if(num == ul.find('li').length){
+            num = 1;
+            ul.css({
+                marginTop:0
+            });
+        }
+        $('.notice-txt').animate({
+            marginTop:-hi * num
+        },400);
+    },2000);
+}
+// 资讯滚动
+notice($('.notice-txt'));
+})
+// ajax请求
+function getDataByAjax() {
+    //   $(".sab-body").html('');
+    $.ajax({
+        url: 'http://d7.cto.shovesoft.com/msyapp/msyApp/queryEnterpriseOrderList.do',
+        type: "POST",
+        success: function (res) {
+            fullDownLoading.hide(); 
+        }
+    })
+}
+
+// 整单子单切换
+function tabMizt(e){
+    $(e).addClass("active").siblings().removeClass("active");
+}
+// TD期切换
+function tabTd(e){
+    if($(e).hasClass("on")){
+        $(e).removeClass("on")
+        $(e).html("TD")
+    }else {
+        $(e).addClass("on")
+        $(e).html("期")
+    }
+}
+// 右侧切换
+function miboxShow(e){
+    
+    if($(e).hasClass("on")){
+        $(e).removeClass("on")
+        $(".mi-hybox").animate({right:"-90%"},200)
+        return false;
+    } else {
+        $(e).addClass("on")
+        $(".mi-hybox").animate({right:"0"},200)
+        return false;
+    }
+}
+
+
+$(function () {
+    // 初始化下拉刷新方法，传入容器及回调函数
+    onPullDownRefresh('.page-main', function () {
+        getDataByAjax()
+    })
+    // 初始化 合作单位滑动
+    // 初始化滑动
+    var mySwiper = new Swiper('.swiper-hezuo', {
+        autoplay: false,
+        pagination: {
+        el: '.swiper-hezuo-pagination',
+        bulletElement: 'li',
+        },
+    })
+
+})
+
+
+
+</script>

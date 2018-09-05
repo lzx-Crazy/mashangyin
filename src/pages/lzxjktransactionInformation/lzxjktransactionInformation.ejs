@@ -1,0 +1,66 @@
+
+<div class="transaction-information">
+  <!-- 自营_最新成交信息(精矿) -->
+  <div class="mi-zybox">
+    <div class="miz-title">
+      <span>当前成交信息为最新</span>
+      <span onclick="sxAlert()" class="miz-sx">筛选<i class="saixuan"></i></span>
+    </div>
+    <ul class="mizn-msgbox">
+      <%for(var i =0;i<6;i++){%>
+        <li>
+          <div class="mil-page">
+            <em>铅Pd>50%、银Ag≥1000克、金Au≥1克</em>
+            <span class="mil-bor">年结算</span>
+          </div>
+          <div class="mil-ck"> 
+            <p class="money">
+              <em class="miz-yuan">整</em>
+              <span>4294</span>
+            </p>
+            <p class="br">上海-平飞</p>
+            <p>买方指定</p>
+          </div>
+          <div class="mil-tiems">成交时间：2017-11-20</div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <!-- 搜索 -->
+  <div class="imss-bj"></div>
+  <div class="im-suosou">
+    <div class="imss-box">
+      <p>类型</p>
+      <div class="imsall-btnbox">
+        <span class="active">全部</span>
+        <span>整单</span>
+        <span>子单</span>
+      </div>
+    </div>
+    <div class="imss-box">
+      <p>产品品名</p>
+      <div class="imsall-btnbox">
+        <span class="active">全部</span>
+        <span>铅精矿</span>
+        <span>银精矿</span>
+        <span>铜精矿</span>
+      </div>
+    </div>
+    <div class="imss-box">
+      <p>类型</p>
+      <div class="imsall-btnbox">
+        <span class="active">全部</span>
+        <span>年结算</span>
+        <span>月结算</span>
+        <span>周结算</span>
+        <span class="ims-big">预结算部分货款、月末结算</span>
+      </div>
+    </div>
+    <div class="imss-footbox">
+      <div class="imssbtn-box">
+        <a href="javascript:;;" onclick="imReset()">重置</a>
+        <a href="javascript:;;" class="imss-wcbtn">完成</a>
+      </div>
+    </div>
+  </div>
+</div>

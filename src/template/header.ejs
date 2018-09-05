@@ -1,0 +1,44 @@
+<% if(isHead){ %>
+<div class="nav-wrap <%= headerBg %>">
+  <% if(ltBtn1 != false){ %>
+  <div class="lt-btn-box">
+    <% if(ltBtn1 != false){ %>
+      <button type="button" class="<%= ltBtn1 %>"><%= ltStr1 %></button>
+    <% } %>
+    <% if(ltBtn2 != false){ %>
+      <button type="button" class="<%= ltBtn2 %>"><%= ltStr2 %></button>
+    <% } %>
+  </div>
+  <% } %>
+  <% if(showTitle){ %>
+    <h3 class="nav-title"><%= pageTitle %></h3>
+  <% } %>
+  <% if(search != false){ %>
+    <div class="<%= search %>"><input type="text" placeholder="<%= searchStr %>"></div>
+  <% } %>
+  <% if(rtBtn1 != false){ %>
+    <div class="rt-btn-box">
+      <% if(rtBtn1 != false){ %>
+        <button type="button" class="<%= rtBtn1 %>"><%= rtStr1 %></button>
+      <% } %>
+      <% if(rtBtn2 != false){ %>
+        <button type="button" class="<%= rtBtn2 %>">
+          <%= rtStr2 %>
+          <% if(rtTxt2 != false){ %>
+            <div class="msgTip"><%= rtTxt2 %></div>
+          <% } %>
+        </button> 
+      <% } %>
+    </div>
+  <% } %>
+  <% if(rtBtn3 != false){ %>
+    <button type="button" class="<%= rtBtn3 %>"><%= rtStr3 %></button>
+  <% } %>
+  <% if(switchBtn != false){ %>
+    <div class="<%= switchBtn %>">
+      <span class="switch-txt"><%= switchStr %></span><input type="checkbox" class="p-switch">
+    </div>
+  <% } %>
+</div>
+<% } %>
+

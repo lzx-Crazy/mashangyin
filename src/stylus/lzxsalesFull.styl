@@ -1,0 +1,90 @@
+
+@import './base'
+
+.sales-full
+  .sf-page
+    margin-top Rem(10)
+    background-color #fff
+    color #999
+    font-size: Rem(12)
+  .sfp-box
+    display flex
+    justify-content: space-between
+    align-items: center
+    height Rem(45)
+    line-height Rem(45)
+    botLine()
+    color: #999
+    padding 0 Rem(10)
+    font-size: Rem(12)
+    >div
+      width 80%
+      text-align right 
+      input
+        text-align right
+        color: #666
+        border 0
+  .sfp-tab
+    padding-bottom Rem(10)
+    font-size: Rem(12)
+    >p
+      height Rem(40)
+      line-height Rem(40)
+      padding 0 Rem(10)
+    .sfp-table
+      width: 94%
+      margin 0 3%
+      text-align center
+      th
+        width 25%
+        height Rem(55/2)
+        line-height Rem(55/2)
+        background-color #666666
+        color #fff
+        border: 1px solid #eee
+      td
+        height Rem(55/2)
+        line-height Rem(55/2)
+        border 1px solid #eee
+        font-size: Rem(10)
+  .sf-xiabox
+    padding 0 Rem(10)
+    margin-bottom Rem(95)
+  .sf-foot-fixe
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    padding Rem(10) 0
+    text-align center
+    background-color #ffffff
+    box-shadow: 0 0 5px #ccc
+    font-size: Rem(12)
+    .sff-check-box
+      color: #666
+    span 
+      display inline-block
+      vertical-align middle
+    .sff-btnbox
+      display flex
+      justify-content space-between
+      align-items: center
+      padding Rem(10) Rem(40) 0
+      >a
+        display block
+        width 45%
+        height Rem(40)
+        line-height Rem(40)
+        background-color $theme-color
+        color: #fff
+        border-radius: Rem(4)
+        &.kfbg
+          background-color #ff9d00
+        .sffb-kficon
+          content: ''
+          display inline-block
+          vertical-align middle
+          getBg("yiwen")
+          width Rem(25/2)
+          height Rem(15)
+          background-size contain

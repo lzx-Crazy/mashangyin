@@ -1,0 +1,52 @@
+@import './base'
+
+@keyframes emersion
+  0%
+    opacity 0
+    transform translateY(Rem(15))
+  100%
+    opacity 1
+    transform translateY(Rem(0))
+
+@keyframes unemersion
+  0%
+    opacity 1
+    transform translateY(Rem(0))
+  100%
+    opacity 0
+    transform translateY(Rem(15))
+
+[data-tabbox]
+  display none
+
+.fix-main
+  position fixed
+  left 0px
+  top 0px
+  width 100%
+  z-index 10
+
+.slc-box
+  .slc-list
+    display none
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 66
+    width 100%
+    padding Rem(5) 0
+    background #fff
+    box-shadow 0 -3px 5px rgba(0,0,0,.1)
+    >li
+      line-height Rem(20)
+      padding Rem(10) 0
+      text-align center
+      &.active
+        color $theme-color
+
+.rich-area
+  line-height Rem(22)
+  padding Rem(10)
+  img,video
+    max-width 100%
+    height auto !important

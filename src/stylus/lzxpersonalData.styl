@@ -1,0 +1,46 @@
+
+@import './base'
+
+.personal-data
+  .pd-listbox
+    >a
+      height Rem(55)
+      line-height Rem(55)
+      toMore()
+      botLine()
+      color: #666
+      display flex
+      justify-content: space-between
+      align-items: center
+      padding Rem(0) Rem(15)
+      background-color #fff
+      font-size: Rem(12)
+      .slc-curr
+        text-align right
+        height Rem(55)
+        line-height Rem(55)
+        border: 0
+        padding-right Rem(15)
+        color: #999
+      em
+        color: #999
+        padding-right Rem(15)
+      .pdl-img
+        height Rem(65/2)
+        width Rem(65/2)
+        border-radius: 50%
+        border: Rem(1) solid #ddd
+        display flex
+        justify-content: center
+        align-items: center
+        margin-right Rem(15)
+        img
+          max-width 100%
+          max-height 100%
+      span
+        vertical-align middle
+      .pdl-Hot
+        color: $theme-color
+        font-size: Rem(18)
+        padding-right Rem(5)
+        font-weight: bold

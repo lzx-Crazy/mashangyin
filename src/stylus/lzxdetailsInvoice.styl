@@ -1,0 +1,43 @@
+
+@import './base'
+
+.details-invoice
+  color: #999
+  font-size: Rem(12)
+  .di-title-money
+    height Rem(50)
+    line-height: Rem(50)
+    background-color #fff
+    text-align center
+    margin-bottom Rem(10)
+    em
+      color: $theme-color
+      font-size: Rem(20)
+      font-weight: bold
+  .di-list
+    li
+      background-color #fff
+      botLine()
+      padding 0 Rem(10)
+      height Rem(95/2)
+      line-height Rem(95/2)
+      display flex
+      justify-content: space-between
+      align-items: center
+      span
+        color: #333
+        font-size: Rem(14)
+  .di-smallbtn
+    display inline-block
+    vertical-align middle
+    height Rem(35)
+    line-height Rem(35)
+    width Rem(80)
+    background-color $theme-color
+    color: #fff
+    text-align center
+    border-radius: Rem(4)
+    margin-left Rem(5)
+  .di-vbtn
+    bigBtn()
+    margin Rem(10) auto

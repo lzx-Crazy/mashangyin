@@ -1,0 +1,186 @@
+<script>
+  // 绑定数据筛选下拉
+  $(function(){
+    $(".cpf-mult").on("click", function (e) {
+      if ($(".cpf-multlist").is(":hidden")) {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".cpf-multlist").fadeOut();
+        if($(".cp-section").is(":hidden")){
+          $(".cp-jksection .cpf-multlist").eq($(this).index()).fadeIn();
+        }else {
+          $(".cp-section .cpf-multlist").eq($(this).index()).fadeIn();
+        }
+        
+      } else {
+        $(".cpf-mult").removeClass("active");
+        $(".cpf-multlist").fadeOut();
+      }
+      e.stopPropagation();
+      $(document).on("click", function (e) {
+        $(".cpf-multlist").fadeOut();
+        e.stopPropagation();
+      });
+    })
+    $(".cpf-multlist").on('click', function (e) {
+      e.preventDefault()
+    })
+    $(".cpf-multlist li").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".cpf-mult.active span").text($(el).text());
+        $(".cpf-multlist").fadeOut();
+        $(".cpf-mult").removeClass("active");
+        // 选择结束
+        // do something
+      })
+    })
+  })
+
+  // 切换
+  function checkXuList(e,ix){
+    $(e).addClass("active").siblings().removeClass("active")
+    if(ix == 1){
+      $(".cp-section").removeClass("active")
+      $(".cp-jksection").addClass("active")
+      // 调用ajax
+      $(".mizn-listbox").html('')
+      getjkData()
+    } else {
+      $(".cp-section").addClass("active")
+      $(".cp-jksection").removeClass("active")
+      // 调用ajax
+      $(".mizn-listbox").html('')
+      getData()
+    }
+
+    
+  }
+
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<li>'+
+            '<div class="mizl-zs">'+
+              '<em class="miz-yuan">整</em>'+
+              '<span class="miz-jgs">TD<em class="miz-red">+1</em></span>'+
+            '</div>'+
+            '<div>'+
+              '<p>白银1</p>'+
+              '<p>5000.0000kg</p>'+
+            '</div>'+
+            '<div class="miz-ckbox">'+
+              '<p>金贵</p>'+
+              '<p>上海-平飞</p>'+
+            '</div>'+
+            '<div class="miz-zf">'+
+              '<label class="miz-yp">非当月票</label>'+
+              '<a href="javascript:;;"><i class="miz-zficon"></i>可转发</a>'+
+            '</div>'+
+            '<div>'+
+              '<p>2017-11-20</p>'+
+              '<a href="javascript:;;" class="miz-gm">当前可买</a>'+
+            '</div>'+
+          '</li>'
+    return _html;
+  }
+  // 精矿
+  function getjkHtmlTemp(res) {
+    var _html = '<li>'+
+              '<div class="mizl-zs">'+
+                '<em class="miz-yuan">子</em>'+
+                '<span class="miz-jgs">铅精矿</em></span>'+
+              '</div>'+
+              '<div class="mizl-jk-page">'+
+                '<div class="mijk-head">'+
+                  '<div>1756.1260T</div>'+
+                  '<div>点价/均价</div>'+
+                 ' <div class="miz-zf">'+
+                    '<label class="miz-yp">采购</label>'+
+                  '</div>'+
+                '</div>'+
+                '<div class="mijk-foot">'+
+                    '铅Pd>50%、银Ag≥1000克、金Au≥1克铅Pd>50%、银Ag≥1000克、金Au≥1克'+
+                '</div>'+
+              '</div>'+
+              '<div>'+
+                '<p>2017-11-20</p>'+
+                '<a href="javascript:;;" class="miz-gm">当前可买</a>'+
+              '</div>'+
+            '</li>'
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.mizn-listbox',function () {
+      getData()
+    })
+  })
+
+
+  function getData(){
+    console.log(11)
+    $.ajax({
+      url: './front/mockdata/lzxinvoiceExpress.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".mizn-listbox").append(getHtmlTemp(pages[i]))
+        }
+        // hideReachLoading();
+        hideLoading();
+        onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+        onReachBottom.currPage = res.currPage;//获取当前页数
+        if(!onReachBottom.hasNextPage){
+          showNullReach($(".mizn-listbox"))
+        }
+      }
+    })
+  }
+
+  function getjkData(){
+    console.log(11)
+    $.ajax({
+      url: './front/mockdata/lzxinvoiceExpress.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".mizn-listbox").append(getjkHtmlTemp(pages[i]))
+        }
+        // hideReachLoading();
+        hideLoading();
+        onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+        onReachBottom.currPage = res.currPage;//获取当前页数
+        if(!onReachBottom.hasNextPage){
+          showNullReach($(".mizn-listbox"))
+        }
+      }
+    })
+  }
+
+  // TD期切换
+function tabTd(e){
+    if($(e).hasClass("on")){
+        $(e).removeClass("on")
+        $(e).html("TD")
+    }else {
+        $(e).addClass("on")
+        $(e).html("期")
+    }
+}
+// 右侧切换
+function miboxShow(e){
+    if($(e).hasClass("on")){
+        $(e).removeClass("on")
+        $(".mi-hybox").animate({right:"-90%"},200)
+        return false;
+    } else {
+        $(e).addClass("on")
+        $(".mi-hybox").animate({right:"0"},200)
+        return false;
+    }
+}
+
+</script>

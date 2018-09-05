@@ -1,0 +1,45 @@
+
+<script>
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<a href="'+res.link+'" class="cib-listpage">'+
+        '<div>'+
+          '<em>发票金额：</em>'+
+          '<span class="cli-bigmoney">'+res.money+'元</span>'+
+        '</div>'+
+        '<div class="cli-nav">'+
+          '<p class="cli-fw"><em>发票编号</em><span>'+res.bianhao+'</span></p>'+
+          '<p><em>发票状态：</em><span>'+res.state+'</span></p>'+
+        '</div>'+
+        '<div class="cli-nav">'+
+          '<p class="cli-fw"><em>品         名：</em><span>'+res.pname+'</span></p>'+
+          '<p><em >数      量：</em><span>'+res.nums+'kg</span></p>'+
+        '</div>'+
+      '</a>'
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.ci-box',function () {
+      $.ajax({
+        url: './front/mockdata/lzxcontrolInvoices.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          console.log(pages.length)
+          for (var i = 0; i < pages.length; i++) {
+            $(".ci-box").append(getHtmlTemp(pages[i]))
+          }
+          // hideReachLoading();
+          hideLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".ci-box"))
+          }
+        }
+      })
+    })
+  })
+</script>

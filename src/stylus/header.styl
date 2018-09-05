@@ -1,0 +1,379 @@
+@import './base'
+@import './sprite'
+
+$nav-btn(w = 35,h = 45)
+  position relative
+  width Rem(w)
+  height Rem(h)
+  line-height Rem(h)
+  background transparent
+  border 0
+.nav-wrap
+  position fixed
+  z-index 19
+  top 0px
+  left 0px
+  width 100%
+  box-sizing border-box
+  display flex
+  justify-content space-between
+  align-items center
+  height Rem(45)
+  &.bg-normal
+    background $theme-color
+  &.bg-opacity
+    background transparent
+    transition .3s background linear
+    &.in-scroll
+      background #fff
+      box-shadow 0 3px 5px rgba(0,0,0,.1)
+  .nav-title
+    position absolute
+    top 0px
+    width 100%
+    padding 0 Rem(80)
+    line-height Rem(45)
+    font-size Rem(19)
+    text-align center
+    color #fff
+    box-sizing border-box
+  .show-navlist
+    display flex
+    justify-content center
+    align-items center
+    >.slide
+      flex 0 0 Rem(16)
+      height Rem(9)
+      margin Rem(3) 0 0 Rem(5)
+      getBg('slide-nav')
+      background-size cover
+      transition .3s linear
+      transition-property transform
+    &.active>.slide
+      transform rotate(180deg)
+  .nav-list
+    visibility hidden
+    position absolute
+    left 0px
+    top Rem(55)
+    opacity 0
+    z-index -9
+    width 100%
+    background #fff
+    box-shadow 0 3px 5px rgba(0,0,0,.1)
+    padding Rem(5) 0
+    text-align center
+    transition .3s linear
+    transition-property z-index,opacity,top
+    >li
+      line-height Rem(35)
+      padding 0 Rem(10)
+      font-size Rem(15)
+      &.active
+        color $theme-color
+    &.active
+      visibility visible
+      z-index 9
+      opacity 1
+      top Rem(45)
+
+  .lt-btn-box,.lt-btn-box
+    position relative
+    z-index 2
+    display flex
+    align-items center
+  .back-to//返回
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(3)
+  .nav-op-back//返回
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(14)
+  .lt-seca // 左边搜索
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(4)
+  .nav-right-scan // 右边扫描
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(10)
+
+  .nav-close
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(6)
+  .nav-share
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(5)
+  .nav-op-share
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(15)
+  .nav-op-msg
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(17)
+  .nav-addr//地址
+    position relative
+    padding 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+    &:after
+      content ''
+      display block
+      abs(2,0,0,auto)
+      margin auto
+      $headerSprite(1)
+  .nav-addr2
+    position relative
+    padding 0 Rem(15) 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+    &:after
+      content ''
+      display block
+      abs(0,0,0,auto)
+      margin auto
+      $headerSprite(2)
+  .nav-card
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(12)
+  .nav-menu
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(8)
+  .btn-string
+    position relative
+    padding 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+  .nav-msg
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,10,0,0)
+      margin auto
+      $headerSprite(13)
+  .nav-msg-l
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,10,0,0)
+      margin auto
+      $headerSprite(11)
+      // position relative
+    .msgTip
+      position absolute
+      top Rem(6)
+      right Rem(5)
+      width Rem(30/2)
+      height Rem(30/2)
+      border-radius: 50%
+      background-color #fff
+      color: $theme-color
+      text-align center
+      line-height Rem(32/2)
+      z-index 9
+      font-size: Rem(9)
+  .nav-scan
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(10)
+  .nav-set
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(9)
+  .nav-search
+    flex 1 1 auto
+    display flex
+    align-items center
+    // margin 0 Rem(10)
+    margin-right Rem(10)
+    background #c10828
+    border-radius 20px
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    &:before
+      content ''
+      display block
+      $headerSprite(4)
+      margin-right Rem(10)
+  .nav-search-main
+    flex 1 1 auto
+    display flex
+    align-items center
+    // margin 0 Rem(10)
+    margin-right Rem(10)
+    background #c10828
+    border-radius 20px
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    margin-left Rem(10)
+    &:before
+      content ''
+      display block
+      $headerSprite(4)
+      margin-right Rem(10)
+    input[type=text]
+      flex 1 1 auto
+      border 0
+      background transparent
+      height 100%
+      color #fff
+      font-size Rem(12)
+      &::-webkit-input-placeholder
+        color #eee
+  .nav-search-white
+    flex 1 1 auto
+    display flex
+    align-items center
+    margin 0 Rem(15)
+    background #fff
+    border-radius 20px
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    &:before
+      content ''
+      display block
+      $headerSprite(16)
+      margin-right Rem(10)
+    input[type=text]
+      flex 1 1 auto
+      border 0
+      background transparent
+      height 100%
+      color #666
+      &::-webkit-input-placeholder
+        color #666
+  .nav-yiwen
+    background transparent
+    border 0
+    position relative
+    font-size Rem(12)
+    color: #fff
+    right Rem(15)
+    &:after
+      content ''
+      display inline-block
+      vertical-align text-bottom
+      top: 0
+      bottom 0
+      right 0
+      margin auto
+      getBg('yiwen')
+      background-size contain
+      width Rem(35/2)
+      height: Rem(35/2)
+  .nav-xiu
+    background transparent
+    border 0
+    position relative
+    font-size Rem(12)
+    color: #fff
+    right Rem(15)
+    &:after
+      content ''
+      display inline-block
+      vertical-align text-bottom
+      top: 0
+      bottom 0
+      right 0
+      margin auto
+      getBg('bixiugai')
+      background-size contain
+      width Rem(23/2)
+      height: Rem(26/2)
+      margin-left Rem(5)
+  .right-search
+    flex 1 1 auto
+    display flex
+    align-items center
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    background transparent
+    border: 0
+    font-size: 0
+    position relative
+    &:after
+      content ''
+      display block
+      $headerSprite(4)
+  .switchBtn
+    font-size: Rem(12)
+    color: #fff
+    padding-right Rem(5)
+        

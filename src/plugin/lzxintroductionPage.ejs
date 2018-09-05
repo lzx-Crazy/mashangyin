@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  // 上下整屏滑动
+  $(function(){
+    var ipheight = $(".ip-headar").height()
+    $(".swiper-wrapper").height($(window).innerHeight() - ipheight)
+
+    var mySwiper = new Swiper('.swiper-container-zp', {
+      direction: 'vertical',
+      pagination: {
+        // el: '.swiper-pagination-zp',
+        clickable: true,
+      }
+    })
+
+
+    // 第一屏 初始化轮播
+    var mySwiperone = new Swiper('.swiper-container-one', {
+      autoplay: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination-one',
+        // bulletElement: 'li',
+      },
+    });
+  })
+  
+</script>

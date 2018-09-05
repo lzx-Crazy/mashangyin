@@ -1,0 +1,26 @@
+
+<div class="cause-refund">
+  <%= tcm({str:'退票原因',more:false,num:false}) %>
+  <a href="javascript:;;" class="cr-tpyy">
+    <span>退票原因</span>
+    <div class="slc-box active">
+      <input type="text" readonly data-source="0" class="slc-curr" value="" placeholder="请选择">
+      <ul class="slc-list">
+        <li data-source="0">发票信息错误</li>
+        <li data-source="1">发票类型错误</li>
+        <li data-source="2">退款</li>
+      </ul>
+    </div>
+  </a>
+  <div class="cr-pagebox">
+    <%= tcm({str:'备注',more:false,num:false}) %>
+    <div class="crp-box">
+      <textarea class=""></textarea>
+      <p><i class="gtIcon"></i> 纸质发票：发起申请后，马山银收到纸质发票3个工作日内处理</p>
+    </div>
+  </div>
+  <div class="cr-footbox">
+    <a href="javascript:;;" class="cr-close">取消</a>
+    <a href="javascript:;;" class="cr-qed">确定</a>
+  </div>
+</div>

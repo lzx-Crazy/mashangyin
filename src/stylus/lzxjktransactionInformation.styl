@@ -1,0 +1,347 @@
+@import './base'
+
+.transaction-information
+  .mi-zybox
+    .miz-title
+      height Rem(40)
+      line-height: Rem(40)
+      background-color #fff
+      padding 0 Rem(15)
+      color: #666
+      font-size: Rem(12)
+      .miz-sx
+        float right
+        color: $theme-color
+        i
+          margin-left Rem(5)
+      .mizt-bl
+        padding-left Rem(10)
+        border-left 3px solid $theme-color
+      .mizt-more
+        float right
+        padding-right Rem(15)
+        font-size: Rem(12)
+        .mizt-qieh
+          display inline-block
+          vertical-align middle
+          background-color #eee
+          color #666
+          height Rem(30)
+          line-height Rem(30)
+          border-radius: Rem(4)
+          padding 0 Rem(4)
+          margin-right Rem(5)
+          >span
+            padding 0 Rem(12)
+            height Rem(26)
+            line-height Rem(26)
+            margin: Rem(2) 0
+            border-radius: Rem(4)
+            display inline-block
+            &.active
+              background-color $theme-color
+              color #fff
+    .miz-swiperbox
+      margin Rem(5) 0
+      width 100%
+      overflow hidden
+      .mizt-box
+        background-color #fff
+        border-radius: Rem(4)
+        padding: Rem(5) 0
+        margin 0 Rem(3)
+        height Rem(230)
+        overflow hidden
+        .mizt-title
+          padding Rem(5)
+          background-color $theme-color
+          color: #fff
+          display inline-block
+          font-size: Rem(10)
+          margin-left Rem(5)
+        .mizt-ptpage
+          text-align center
+          font-size: Rem(14)
+          color: #666
+          line-height: Rem(15)
+          .mizt-slbox
+            margin-top Rem(5)
+            p
+              font-size: Rem(10)
+          .mizt-qh
+            padding Rem(5) 0 Rem(6)
+          .mizt-ck
+            padding-bottom: Rem(6)
+            .mizz-weizhiIcon
+              getBg("dingwei")
+              width Rem(7)
+              height Rem(21/2)
+              background-size contain
+              display inline-block
+              vertical-align middle
+              margin-right Rem(3)
+          .mizt-cj
+            color: $theme-color
+        .mizt-btnbox
+          .mizb-btn
+            width 85%
+            height Rem(25)
+            line-height Rem(25)
+            background-color #fff
+            border 1px solid $theme-color
+            color: $theme-color
+            text-align center
+            font-size: Rem(12)
+            border-radius: Rem(4)
+            display block
+            margin Rem(15/2) auto 0
+            &.on
+              background-color $theme-color
+              color #fff
+        .mizt-times
+          color: #999
+          font-size: Rem(12)
+          text-align center
+          padding-top Rem(7)
+    .mizn-listbox
+      padding-top Rem(5)
+      li
+        background-color #fff
+        border-radius Rem(4)
+        margin 0 Rem(3) Rem(5)
+        padding Rem(10) 0
+        display flex
+        justify-content: space-between
+        align-items center
+        text-align: center
+        font-size: Rem(10)
+        color: #666
+        div
+          border-right 1px solid #eee
+          height Rem(40)
+          width 21%
+          overflow hidden
+          &:last-child
+            border-right 0
+          p
+            line-height Rem(17)
+            ellp()
+        .miz-ckbox
+          width 15%
+        .miz-zf
+          width 17%
+          .miz-yp
+            border: 1px solid #999
+            padding Rem(3)
+            display block
+            width 75%
+            margin 0 auto Rem(5)
+            border-radius: Rem(4)
+            font-size: Rem(10)
+            ellp()
+          .miz-zficon
+            getBg("zhuanfa")
+            background-size contain
+            display inline-block
+            width Rem(29/2)
+            height Rem(10)
+            margin-right Rem(2)
+          a
+            color #666
+        .mizl-zs
+          padding-left: Rem(4)
+          border-right 1px solid #eee
+          line-height Rem(35)
+          width 23%
+          text-align left 
+          ellp()
+          .miz-yuan
+            width Rem(20)
+            height Rem(20)
+            line-height Rem(20)
+            text-align center
+            color: #999
+            border 1px solid #999
+            display inline-block
+            vertical-align middle
+            border-radius: 50%
+          .miz-jgs
+            font-size: Rem(20)
+            vertical-align middle
+            &.miz-hyzl
+              font-size: Rem(10)
+            .miz-lv
+              color: #80c269
+            .miz-red
+              color: $theme-color
+        .miz-gm
+          display inline-block
+          background-color $theme-color
+          color: #ffffff
+          width 80%
+          height Rem(45/2)
+          line-height Rem(47/2)
+          border-radius: Rem(4)
+    .mizn-msgbox
+      margin-top Rem(5)
+      li
+        margin 0 Rem(5) Rem(5)
+        padding Rem(10) 0
+        background-color #fff
+        font-size: Rem(10)
+        color: #666
+        .mil-page
+          display flex
+          justify-content space-around
+          align-items: center
+          text-align: right
+          >em
+            width 60%
+            ellp()
+            text-align left 
+          .mil-bor
+            border 1px solid #ccc
+            padding Rem(2) Rem(5)
+            border-radius: Rem(4)
+        .mil-ck
+          display flex
+          justify-content: space-between
+          align-items: center
+          margin Rem(30/2) 0
+          p
+            width 33.333%
+            text-align center
+            height Rem(35/2)
+            line-height Rem(35/2)
+            font-size: Rem(15)
+            color: #666
+            &.br
+              border-right 1px solid #eee
+            &.money
+              font-size: Rem(23)
+              color: $theme-color
+              text-align left
+              padding-left Rem(10)
+              span
+                vertical-align middle
+            .miz-yuan
+              width Rem(20)
+              height Rem(20)
+              line-height Rem(20)
+              text-align center
+              color: #999
+              border 1px solid #999
+              display inline-block
+              vertical-align middle
+              border-radius: 50%
+              font-size: Rem(10)
+        .mil-tiems
+          text-align right
+          padding-right Rem(10)
+  .imss-bj
+    display none
+    position fixed
+    width 100%
+    height 100%
+    background-color rgba(0,0,0,0.5)
+    top: 0
+    left 0
+    z-index 20
+    &.active
+      display block
+  .imss-footbox
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    .imssbtn-box
+      display flex
+      justify-content: space-between
+      align-items: center
+      a
+        display block
+        width 50%
+        background-color #666
+        text-align center
+        height Rem(75/2)
+        line-height Rem(75/2)
+        color: #fff
+        &.imss-wcbtn
+          background-color $theme-color
+  .im-suosou
+    position fixed
+    width 70%
+    height 100%
+    right: -70%
+    top: 0
+    z-index 21
+    background-color #fff
+    .imss-box
+      padding Rem(10)
+      botLine()
+      color: #666
+      .imsall-btnbox
+        botLine()
+        // padding Rem(10) 0
+        font-size: Rem(12)
+        line-height Rem(20)
+        p
+          text-align left
+          margin-bottom 0
+        input
+          border-radius: Rem(4)
+          border 1px solid #eee
+          padding Rem(8) 4%
+          width 90%
+          margin-top Rem(10)
+          background-color #eeeeee
+          -webkit-appearance: none
+      .imsall-btnbox
+        border-bottom 0
+        display flex
+        justify-content: flex-start
+        align-items: center
+        flex-wrap: wrap
+        >span
+          display inline-block
+          vertical-align middle
+          width 27%
+          padding Rem(3) 0
+          text-align center
+          border 1px solid #dadada
+          border-radius: Rem(4)
+          color: #666
+          margin-top Rem(10)
+          margin-left 5%
+          &.active
+            background-color $theme-color
+            color: #fff
+            border 1px solid $theme-color
+        .ims-big
+          width 60%
+          text-align center
+    .imsa-times
+      .imsall-btnbox
+        display flex
+        justify-content space-between
+        align-content: center
+        .imsa-timebox
+          width 40%
+          padding-right 4%
+          background-color #eee
+          position relative
+          margin-top Rem(10)
+          border-radius: Rem(4)
+          &:after
+            content: ''
+            display block
+            position absolute
+            right Rem(5)
+            top: Rem(8)
+            getBg("rili")
+            background-size contain
+            width Rem(20)
+            height Rem(20)
+          >input
+            margin-top 0
+        

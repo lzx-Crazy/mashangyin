@@ -1,0 +1,45 @@
+
+@import './base'
+
+.open-order
+  .kk-list.oo-list
+    margin-bottom Rem(70)
+  .kk-footbox
+    display flex
+    justify-content: space-between
+    align-items: center
+    padding Rem(10) Rem(15)
+    box-shadow 0 0 4px #ccc
+    >span
+      color: $theme-color
+      font-size: Rem(12)
+      em
+        font-size: Rem(16)
+    >a
+      width Rem(250/2)
+      height Rem(40)
+      line-height Rem(40)
+      border-radius: Rem(6)
+      background-color $theme-color
+      color: #fff
+      text-align center
+  .kk-zzpage
+    position absolute
+    top: 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(0,0,0,0.5)
+    border-radius: Rem(6)
+    &:after
+      content: ''
+      display: block
+      position absolute
+      getBg("xuanzhong")
+      width Rem(30)
+      height Rem(43/2)
+      background-size contain
+      left 50%
+      top: 50%
+      margin-top Rem(-43/2/2)
+      margin-left Rem(-30)

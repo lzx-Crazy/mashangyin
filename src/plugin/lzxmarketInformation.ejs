@@ -1,0 +1,14 @@
+<script>
+  $(function(){
+    $(".mis-cimenu li").each(function(i,el){
+      $(el).on("click",function(){
+        $(el).addClass("active").siblings().removeClass("active");
+        // getDataHtml($(el).data("status"))
+      })
+    })
+  })
+  
+  // function getDataHtml(res){
+  //   console.log(res)
+  // }
+</script>

@@ -1,0 +1,187 @@
+@import './base'
+
+.invoice-management
+  .im-section
+    margin-bottom Rem(20)
+    .ims-page
+      margin-top Rem(25)
+      color: #999
+      font-size: Rem(12)
+      p
+        text-align center
+        margin-bottom Rem(10)
+      .imsp-box
+        margin 0 Rem(10)
+        border-radius: Rem(4)
+        background-color #fff
+        padding Rem(15) Rem(10)
+        line-height Rem(22)
+        .imsp-flex
+          display flex
+          justify-content: space-between
+          align-items: center
+          >div
+            width 60%
+            ellp()
+            &.imsp-small
+              width 40%
+        em
+          color: #666
+          &.imsp-red
+            color: $theme-color
+      .imsp-btnbox
+        text-align right
+        margin-top Rem(5)
+        >a
+          smallBtn()
+          margin-left Rem(10)
+  .im-suosou
+    position fixed
+    width 70%
+    height 100%
+    right: -70%
+    top: 0
+    z-index 21
+    background-color #fff
+    .imss-box
+      padding Rem(10)
+      li
+        botLine()
+        padding Rem(10) 0
+        font-size: Rem(12)
+        line-height Rem(20)
+        p
+          text-align left
+          margin-bottom 0
+        input
+          border-radius: Rem(20)
+          border 1px solid #eee
+          padding Rem(10) 4%
+          width 90%
+          background-color #eeeeee
+          -webkit-appearance: none
+      .imsall-btnbox
+        border-bottom 0
+        display flex
+        justify-content: space-between
+        align-items: center
+        >span
+          display inline-block
+          vertical-align middle
+          width 25%
+          padding Rem(5) 0
+          text-align center
+          border 1px solid $theme-color
+          border-radius: Rem(4)
+          color: $theme-color
+          &.active
+            background-color $theme-color
+            color: #fff
+  .imss-bj
+    display none
+    position fixed
+    width 100%
+    height 100%
+    background-color rgba(0,0,0,0.5)
+    top: 0
+    left 0
+    z-index 20
+    &.active
+      display block
+  .imss-footbox
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    .imssbtn-box
+      display flex
+      justify-content: space-between
+      align-items: center
+      a
+        display block
+        width 50%
+        background-color #666
+        text-align center
+        height Rem(75/2)
+        line-height Rem(75/2)
+        color: #fff
+        &.imss-wcbtn
+          background-color $theme-color
+.misp-jujie
+  color: #666
+  textarea
+    vertical-align top
+    margin-left Rem(10)
+    border: 1px solid #999
+    height Rem(70)
+    background-color #eeeeee
+    padding Rem(2) Rem(5)
+
+.alert-box
+  position fixed
+  top: 0
+  left 0
+  width 100%
+  height 100%
+  display none
+  &:after
+    content: ''
+    position absolute
+    width 100%
+    height 100%
+    top: 0
+    left 0
+    background-color rgba(0,0,0,0.5)
+    z-index 9
+  &.active
+    display block
+.alert-section
+  background-color #fff
+  border-radius: Rem(5)
+  position relative
+  top: 25%
+  left 15%
+  z-index: 10
+  max-width: 60%
+  padding Rem(10) 5%
+  color: #666
+  font-size: Rem(12)
+  >p
+    padding Rem(10) 0
+    text-align center
+    font-size: Rem(14)
+  .as-page
+    margin-bottom Rem(8)
+    >div
+      display inline-block
+      vertical-align middle
+      width 60%
+    span 
+      display inline-block
+      vertical-align middle
+    input
+      border-radius: Rem(20)
+      background-color #eee
+      border: 0
+      height Rem(30)
+      padding: 0 Rem(10)
+      color #666
+      font-size Rem(10)
+      width 100%
+      line-height Rem(30)
+  .as-footbtn
+    display flex
+    justify-content space-between
+    align-items: center
+    margin-top Rem(15)
+    >a
+      width 45%
+      height Rem(35)
+      line-height Rem(35)
+      background-color #999999
+      color: #fff
+      text-align center
+      display block
+      border-radius: Rem(6)
+      &.active
+        background-color $theme-color

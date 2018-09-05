@@ -1,0 +1,221 @@
+@import './base'
+
+.concentrate-management
+  .cp-xu-list
+    display flex
+    justify-content: space-between
+    align-items: center
+    background-color #fff
+    font-size: Rem(15)
+    padding 0 Rem(5)
+    margin-bottom 1px
+    li
+      min-width 50%
+      height Rem(45)
+      line-height Rem(45)
+      color: #666
+      position relative
+      text-align center
+      &.active
+        color: $theme-color
+        &:after
+          content: ''
+          position absolute
+          bottom 0
+          width 50%
+          left 25%
+          border-bottom 2px solid $theme-color
+  .cp-section,.cp-jksection
+    position relative
+    display none
+    &.active
+      display block
+    .cp-fixtop
+      display flex
+      width 100%
+      height Rem(40)
+      // justify-content space-around
+      align-items center
+      background #fff
+      color #666666
+      font-size Rem(13)
+      position relative
+      botLine()
+      overflow-y hidden
+      overflow-x auto
+      >div
+        height Rem(40)
+        line-height Rem(40)
+        flex: 0 0 25%
+        text-align center
+        ellp()
+        font-size: Rem(12)
+      &.cp-zd
+        >div
+          flex: 0 0 20%
+      .cpf-mult
+        position relative
+        >span
+          display inline-block
+          max-width 85%
+          ellp()
+          vertical-align middle
+        &.hides
+          display none
+        &.active:after
+          content: ''
+          width 50%
+          left 25%
+          position absolute
+          bottom 0px
+          border-bottom 1px solid $theme-color
+      .cpf-xlIcon
+        getBg("xiala")
+        width Rem(18/2)
+        height Rem(5)
+        background-size contain
+        display inline-block
+        margin-left Rem(5)
+        vertical-align middle
+      .cm-rightzd
+        border-right: 1px solid #eee
+        margin-left -1px
+        &.active:after
+          width 0
+    .cpf-multlist
+      display none
+      position absolute
+      top Rem(40)
+      left 0px
+      z-index 3
+      width 100%
+      background #fff
+      text-align center
+      line-height Rem(40)
+      padding Rem(5) 0
+      border-top 1px solid #e6e6e6
+      box-shadow 0 3px 5px rgba(0,0,0,.1)
+      color #666
+      li.active
+        color $theme-color
+  .cm-sec-box
+    margin: Rem(5) Rem(5) 0
+    .cmsb-list
+      font-size: Rem(12)
+      color: #666666
+      li
+        background-color #fff
+        border-radius: Rem(6)
+        margin-bottom Rem(5)
+        .cmsb-title
+          height Rem(30)
+          line-height Rem(30)
+          padding 0 Rem(10)
+          botLine()
+          display flex
+          justify-content: space-between
+          align-items: center
+          >div
+            max-width 60%
+            ellp()
+          .cmsb-tips
+            padding Rem(2) Rem(5)
+            border-radius: Rem(4)
+            background-color $theme-color
+            color: #fff
+            font-size: Rem(10)
+            margin-right Rem(5)
+          .cmsb-times
+            font-size: Rem(10)
+        .cmsb-body
+          display flex
+          justify-content: space-between
+          align-items: center
+          .cmsbb-left
+            flex 0 0 30%
+            text-align: center
+            font-size: Rem(15)
+            color: #666
+          .cmsbb-right
+            flex 1
+            text-align: center
+            .cmsbr-page
+              height Rem(30)
+              border-bottom 1px solid #eee
+              border-left 1px solid #eee
+              font-size: 0
+              &:last-child
+                border-bottom 0
+              >em
+                width 25%
+                color: #999
+                border-right 1px solid #eee
+                height Rem(30)
+                line-height Rem(30)
+                display inline-block
+                vertical-align middle
+                font-size: Rem(12)
+                margin-left: -1px
+              >span
+                display inline-block
+                vertical-align middle
+                width 73%
+                padding-left 2%
+                ellp()
+                font-size: Rem(12)
+                &.csms-txt-left
+                  text-align left
+            .cmsbr-page-two
+              height Rem(30)
+              border-bottom 1px solid #eee
+              border-left 1px solid #eee
+              font-size: 0
+              .cmst-sl
+                width 25%
+                color: #999
+                border-right Rem(1) solid #eee
+                height Rem(30)
+                line-height: Rem(30)
+                display inline-block
+                vertical-align middle
+                font-size: Rem(12)
+                margin-left Rem(-1)
+              .cmst-js
+                width 20%
+                display inline-block
+                vertical-align middle
+                font-size: Rem(12)
+                color #999
+              .cmst-slnum
+                width 30%
+                height Rem(30)
+                line-height: Rem(30)
+                border-right 1px solid #eee
+                display inline-block
+                vertical-align middle
+                font-size: Rem(12)
+                margin-left -1px
+                ellp()
+              .cmst-jsyue
+                width 25%
+                height Rem(30)
+                line-height: Rem(30)
+                border-left 1px solid #eee
+                display inline-block
+                vertical-align middle
+                font-size: Rem(12)
+                margin-right -1px
+        .cmsbr-page-btnbox
+          height Rem(30)
+          border-left 1px solid #eee
+          text-align right 
+          line-height Rem(30)
+          padding-right Rem(10)
+          font-size: Rem(10)
+          >button
+            smallBtn()
+            height Rem(20)
+            line-height Rem(18)
+            margin-left Rem(8)
+
+            

@@ -1,0 +1,109 @@
+
+<div class="invoice-management">
+  <div class="im-section">
+    <%for(var i=0;i<2;i++){%>
+      <div class="ims-page">
+        <p>今天 08:30</p>
+        <div class="imsp-box">
+          <div>
+            <span>发票系统编号：</span>
+            <em>FP1807240001</em>
+          </div>
+          <div>
+            <span>企业名称：</span>
+            <em>湖南马上银电子商务有限公司</em>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>开票总金额：</span>
+                <em class="imsp-red">1000000.00元</em>
+            </div>
+            <div class="imsp-small">
+                <span>申请人：</span>
+                <em>李大大</em>
+            </div>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>业务审核人：</span>
+                <em>/</em>
+            </div>
+            <div class="imsp-small">
+                <span>当前状态：</span>
+                <em>待审核</em>
+            </div>
+          </div>
+          <div>
+            <span>申请时间：</span>
+            <em>2018-07-24 14:23:37</em>
+          </div>
+          <div class="imsp-btnbox">
+            <a href="javascript:;;" onclick="tongyi()">同意开票</a>
+            <a href="javascript:;;" class="bai" onclick="jujue()">拒绝开票</a>
+            <a href="javascript:;;">查看详情</a>
+          </div>
+        </div>
+      </div>
+      <div class="ims-page">
+        <p>2017-12-01 08:30:10</p>
+        <div class="imsp-box">
+          <div>
+            <span>发票系统编号：</span>
+            <em>FP1807240001</em>
+          </div>
+          <div>
+            <span>企业名称：</span>
+            <em>湖南马上银电子商务有限公司</em>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>开票总金额：</span>
+                <em class="imsp-red">1000000.00元</em>
+            </div>
+            <div class="imsp-small">
+                <span>申请人：</span>
+                <em>李大大</em>
+            </div>
+          </div>
+          <div class="imsp-flex">
+            <div>
+                <span>业务审核人：</span>
+                <em>/</em>
+            </div>
+            <div class="imsp-small">
+                <span>当前状态：</span>
+                <em>待审核</em>
+            </div>
+          </div>
+          <div>
+            <span>申请时间：</span>
+            <em>2018-07-24 14:23:37</em>
+          </div>
+          <div class="imsp-btnbox">
+            <a href="javascript:;;">查看详情</a>
+          </div>
+        </div>
+      </div>
+    <%}%>
+  </div>
+  <!-- 搜索 -->
+  <div class="imss-bj"></div>
+  <div class="im-suosou">
+    <ul class="imss-box">
+      <li>
+        <p>发票编号</p>
+        <input type="text" placeholder="请输入发票编号">
+      </li>
+      <li>
+        <p>申请人</p>
+        <input type="text" placeholder="请输入申请人姓名">
+      </li>
+    </ul>
+    <div class="imss-footbox">
+      <div class="imssbtn-box">
+        <a href="javascript:;;" onclick="imReset()">重置</a>
+        <a href="javascript:;;" class="imss-wcbtn">完成</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="market-information">
+  <div class="mi-section">
+    <%= tcm({str:'最新行情信息',more:false,num:false}) %>
+    <ul class="mis-cimenu">
+      <li class="active" data-status='0'>
+        <p>Ag T+D</p>
+        <p class="mis-lv">3629</p>
+        <div class="mis-lv"><span>+0.03</span><span>0.33%</span></div>
+      </li>
+      <%for(var i=0;i<7;i++){%>
+        <li data-status="<%=i+1%>">
+          <p>沪银主力</p>
+          <p class="mis-lv">3629</p>
+          <div class="mis-red"><span>+0.03</span><span>0.33%</span></div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="mi-destail">
+    <%= tcm({str:'行情详情',more:false,num:false}) %>
+    <ul class="mid-list">
+      <li><p>品种名称</p><span>Ag T+D</span></li>
+      <li><p>最新价</p><span>3622.00</span></li>
+      <li><p>涨跌</p><span class="midl-red">+1.0</span></li>
+      <li><p>涨跌幅度</p><span class="midl-red">+0.03%</span></li>
+      <li><p>开盘价</p><span>3619.00</span></li>
+      <li><p>收盘价</p><span>3621.00</span></li>
+      <li><p>最高价</p><span>3632.00</span></li>
+      <li><p>最低价</p><span>3615.00</span></li>
+      <li><p>更新时间</p><span>2018-02-28 17:30:41</span></li>
+    </ul>
+  </div>
+</div>

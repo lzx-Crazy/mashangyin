@@ -1,0 +1,116 @@
+<div class="l-infromation">
+  <ul class="li-menu-list li-menuBox">
+    <li class="active" data-status="0"><a href="javascript:;;" >行情信息</a></li>
+    <li data-status="1"><a href="javascript:;;">企业新闻</a></li>
+    <li data-status="2"><a href="javascript:;;">企业公告</a></li>
+  </ul>
+  
+  <div class="li-pagebox active">
+    <!-- 行情信息 -->
+    <div class="lip-page">
+      <%= tcm({str:'行情信息',more:false,num:false}) %>
+      <ul class="li-menu-list" id="hqList">
+        <li class="active" onclick="hqList(0)" ><a href="javascript:;;" >白银</a></li>
+        <li><a href="javascript:;;" onclick="hqList(1)">黄金</a></li>
+        <li><a href="javascript:;;" onclick="hqList(2)">铂金</a></li>
+      </ul>
+      <!-- 白银 -->
+      <div class="lipt-box active">
+        <table class="lip-tab ">
+            <tr>
+              <th>合约</th>
+              <th>开盘价</th>
+              <th>收盘价</th>
+              <th>最高价</th>
+              <th>最低价</th>
+            </tr>
+            <%for(var i=0;i<3;i++){%>
+            <tr>
+              <td>Ag99.99</td>
+              <td>3846.00</td>
+              <td>-</td>
+              <td>3880</td>
+              <td>3859</td>
+            </tr>
+            <%}%>
+          </table>
+      </div>
+      <!-- 黄金 -->
+      <div class="lipt-box">
+        <table class="lip-tab ">
+            <tr>
+              <th>合约</th>
+              <th>开盘价</th>
+              <th>收盘价</th>
+              <th>最高价</th>
+              <th>最低价</th>
+            </tr>
+            <%for(var i=0;i<3;i++){%>
+            <tr>
+              <td>2Ag99.99</td>
+              <td>3846.00</td>
+              <td>-</td>
+              <td>3880</td>
+              <td>3859</td>
+            </tr>
+            <%}%>
+          </table>
+      </div>
+      <!-- 铂金 -->
+      <div class="lipt-box">
+        <table class="lip-tab ">
+            <tr>
+              <th>合约</th>
+              <th>开盘价</th>
+              <th>收盘价</th>
+              <th>最高价</th>
+              <th>最低价</th>
+            </tr>
+            <%for(var i=0;i<3;i++){%>
+            <tr>
+              <td>3Ag99.99</td>
+              <td>3846.00</td>
+              <td>-</td>
+              <td>3880</td>
+              <td>3859</td>
+            </tr>
+            <%}%>
+          </table>
+      </div>
+    </div>
+    <!-- Ag(白银)基差数据 -->
+    <div class="lip-page">
+      <%= tcm({str:'Ag(白银)基差数据',more:false,num:false}) %>
+      <div class="lip-zxpa">
+        <img src="./front/images/zx.png" alt="">
+      </div>
+    </div>
+    <!-- 企业资讯 -->
+    <div class="lip-page">
+      <%= tcm({str:'企业资讯',more:false,num:false}) %>
+      <div class="lipzx-list" id="zxListbox">
+        <%for(var i=0;i<4;i++){%>
+          <%= zixun %>
+        <%}%>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 企业新闻 -->
+  <div class="li-pagebox ">
+    <div class="lipzx-list linqide">
+      <%for(var i=0;i<7;i++){%>
+        <%= zixun %>
+      <%}%>
+    </div>
+  </div>
+  <!-- 企业公告 -->
+  <div class="li-pagebox">
+      <div class="lipzx-list ggqide">
+        <%for(var i=0;i<8;i++){%>
+          <%= zixun %>
+        <%}%>
+      </div>
+    </div>
+</div>

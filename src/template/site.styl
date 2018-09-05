@@ -1,0 +1,433 @@
+@import '../stylus/base'
+
+@media screen and (max-width: 370px)
+  html
+    font-size 12px
+    
+@media (min-width: 375px)
+	html
+    font-size 14px
+html,body
+  height 100%
+
+body
+  background #f4f4f4
+  color #363636
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+  /* WebKit browsers */   
+  color: #CBCBCB
+input:-moz-placeholder, textarea:-moz-placeholder
+  /* Mozilla Firefox 4 to 18 */   
+  color: #CBCBCB
+input::-moz-placeholder, textarea::-moz-placeholder 
+  /* Mozilla Firefox 19+ */   
+  color: #CBCBCB
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+  /* Internet Explorer 10+ */   
+  color: #CBCBCB
+  
+input[type="button"],input[type="submit"],input[type="reset"],textarea,input[type="radio"],input[type="checkbox"]
+  -webkit-appearance none
+
+input,button,select, textarea,a
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+  outline none
+.btn
+  border: 0
+
+.fuil-img
+  max-width 100%
+  max-height 100%
+
+.body-main
+  // height 100%
+  box-sizing border-box
+  padding Rem(45) 0 0
+  &.ptop-none
+    padding-top 0
+  
+.page-main
+  display flex
+  flex-flow column
+  min-height 100%
+  padding 0 0 Rem(50)
+  box-sizing border-box
+  &.max-h
+    flex 1 0 100%
+  &.pbot-none
+    padding-bottom 0
+.lt
+  float left
+.rt
+  float right
+
+.alpha
+  height 100%
+  overflow hidden
+  position relative
+
+.alpha body
+  height 100%
+  overflow hidden
+
+// 清除浮动
+.clearfix:after
+  content ''
+  display block
+  width 0
+  height 0
+  overflow hidden
+  clear both
+  float none
+
+// tips
+.show-tips
+  position fixed
+  width 100%
+  top 40%
+  z-index 399
+  text-align center
+  animation tips-in .7s
+  >p
+    display inline-block
+    max-width (200/14)rem
+    background rgba(0,0,0,.5)
+    color #fff
+    border-radius 100px
+    padding (10/14)rem (20/14)rem
+  @keyframes tips-in
+    0%
+      opacity 0
+      transform scale(0)
+    100%
+      opacity 1
+      transform scale(1)
+
+// loading
+.show-loading
+  position fixed
+  z-index 299
+  left 0
+  top 0
+  width 100%
+  height 100%
+  text-align center
+  // background-color rgba(0,0,0,0.1)
+  img
+    width (50/14)rem
+    height (50/14)rem
+    margin-top 60%
+    // margin (30/14)rem auto (30/14)rem
+    animation forLoading .5s linear infinite
+  @keyframes forLoading
+    0%
+      transform rotate(0deg)
+    100%
+      transform rotate(360deg)
+// reachloading
+.show-reach-loading
+  width 100%
+  height (50/14)rem
+  display flex
+  justify-content center
+  align-items center
+  background #f5f5f5
+  color #c6c6c6
+  font-size Rem(13)
+  img
+    width (12/14)rem
+    height (12/14)rem
+    margin-right Rem(5)
+    animation forLoading 0.3s linear infinite
+  @keyframes forLoading
+    0%
+      transform rotate(0deg)
+    100%
+      transform rotate(360deg)
+
+.show-pulldown-loading
+  width 100%
+  height Rem(50)
+  display flex
+  justify-content center
+  align-items center
+  background #f5f5f5
+  color #c6c6c6
+  font-size Rem(13)
+  overflow hidden
+  margin-top Rem(-50)
+  // box-shadow 0 3px 3px rgba(0,0,0,.3) inset
+  // transition margin-top .1s
+  img
+    width (12/14)rem
+    height (12/14)rem
+    margin-right Rem(5)
+    animation forLoading 1s linear infinite
+  @keyframes forLoading
+    0%
+      transform rotate(0deg)
+    100%
+      transform rotate(360deg)
+  &.active
+    margin-top Rem(0)
+.show-null-reach
+  width 100%
+  height (50/14)rem
+  display flex
+  justify-content center
+  align-items center
+  background #f5f5f5
+  color #c6c6c6
+  font-size Rem(13)
+
+// 开关美化
+input[type='checkbox'].p-switch,input[type='radio'].p-switch
+  display inline-block
+  width Rem(40)
+  height Rem(20)
+  vertical-align middle
+  position relative
+  cursor pointer
+  overflow hidden
+  box-sizing border-box
+  margin 0 0 0 Rem(5)
+  border: none
+  border-radius Rem(40)
+  &:before
+    content ""
+    display block
+    width Rem(40)
+    height Rem(20)
+    background #f9f9f9
+    // border 1px solid #b3b3b3
+    border-radius Rem(40)
+    box-sizing border-box
+    transition .3s
+    -webkit-appearance:none
+  &:after
+    content ""
+    display block
+    width Rem(16)
+    height Rem(16)
+    border-radius 100%
+    background $theme-color
+    position absolute
+    left 3px
+    top 2px
+    // box-shadow 0 0 5px rgba(0,0,0,.5)
+    border-color transparent
+    transition .3s
+    transition-property box-shadow,left,background
+    box-sizing border-box
+  &:checked:before
+    border-color #fff
+    background #fff
+  &:checked:after
+    // box-shadow 0 0 5px rgba(0,0,0,.5)
+    left Rem(21)
+
+input[type='checkbox'].p-point,input[type='radio'].p-point
+  display inline-block
+  width Rem(14)
+  height Rem(14)
+  vertical-align middle
+  position relative
+  cursor pointer
+  overflow hidden
+  box-sizing border-box
+  margin 0 0 0 Rem(5)
+  &:before
+    content ""
+    display block
+    width Rem(14)
+    height Rem(14)
+    background #fff
+    border 1px solid #b3b3b3
+    border-radius 100%
+    box-sizing border-box
+    transition .3s
+  &:after
+    content ""
+    display block
+    width Rem(6)
+    height Rem(6)
+    border-radius 100%
+    background #fff
+    position absolute
+    abs(0,0,0,0)
+    margin auto
+    transition .3s
+    transition-property background
+    box-sizing border-box
+  &:checked:after
+    background $theme-color
+
+input[type='checkbox'].p-hook,input[type='radio'].p-hook
+  display inline-block
+  width Rem(14)
+  height Rem(14)
+  vertical-align middle
+  position relative
+  cursor pointer
+  overflow hidden
+  margin 0 Rem(3)
+  -webkit-appearance: none  //去掉默认样式
+  border: none !important
+  border-radius: 0 
+  &:before
+    content ""
+    display block
+    width Rem(14)
+    height Rem(14)
+    background #fff
+    border 1px solid #b3b3b3
+    box-sizing border-box
+    transition .3s
+  &:after
+    content ""
+    display block
+    width Rem(5)
+    height Rem(9)
+    border-bottom 1px solid transparent
+    border-right 1px solid transparent
+    background transparent
+    transform rotate(40deg)
+    position absolute
+    abs(-3,0,0,0)
+    margin auto
+    transition .3s
+    transition-property background
+    box-sizing border-box
+  &:checked:before
+    border-color $theme-color
+    background $theme-color
+  &:checked:after
+    border-color #fff
+  &.fill
+    &:before
+      border-radius 100%
+    &:checked:before
+      border-color $theme-color
+      background $theme-color
+    &:checked:after
+      border-color #fff
+
+
+
+// 弹窗背景
+.bg-drop
+  position fixed
+  top 0px
+  left 0px
+  z-index 198
+  width 100%
+  height 100%
+  background rgba(102,102,102,.7)
+  animation drop-show .4s
+.show-confirm
+  position fixed
+  left 0px
+  right 0px
+  top Rem(150)
+  z-index 199
+  margin auto
+  width Rem(280)
+  background #fff
+  border-radius 10px
+  overflow hidden
+  box-shadow 0 0 10px rgba(0,0,0,.5)
+  animation confirm-show .5s
+  .sc-btnbox
+    display flex
+    justify-content: space-between
+    align-items: center
+    padding 0 Rem(15) Rem(15)
+  .sc-title
+    font-size: Rem(15)
+    color: #666
+    text-align: center
+    padding-top Rem(15)
+  .sc-cont
+    text-align center
+    padding Rem(20) Rem(15)
+    color: #999
+    font-size: Rem(12)
+    line-height Rem(18)
+  .btn-accept,.btn-cancel
+    box-sizing border-box
+    width 45%
+    height Rem(35)
+    font-size: Rem(12)
+    outline none
+    box-shadow none
+    background transparent
+    border 0
+    border-radius: Rem(4)
+  .btn-accept
+    background-color #dc0202
+    color #fff
+  .btn-cancel
+    background-color #666666
+    color #fff
+  @keyframes confirm-show
+    0%
+      top (120/14)rem
+      opacity 0
+    100%
+      top (150/14)rem
+      opacity 1
+  @keyframes drop-show
+    0%
+      opacity 0
+    100%
+      opacity 1
+
+// 红星标注
+.red-point
+  position relative
+  &:after
+    content ''
+    display block
+    width 6px
+    height 6px
+    border-radius 100%
+    background #f00
+    position absolute
+    right Rem(5)
+    top Rem(5)
+// 红色小感叹号
+.gtIcon
+  width Rem(12)
+  height Rem(12)
+  getBg("gtIcon")
+  background-size contain
+  display inline-block
+  vertical-align middle
+.saixuan
+  width Rem(13)
+  height Rem(13)
+  getBg("saixuan")
+  background-size contain
+  display inline-block
+  vertical-align middle
+// 两个确定取消按钮
+.cr-footbox
+  margin Rem(10) auto
+  display flex
+  justify-content: center
+  align-items: center
+  width 80%
+  >a
+    width 45%
+    height Rem(40)
+    line-height Rem(40)
+    background-color #666
+    color: #fff
+    text-align center
+    border-radius: Rem(4)
+    margin-right 10%
+    &:last-child
+      margin-right 0
+    &.cr-qed
+      background-color $theme-color

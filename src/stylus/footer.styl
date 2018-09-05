@@ -1,0 +1,73 @@
+@import './base'
+@import './sprite'
+
+.page-footer
+  position fixed
+  z-index 9
+  left 0px
+  bottom 0px
+  width 100%
+  height Rem(50)
+  border-top 1px solid #e6e6e6
+  background #fff
+  display flex
+  justify-content space-around
+  .f-item
+    display flex
+    flex-flow column
+    justify-content space-around
+    align-items center
+    padding-top Rem(5)
+    position relative
+    .f-name
+      line-height Rem(20)
+      color #333
+      font-size Rem(12)
+    .f-ks-box
+      position absolute
+      top: Rem(2)
+      right Rem(-38)
+      font-size: Rem(10)
+      background-color $theme-color
+      padding Rem(2)
+      color: #fff
+      display block
+      width Rem(40)
+      text-align center
+      border-radius: Rem(2)
+  &.acc-footer
+    .item1 .f-icon
+      $accFooterSprite(1)
+    .item2 .f-icon
+      $accFooterSprite(2)
+    .item3 .f-icon
+      $accFooterSprite(3)
+    .item4 .f-icon
+      $accFooterSprite(4)
+    .item5 .f-icon
+      $accFooterSprite(5)
+    .item1.active 
+      .f-icon
+        $accFooterSprite(6)
+      p
+        color $theme-color
+    .item2.active 
+      .f-icon
+        $accFooterSprite(7)
+      p
+        color $theme-color
+    .item3.active 
+      .f-icon
+        $accFooterSprite(8)
+      p
+        color $theme-color
+    .item4.active 
+      .f-icon
+        $accFooterSprite(9)
+      p
+        color $theme-color
+    .item5.active 
+      .f-icon
+        $accFooterSprite(10)
+      p
+        color $theme-color

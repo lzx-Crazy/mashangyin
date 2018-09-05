@@ -1,0 +1,90 @@
+$theme-color = #d7092d
+
+// 转换为rem
+Rem(num)
+  return num == 'auto' ? auto : (num/14)rem
+
+// 定位
+abs(t,r,b,l)
+  position absolute
+  top Rem(t)
+  right Rem(r)
+  bottom Rem(b)
+  left Rem(l)
+
+// 获取背景图
+getBg(name)
+  str = '../assets/images/icon/'+name+'.png'
+  background url(str) no-repeat
+// 一条下边线
+botLine()
+  border-bottom 1px solid #eee
+// 一行字、多出省略
+ellp()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+// 多行字、多出省略
+ellps(line = 2)
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp line
+  overflow hidden
+// 更多的右箭头
+toMore(r = 15)
+  position relative
+  &:after
+    content ''
+    display block
+    width Rem(13/2)
+    height Rem(24/2)
+    position absolute
+    right Rem(r)
+    top 50%
+    margin-top Rem(-(24/2/2))
+    getBg('page-more')
+    background-size Rem(13/2) Rem(24/2)
+    background-position center
+  &.nomore
+    &:after
+      display none
+// 更多的右箭头   
+beMore(r = 15)
+  position absolute
+  display block
+  width Rem(30)
+  height Rem(30)
+  position absolute
+  right Rem(r)
+  top 50%
+  margin-top Rem(-(30/2))
+  getBg('page-more')
+  background-size Rem(13/2) Rem(24/2)
+  background-position right center
+
+// 大按钮
+bigBtn()
+  width 90%
+  height Rem(40)
+  line-height Rem(40)
+  text-align center
+  color: #fff
+  border-radius: Rem(4)
+  background-color $theme-color
+  font-size: Rem(15)
+  margin 0 auto
+  display block
+smallBtn()
+  display inline-block
+  vertical-align middle
+  padding Rem(1) Rem(8)
+  background-color $theme-color
+  color: #fff
+  border-radius: Rem(4)
+  font-size: Rem(10)
+  border 1px solid $theme-color
+  height Rem(20)
+  line-height Rem(20)
+  &.bai
+    background-color #fff
+    color: $theme-color

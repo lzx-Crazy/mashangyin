@@ -1,0 +1,108 @@
+<div class="ol-item">
+  <div class="ol-top">
+    <h3>小鹿网卖场店</h3>
+    <p class="t-status"><%= status %></p>
+  </div>
+  <% for(var i=0;i<num;i++){ %>
+  <a class="ol-mid" href="">
+    <div class="ol-img">
+      <img src="http://placehold.it/190x190/09f/fff.png">
+    </div>
+    <div class="ol-info <%= (type != 1)? 'pr-0' : '' %>">
+      <% if(type==1){ %>
+        <h3>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <p class="i-info">
+          <span>颜色：红色</span>
+          <span>长度：1米</span>
+          <span>类型：USB插口</span>
+        </p>
+        <p class="i-price">￥75</p>
+        <p class="i-num">X1</p>
+        <span class="i-series">12系列</span>
+      <% } %>
+      <% if(type==2){ %>
+        <h3><i class="i-type">向导订单</i>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <div class="i-doyen">
+          <h3 class="female">何菲菲</h3>
+          <p>一级向导达人</p>
+        </div>
+        <div class="i-meal">
+          <label>套餐：</label>
+          <p>【游丽江】向导服务1天</p>
+        </div>
+      <% } %>
+      <% if(type==3){ %>
+        <h3>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <div class="i-seller">
+          <p>合作商户：小鹿网旅游</p>
+          <p>比例：10%</p>
+        </div>
+      <% } %>
+      <% if(type==4){ %>
+        <h3>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <div>
+          <div class="i-seller">
+            <p>比例：10%</p>
+            <p>丽江</p>
+          </div>
+          <div class="i-orderinfo">
+            <p><em>￥</em>4298.00</p>
+            <p>产品编号：XLW120908890</p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </a>
+  <% } %>
+  <% if(type == 4){ %>
+    <div class="ol-group">
+      <div class="olg-line">
+        <p>出发地：深圳</p>
+        <p>出团时间：5月12日</p>
+      </div>
+      <div class="olg-line">
+        <p>已报名：12位（共20位）</p>
+        <p>剩余团位：8位</p>
+      </div>
+      <a class="olg-human" href="">
+        <span>报团人数</span>
+        <div class="olg-img"><img src="http://placehold.it/100x100/09f/fff.png"></div>
+        <div class="olg-img"><img src="http://placehold.it/100x100/09f/fff.png"></div>
+        <div class="olg-img"><img src="http://placehold.it/100x100/09f/fff.png"></div>
+        <div class="olg-img"><img src="http://placehold.it/100x100/09f/fff.png"></div>
+        <span class="olg-more">详细 ></span>
+      </a>
+    </div>
+  <% }else{ %>
+    <div class="ol-bot">
+      <% if(!hasInfo){ %>
+        <p><%= hasDate ? '2018-08-02 14:15:12' : '' %></p>
+        <p>共1件商品  合计：￥75.00（运费 0.00）</p>
+      <% } %>
+      <% if(hasInfo){ %>
+        <div>
+          <p>出发时间：2018-08-02 14:15:12</p>
+          <p>行程天数：6天5晚</p>
+          <p>套餐包含：成人1 儿童1 房间1</p>
+        </div>
+        <p>合计：￥75.00（运费 0.00）</p>
+      <% } %>
+    </div>
+    <% if(type==3){ %>
+    <div class="ol-act between">
+      <div class="ola-date">确认剩余时间：<i class="global-timeout" data-date="1534660181000"></i></div>
+      <div class="ola-btn">
+      <% for(var i=0;i<btn.length;i++){ %>
+        <button type="button" class="btn-normal"><%= btn[i] %></button>
+      <% } %>
+      </div>
+    </div>
+    <% }else{ %>
+    <div class="ol-act">
+      <% for(var i=0;i<btn.length;i++){ %>
+        <button type="button" class="btn-normal"><%= btn[i] %></button>
+      <% } %>
+    </div>
+    <% } %>
+  <% } %>
+</div>

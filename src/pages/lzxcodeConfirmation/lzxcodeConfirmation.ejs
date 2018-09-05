@@ -1,0 +1,40 @@
+<div class="code-confirmation">
+  <ul class="cc-header-list">
+    <li>
+      <span>码单所属</span>
+      <input type="text" value="郴州市金贵银业股份有限公司" readonly>
+    </li>
+    <li>
+      <span>供方</span>
+      <input type="text" value="湖南马上银电商平台" readonly>
+    </li>
+    <li>
+      <span>需方</span>
+      <input type="text" value="湖南白银贸易有限公司" readonly>
+    </li>
+    <li>
+      <div class="cchl-shuang">
+        <span>总共</span>
+        <input type="text" value="共66块" readonly>
+      </div>
+      <div class="cchl-shuang">
+        <span>合计</span>
+        <input type="text" value="266382.7kg" readonly>
+      </div>
+    </li>
+  </ul>
+  <ul class="cc-header-list cc-bm-list">
+    <li>
+      <span>序号</span>
+      <span>银锭编码号</span>
+      <span>重量</span>
+    </li>
+    <%for(var i = 0;i<10;i++){%>
+      <li>
+        <p><%= i %></p>
+        <p>JG170927001</p>
+        <p>15656.3</p>
+      </li>
+    <%}%>
+  </ul>
+</div>

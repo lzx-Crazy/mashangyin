@@ -1,0 +1,44 @@
+@import './base'
+
+
+.contract-confimation
+  .cc-header
+    width 100%
+    align-self flex-start
+  .cc-htBox
+    background-color #fff
+    margin Rem(5) 0
+    overflow hidden
+    overflow-y: auto
+    padding 0 Rem(5)
+  .cc-foot
+    align-self flex-end
+    // position fixed
+    height Rem(105)
+    width 100%
+    padding-bottom Rem(5)
+    .ccf-secbox
+      margin-bottom Rem(5)
+      background-color #fff
+      flex 1
+      
+      li
+        display flex
+        justify-content: space-between
+        align-items: center
+        height Rem(30)
+        line-height Rem(30)
+        color #666
+        text-align center
+        font-size: Rem(12)
+        >div
+          width 25%
+          border-right 1px solid #eee
+          border-bottom 1px solid #eee
+          &.ccfs-gsname
+            width 50%
+        &:last-child
+          div
+            border-bottom 0
+    .ccf-btn
+      bigBtn()

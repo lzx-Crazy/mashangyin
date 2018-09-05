@@ -1,0 +1,119 @@
+<script>
+  $(function(){
+    // 搜索
+    $(".rt-btn-box .right-search").on("click",function(){
+      $(".imss-bj").addClass("active")
+      $(".im-suosou").animate({right:"0"})
+    })
+    // 关闭搜索
+    $(".imss-bj").on("click",function(){
+      closesos()
+    })
+    // 选择
+    $(".imsall-btnbox span").on("click",function(){
+      $(this).addClass("active").siblings().removeClass("active")
+    })
+  })
+  // 关闭搜索
+  function closesos(){
+    setTimeout(function(){
+      $(".imss-bj").removeClass("active")
+    },500)
+    $(".im-suosou").animate({right:"-70%"})
+  }
+
+  // 重置
+  function imReset(){
+    $(".imsall-btnbox span").removeClass("active")
+    $(".imss-box input").val('')
+  }
+
+  // 关闭填写弹窗
+  function closeas(){
+    $(".alert-box").removeClass("active")
+    $("body").css("overflow","auto")
+  }
+  // 弹出填写
+  function tanchu(){
+    $("body").css("overflow","hidden")
+    $(".as-bh").html('')
+    $(".as-gs").val('')
+    $(".as-hm").val('')
+    $(".alert-box").addClass("active")
+  }
+// 修改信息
+  function updatexx(e){
+    var bh = $(e).parent().parent().find(".im-bh").html()
+    var names = $(e).parent().parent().find(".im-name").html()
+    var haoma = $(e).parent().parent().find(".im-haoma").html()
+    tanchu()
+    $(".as-bh").html(bh)
+    $(".as-gs").val(names)
+    $(".as-hm").val(haoma)
+  }
+  // 新增信息
+  function addxx(e){
+    var bh = $(e).parent().parent().find(".im-bh").html()
+    tanchu()
+    $(".as-bh").html(bh)
+  }
+
+
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="ims-page">'+
+        '<p>'+res.times+'</p>'+
+        '<div class="imsp-box">'+
+          '<div>'+
+            '<span>nw发票系统编号：</span>'+
+            '<em class="im-bh">'+res.bh+'</em>'+
+          '</div>'+
+          '<div>'+
+            '<span>快递信息：</span>'+
+            '<em class="im-name">'+res.kd+'</em>'+
+          '</div>'+
+          '<div class="imsp-flex">'+
+            '<div>'+
+                '<span>快递号码：</span>'+
+                '<em class="im-haoma">'+res.hm+'</em>'+
+            '</div>'+
+           ' <div class="imsp-small">'+
+                '<span>当前状态：</span>'+
+                '<em>未完成</em>'+
+            '</div>'+
+          '</div>'+
+          '<div class="imsp-btnbox">'+
+            '<a href="javascript:;;" class="im-add" onclick="addxx(this)">填写快递信息</a>'+
+          '</div>'+
+       ' </div>'+
+      '</div>'
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.im-section',function () {
+      $.ajax({
+        url: './front/mockdata/lzxinvoiceExpress.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          console.log(pages.length)
+          for (var i = 0; i < pages.length; i++) {
+            $(".im-section").append(getHtmlTemp(pages[i]))
+          }
+          // hideReachLoading();
+          hideLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".im-section"))
+          }
+        }
+      })
+    })
+  })
+
+
+</script>

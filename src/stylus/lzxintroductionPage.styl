@@ -1,0 +1,219 @@
+@import './base'
+    
+.introduction-page
+  margin-top Rem(-45)
+  .ip-headar
+    height Rem(45)
+    background-color $theme-color
+    position fixed
+    top 0
+    left 0
+    width 100%
+    display flex
+    justify-content space-between
+    align-items center
+    .ip-black
+      position: relative
+      width: Rem(35)
+      height: Rem(45)
+      line-height: Rem(45)
+      background: transparent
+      border: 0
+      font-size: 0
+      &:after
+        content: ''
+        display: block
+        abs(0,0,0,0)
+        margin: auto
+        background: url('../assets/images/icon/header-sprites.png') no-repeat
+        background-size Rem(419) Rem(90)
+        background-position Rem(-41) Rem(-5) 
+        width Rem(11)
+        height Rem(19)
+    .iph-title
+      flex 1
+      margin-left Rem(-35)
+      display flex
+      justify-content: center
+      align-items: center
+      color: #FFF
+      font-size: Rem(15)
+      .ipht-img
+        width Rem(30)
+        height Rem(30)
+        display flex
+        justify-content: center
+        align-items: center
+        margin-right Rem(10)
+        img
+          max-width 100%
+  .ip-swiperbox
+    margin-top Rem(45)
+    .swiper-container 
+      width: 100%
+      height: 100%
+      .swiper-slide 
+        text-align: center
+        font-size: 18px
+        background: #fff
+        display: flex
+    .ipss-box
+      color: #999
+      text-align center
+      .ipss-img
+        width 100%
+        margin-top Rem(40)
+        img
+          max-width 80%
+          max-height: 100%
+      p
+        margin Rem(20) auto
+        font-size: Rem(15)
+      .ipss-down
+        display block
+        width Rem(90)
+        height Rem(30)
+        line-height Rem(30)
+        border-radius: Rem(4)
+        background-color $theme-color
+        color #fff
+        font-size: Rem(14)
+        margin 0 auto
+        box-shadow 0 0 2px $theme-color
+    .ipss-lbsec
+      background-color #fff
+      width Rem(400)
+      height Rem(380)
+      margin 0 auto
+      position absolute
+      bottom 0
+      left 50%
+      margin-left Rem(-200)
+      .swiper-button-prev
+        left Rem(40)
+        getBg("swiper-left")
+        height Rem(35)
+        width Rem(35)
+        background-size contain
+      .swiper-button-next
+        right Rem(40)
+        getBg("swiper-right")
+        height Rem(35)
+        width Rem(35)
+        background-size contain
+      .swiper-pagination-bullet
+        background-color $theme-color
+      .swiper-pagination-bullet-active
+        background-color $theme-color
+      .ipswiper-img
+        width Rem(200)
+        height Rem(350)
+        margin 0 auto
+        overflow: hidden
+        display flex
+        align-items: flex-end
+        >img
+          max-height 100%
+          max-width 100%
+    .swiper-page-two
+      padding-top Rem(20)
+      background-color #eee
+      width 100%
+      h1
+        color: #666
+        font-weight: bold
+        padding Rem(20) 0
+      .spt-txt
+        color: #999
+        font-size: Rem(11)
+        line-height Rem(20)
+        padding 0 Rem(20)
+        text-align left
+      .spt-page
+        padding-top Rem(30)
+        .spt-img
+          height Rem(60)
+          margin 0 auto
+          img
+            max-height 100%
+        .spt-title
+          color: #666
+          font-weight: bold
+          font-size Rem(14)
+          padding Rem(10) 0 Rem(5) 0
+        .spt-txt
+          text-align center
+    .swiper-page-three
+      background-color: #fff
+      text-align center
+      width 100%
+      h1
+        color: #666
+        font-weight: bold
+        padding Rem(20) 0
+      h2
+        color #666
+        font-size: Rem(14)
+        padding-bottom Rem(20)
+      .spt-txt
+        color: #999
+        font-size: Rem(11)
+        line-height Rem(20)
+        padding 0 Rem(20)
+        text-align center
+      .spt-foot-img
+        height Rem(410)
+        position absolute
+        bottom 0
+        text-align: center
+        width 100%
+        img
+          display inline-block
+          vertical-align middle
+          max-height 100%
+    .swiper-page-four
+      width 100%
+      background: url("../assets/images/l-swiper-bg04.png") no-repeat
+      background-size cover
+      display flex
+      justify-content: space-between
+      align-items: center
+      .spf-img
+        flex 1
+        img
+          max-width 100%
+      .spf-txt
+        width Rem(160)
+        color #666
+        text-align left
+        margin-left Rem(-20)
+        padding-right Rem(10)
+        >h1
+          padding-left Rem(10)
+          font-size: Rem(18)
+          font-weight: bold
+          color #666
+          margin-bottom Rem(10)
+          border-left Rem(2) solid $theme-color
+        >p
+          font-size: Rem(10)
+          line-height Rem(18)
+    .swiper-page-five
+      width 100%
+      background: url("../assets/images/l-swiper-bg05.png") no-repeat
+      background-size cover
+      display flex
+      justify-content: space-between
+      align-items: center
+      .spfi-box
+        margin 0 auto
+        h1
+          color: $theme-color
+          font-size: Rem(21)
+          font-weight: bold
+          padding-bottom Rem(20)
+        p
+          font-size: Rem(10)
+          color #999
+          line-height Rem(20)
+      

@@ -1,0 +1,45 @@
+
+<script>
+    // 上拉加载html拼接方法
+    function getHtmlTemp(res) {
+      var _html = '<li>'+
+          '<div>可开票金额：<em class="ool-money">500,000,000.0元</em></div>'+
+          '<div class="ool-page">'+
+              '<div>已开票金额：<em>new500,000.0元</em></div>'+
+              '<div>合同金额：<em>3,876,123,00元</em></div>'+
+              '</div>'+
+          '<div class="ool-page">'+
+            '<div>订单编号：<span>AG9999</span> </div>'+
+            '<div>合同编号：<span>FP-20180102201</span> </div>'+
+          '</div>'+
+          '<div class="ool-btnbox">'+
+            '<a href="javascript:;;" class="on">查看订单</a>'+
+            '<a href="javascript:;;">查看合同</a>'+
+          '</div>'+
+        '</li>'
+      return _html;
+    }
+  
+    $(function () {
+      // 初始化上拉加载
+      onReachBottom.init('.oo-list',function () {
+        $.ajax({
+          url: './front/mockdata/lzxcontrolInvoices.json',
+          type: 'GET',
+          success: function (res) {
+            var pages = res.pages;
+            for (var i = 0; i < pages.length; i++) {
+              $(".oo-list .show-reach-loading").before(getHtmlTemp(pages[i]))
+            }
+            // hideReachLoading();
+            hideLoading();
+            onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+            onReachBottom.currPage = res.currPage;//获取当前页数
+            if(!onReachBottom.hasNextPage){
+              showNullReach($(".oo-list"))
+            }
+          }
+        })
+      })
+    })
+  </script>

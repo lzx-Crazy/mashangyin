@@ -1,0 +1,232 @@
+<div class="concentrate-products">
+  <!-- 筛选条件菜单 -->
+  <ul class="cp-xu-list">
+    <li class="active" onclick="checkXuList(this)">自营热门(白银)</li>
+    <li onclick="checkXuList(this)">产能预售(白银)</li>
+    <li onclick="checkXuList(this)">一口价</li>
+    <li onclick="checkXuList(this,1)">精矿</li>
+  </ul>
+  <!-- 自营热门(白银) +  产能预售(白银) + 一口价-->
+  <div class="cp-section active">
+    <div class="cp-fixtop">
+      <div class="cpf-mult"><span>区域</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>仓库</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>品牌</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>开票</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>结算</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>类型</span><i class="cpf-xlIcon"></i></div>
+    </div>
+    <!-- 区域 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>上海</li>
+      <li>深圳</li>
+    </ul>
+    <!-- 仓库 -->
+    <ul class="cpf-multlist">
+      <li>全部</li>
+      <li>上海-飞平</li>
+      <li>深圳-飞平</li>
+    </ul>
+    <!-- 品牌 -->
+    <ul class="cpf-multlist">
+      <li>全部</li>
+      <li>金贵</li>
+      <li>宇腾</li>
+    </ul>
+    <!-- 开票 -->
+    <ul class="cpf-multlist">
+      <li>全部</li>
+      <li>当月票</li>
+      <li>非当月票</li>
+    </ul>
+    <!-- 结算 -->
+    <ul class="cpf-multlist">
+      <li>全部</li>
+      <li>现款现货</li>
+      <li>点价权+延期补偿</li>
+      <li>现款现货+账期升水补偿</li>
+    </ul>
+    <!-- 类型 -->
+    <ul class="cpf-multlist">
+      <li>全部</li>
+      <li>整单</li>
+      <li>散单</li>
+      <li>仓单</li>
+    </ul>
+    
+  </div>
+  <!-- 精矿 -->
+  <div class="cp-jksection">
+    <div class="cp-fixtop">
+      <div class="cpf-mult"><span>产品品名</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>购销类型</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>产品类型</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>定价日</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>包装</span><i class="cpf-xlIcon"></i></div>
+      <div class="cpf-mult"><span>结算方式</span><i class="cpf-xlIcon"></i></div>
+    </div>
+    <!-- 产品品名 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>铅精矿</li>
+      <li>银精矿</li>
+    </ul>
+    <!-- 购销类型 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>销售</li>
+      <li>采购</li>
+    </ul>
+    <!-- 产品类型 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>整单</li>
+      <li>子单</li>
+    </ul>
+    <!-- 定价日 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>均价</li>
+      <li>点价</li>
+      <li>点价/均价</li>
+    </ul>
+    <!-- 包装 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>袋装</li>
+      <li>散装</li>
+      <li>袋装/散装</li>
+    </ul>
+    <!-- 结算方式 -->
+    <ul class="cpf-multlist" >
+      <li>全部</li>
+      <li>年结算</li>
+      <li>月结算</li>
+      <li>周结算</li>
+      <li>预结算部分贷款、月末结清</li>
+    </ul>
+    
+  </div>
+  <!-- 内容列表 -->
+  <div class="cp-sec-box">
+      <ul class="mizn-listbox">
+        <%for(var i=0;i<4;i++){%>
+          <li>
+            <div class="mizl-zs">
+              <em class="miz-yuan">整</em>
+              <span class="miz-jgs">TD<em class="miz-red">+1</em></span>
+            </div>
+            <div>
+              <p>白银1</p>
+              <p>5000.0000kg</p>
+            </div>
+            <div class="miz-ckbox">
+              <p>金贵</p>
+              <p>上海-平飞</p>
+            </div>
+            <div class="miz-zf">
+              <label class="miz-yp">非当月票</label>
+              <a href="javascript:;;"><i class="miz-zficon"></i>可转发</a>
+            </div>
+            <div>
+              <p>2017-11-20</p>
+              <a href="javascript:;;" class="miz-gm">当前可买</a>
+            </div>
+          </li>
+          <li>
+              <div class="mizl-zs">
+                <em class="miz-yuan">仓</em>
+                <span class="miz-jgs">TD<em class="miz-lv">-2</em></span>
+              </div>
+              <div>
+                <p>白银1</p>
+                <p>5000.0000kg</p>
+              </div>
+              <div class="miz-ckbox">
+                <p>金贵</p>
+                <p>上海-平飞</p>
+              </div>
+              <div class="miz-zf">
+                <label class="miz-yp">当月票</label>
+                <a href="javascript:;;"><i class="miz-zficon"></i>可转发</a>
+              </div>
+              <div>
+                <p>2017-11-20</p>
+                <a href="javascript:;;" class="miz-gm">当前可买</a>
+              </div>
+            </li>
+            <li>
+              <div class="mizl-zs">
+                <em class="miz-yuan">散</em>
+                <span class="miz-jgs miz-hyzl">沪银主力<em class="miz-lv">-48</em></span>
+              </div>
+              <div>
+                <p>白银1</p>
+                <p>5000.0000kg</p>
+              </div>
+              <div class="miz-ckbox">
+                <p>金贵</p>
+                <p>上海-平飞</p>
+              </div>
+              <div class="miz-zf">
+                <label class="miz-yp">当月票</label>
+                <a href="javascript:;;"><i class="miz-zficon"></i>可转发</a>
+              </div>
+              <div>
+                <p>2017-11-20</p>
+                <a href="javascript:;;" class="miz-gm">当前可买</a>
+              </div>
+            </li>
+            <!-- 精矿商品 -->
+            <li>
+              <div class="mizl-zs">
+                <em class="miz-yuan">子</em>
+                <span class="miz-jgs">铅精矿</em></span>
+              </div>
+              <div class="mizl-jk-page">
+                <div class="mijk-head">
+                  <div>1756.1260T</div>
+                  <div>点价/均价</div>
+                  <div class="miz-zf">
+                    <label class="miz-yp">采购</label>
+                  </div>
+                </div>
+                <div class="mijk-foot">
+                    铅Pd>50%、银Ag≥1000克、金Au≥1克铅Pd>50%、银Ag≥1000克、金Au≥1克
+                </div>
+              </div>
+              <div>
+                <p>2017-11-20</p>
+                <a href="javascript:;;" class="miz-gm">当前可买</a>
+              </div>
+            </li>
+        <%}%>
+      </ul>
+  </div>
+</div>
+
+<!-- TD || 期 -->
+<div class="mi-td" onclick="tabTd(this)">TD</div>
+<!-- 右侧 AG 沪银主力 -->
+<div class="mi-hybox">
+  <i class="mih-jtICon" onclick="miboxShow(this)"></i>
+  <div class="mih-section">
+    <div class="mihs-page">
+      <p>Ag(T+D)</p>
+      <div>
+        <em>3621</em>
+        <span><i class="mihs-jtIcon"></i>-9</span>
+        <span><i class="mihs-jtIcon"></i>-0.25%</span>
+      </div>
+    </div>
+    <div>
+      <p>沪银主力</p>
+      <div>
+        <em>3621</em>
+        <span><i class="mihs-jtIcon"></i> -9</span>
+        <span><i class="mihs-jtIcon"></i>-0.25%</span>
+      </div>
+    </div>
+  </div>
+</div>

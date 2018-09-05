@@ -1,0 +1,194 @@
+@import './base'
+
+$nav-btn(w = 35,h = 45)
+  position relative
+  width Rem(w)
+  height Rem(h)
+  background transparent
+  border 0
+.personal-center
+  margin-top Rem(-45)
+  .pc-head
+    background-color $theme-color
+    color: #fff
+    height Rem(65)
+    padding Rem(10) Rem(15)
+    display flex
+    justify-content: space-between
+    align-items: flex-start 
+    .pch-page
+      padding-left Rem(20)
+      display flex
+      justify-content: center
+      align-items: center
+      font-size: Rem(12)
+      .pchp-img
+        width Rem(50)
+        height Rem(50)
+        border-radius: 50%
+        overflow hidden
+        background-color #e3506a
+        padding Rem(4)
+        img
+          max-width 100%
+      .pchp-txt
+        padding-left: Rem(5)
+        line-height: Rem(13)
+        padding-top Rem(10)
+        .pchp-name
+          padding-bottom Rem(5)
+        .pchp-djicon
+          getBg('dengji')
+          background-size contain
+          display inline-block
+          vertical-align middle
+          width Rem(15)
+          height Rem(15)
+        span
+          vertical-align middle
+        .pchp-rz
+          font-size: Rem(10)
+          padding-left Rem(2)
+    .pch-linkbox
+      a
+        display inline-block
+        vertical-align middle
+        position relative
+        i
+          display block
+        .shuliang
+          width Rem(15)
+          height Rem(15)
+          border-radius: 50%
+          background-color #fff
+          color: $theme-color
+          position absolute
+          top: Rem(-5)
+          right Rem(-5)
+          font-size: Rem(10)
+          text-align center
+          line-height Rem(15)
+      .nav-msg
+        background transparent
+        border 0
+        position relative
+        font-size Rem(12)
+        color: #fff
+        &:after
+          content ''
+          display inline-block
+          vertical-align text-bottom
+          top: 0
+          bottom 0
+          right 0
+          margin auto
+          getBg('xxd')
+          background-size contain
+          width Rem(20)
+          height: Rem(20)
+      .nav-kefu
+        background transparent
+        border 0
+        position relative
+        font-size Rem(12)
+        color: #fff
+        margin-right Rem(5)
+        &:after
+          content ''
+          display inline-block
+          vertical-align text-bottom
+          top: 0
+          bottom 0
+          right 0
+          margin auto
+          getBg('yiwen')
+          background-size contain
+          width Rem(20)
+          height: Rem(20)
+      .nav-state
+        background transparent
+        border 0
+        position relative
+        font-size Rem(12)
+        color: #fff
+        margin-right Rem(5)
+        &:after
+          content ''
+          display inline-block
+          vertical-align text-bottom
+          top: 0
+          bottom 0
+          right 0
+          margin auto
+          getBg('shezhi')
+          background-size contain
+          width Rem(20)
+          height: Rem(20)
+  .pc-body
+    margin-top Rem(5)
+    .pcb-money
+      height Rem(85/2)
+      line-height Rem(85/2)
+      background-color #fff
+      color: #999
+      display flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom Rem(5)
+      .pcb-jf
+        padding-right Rem(30)
+        margin-right Rem(20)
+        color: #999
+        toMore()
+        em
+          color: $theme-color
+          font-size Rem(18)
+          padding 0 Rem(8)
+          vertical-align top
+      .pcb-qian
+        padding-left Rem(25)
+        em
+          color: $theme-color
+          font-size: Rem(18)
+          padding 0 Rem(8)
+          vertical-align top
+    .pcb-orderbox
+      margin-bottom: Rem(5)
+      background-color #fff
+      .title-count-more
+        border-bottom 0
+      .pcbo-section
+        height Rem(60)
+        padding-bottom Rem(10)
+        display flex
+        justify-content: center
+        align-items: center
+        text-align center
+        font-size: Rem(10)
+        >div
+          width 33.333%
+          color: #999
+          line-height Rem(22)
+          .pcbo-big
+            font-size: Rem(30)
+            color: #333
+            font-weight: bold
+    .pcb-listbox
+      margin-bottom Rem(5)
+      >a
+        display block
+        toMore()
+        .tcm-title
+          font-size: Rem(12)
+        .pcb-rzstate
+          position absolute
+          right Rem(30)
+          top: 0
+          height Rem(40)
+          display block
+          line-height Rem(40)
+          color: #666
+          font-size: Rem(12)
+
+          
+    

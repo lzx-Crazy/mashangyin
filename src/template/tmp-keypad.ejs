@@ -1,0 +1,44 @@
+<div class="keypad">
+  <div class="k-zz" onclick="closeKp()"></div>  
+  <div class="k-section">
+    <div class="ks-title ks-red">
+      <span>价格</span>
+      <em class="ksk-name">升水</em>
+      <input value="11" type="text" class="kpInput" readonly>
+    </div>
+    <div class="ks-keypad">
+      <div class="ksk-page">
+        <span onclick="stsThree(1)">升水</span>
+        <span onclick="stsThree(0)">平水</span>
+        <span onclick="stsThree(-1)">贴水</span>
+        <span></span>
+      </div>
+      <div class="ksk-page-nr">
+        <div class="kskpn-page">
+          <span onclick="stskp(this)">1</span>
+          <span onclick="stskp(this)">2</span>
+          <span onclick="stskp(this)">3</span>
+        </div>
+        <div class="kskpn-page">
+          <span onclick="stskp(this)">4</span>
+          <span onclick="stskp(this)">5</span>
+          <span onclick="stskp(this)">6</span>
+        </div>
+        <div class="kskpn-page">
+          <span onclick="stskp(this)">7</span>
+          <span onclick="stskp(this)">8</span>
+          <span onclick="stskp(this)">9</span>
+        </div>
+        <div class="kskpn-page">
+          <span onclick="stskp(this)">0</span>
+          <span></span>
+          <span onclick="closeKp()">取消</span>
+        </div>
+      </div>
+      <div class="ksk-page">
+        <span class="ksk-del" onclick="kskDel()">删除</span>
+        <span class="ksk-qd">确定</span>
+      </div>
+    </div>
+  </div>
+</div>

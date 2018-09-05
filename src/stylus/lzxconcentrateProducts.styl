@@ -1,0 +1,193 @@
+@import './base'
+
+.concentrate-products
+  .cp-xu-list
+    display flex
+    justify-content: space-between
+    align-items: center
+    background-color #fff
+    font-size: Rem(13)
+    padding 0 Rem(5)
+    margin-bottom 1px
+    li
+      min-width 20%
+      height Rem(45)
+      line-height Rem(45)
+      color: #666
+      position relative
+      text-align center
+      &.active
+        color: $theme-color
+        &:after
+          content: ''
+          position absolute
+          bottom 0
+          width 80%
+          left 10%
+          border-bottom 2px solid $theme-color
+  .cp-section,.cp-jksection
+    position relative
+    display none
+    &.active
+      display block
+    .cp-fixtop
+      display flex
+      width 100%
+      height Rem(40)
+      // justify-content space-around
+      align-items center
+      background #fff
+      color #666666
+      font-size Rem(13)
+      position relative
+      botLine()
+      overflow-y hidden
+      overflow-x auto
+      >div
+        flex: 0 0 25%
+        text-align center
+        ellp()
+        font-size: Rem(12)
+      .cpf-mult
+        position relative
+        >span
+          display inline-block
+          max-width 85%
+          ellp()
+        .cpf-xlIcon
+          getBg("xiala")
+          width Rem(18/2)
+          height Rem(5)
+          background-size contain
+          display inline-block
+          margin-left Rem(5)
+          vertical-align middle
+        // &:after
+        //   content ''
+        //   display block
+        //   position absolute
+        //   abs(0,0,0,auto)
+        //   margin auto
+        //   width Rem(15)
+        //   height Rem(10)
+        //   getBg('mult-sprites')
+        //   background-size Rem(20) Rem(30)
+        //   background-position Rem(-2) Rem(-2)
+        //   transition .3s
+        // &.active
+        //   color $theme-color
+        //   &:after
+        //     background-position-y Rem(-17)
+    .cpf-multlist
+      display none
+      position absolute
+      top Rem(40)
+      left 0px
+      z-index 3
+      width 100%
+      background #fff
+      text-align center
+      line-height Rem(40)
+      padding Rem(5) 0
+      border-top 1px solid #e6e6e6
+      box-shadow 0 3px 5px rgba(0,0,0,.1)
+      color #666
+      li.active
+        color $theme-color
+  .cp-sec-box
+    .mizn-listbox
+      padding-top Rem(5)
+      li
+        background-color #fff
+        border-radius Rem(4)
+        margin 0 Rem(3) Rem(5)
+        padding Rem(10) 0
+        display flex
+        justify-content: space-between
+        align-items center
+        text-align: center
+        font-size: Rem(10)
+        color: #666
+        >div
+          border-right 1px solid #eee
+          height Rem(40)
+          width 21%
+          overflow hidden
+          &:last-child
+            border-right 0
+          p
+            line-height Rem(17)
+            ellp()
+        .miz-ckbox
+          width 15%
+        .miz-zf
+          width 17%
+          .miz-yp
+            border: 1px solid #999
+            padding Rem(3)
+            display block
+            width 75%
+            margin 0 auto Rem(5)
+            border-radius: Rem(4)
+            font-size: Rem(10)
+            ellp()
+          .miz-zficon
+            getBg("zhuanfa")
+            background-size contain
+            display inline-block
+            width Rem(29/2)
+            height Rem(10)
+            margin-right Rem(2)
+          a
+            color #666
+        .mizl-zs
+          padding-left: Rem(4)
+          border-right 1px solid #eee
+          line-height Rem(35)
+          width 23%
+          text-align left 
+          ellp()
+          .miz-yuan
+            width Rem(20)
+            height Rem(20)
+            line-height Rem(20)
+            text-align center
+            color: #999
+            border 1px solid #999
+            display inline-block
+            vertical-align middle
+            border-radius: 50%
+          .miz-jgs
+            font-size: Rem(18)
+            vertical-align middle
+            &.miz-hyzl
+              font-size: Rem(10)
+            .miz-lv
+              color: #80c269
+            .miz-red
+              color: $theme-color
+        .miz-gm
+          display inline-block
+          background-color $theme-color
+          color: #ffffff
+          width 80%
+          height Rem(45/2)
+          line-height Rem(47/2)
+          border-radius: Rem(4)
+        .mizl-jk-page
+          width 50%
+          padding 0 2%
+          .mijk-head
+            display flex
+            justify-content: space-between
+            align-items: center
+            botLine()
+            text-align center
+            >div 
+              border-right 1px solid #eee
+              width 33.33%
+              &:last-child
+                border-right 0
+          .mijk-foot
+            ellp()
+            line-height Rem(18)

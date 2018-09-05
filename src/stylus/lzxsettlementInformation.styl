@@ -1,0 +1,36 @@
+@import './base'
+
+.settlement-information
+  .si-section
+    display flex
+    justify-content: space-between
+    align-items: center
+    height Rem(45)
+    line-height Rem(45)
+    color: #666
+    botLine()
+    padding 0 Rem(10)
+    background-color #fff
+    &:last-child
+      border-bottom 0
+    >a
+      width Rem(70)
+      height Rem(30)
+      line-height Rem(30)
+      border-radius: Rem(4)
+      border 1px solid $theme-color
+      color $theme-color
+      display block
+      text-align center
+  .si-tipbox
+    background-color: #feecbf
+    color: #666
+    padding Rem(5) Rem(10)
+    display flex
+    justify-content: flex-start
+    font-size Rem(10)
+    line-height: Rem(18)
+    .sit-tishi
+      margin-left Rem(5)
+    >i
+      margin-top Rem(2)
