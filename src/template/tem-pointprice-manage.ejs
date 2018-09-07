@@ -1,0 +1,67 @@
+<div class="tem-point-management">
+    <p class="tpm-p">2018-08-07 08:30:10</p>
+    <ul class="tpm-ul">
+        <li class="tpm-li">
+            <div>
+                <span>订单编号：</span>
+                <span class="c6">XH011118555552</span>
+            </div>
+        </li>
+        <li class="tpm-li two">
+            <div>
+                <span>点价人：</span>
+                <span class="c6">平台</span>
+            </div>
+            <div>
+                <span>最终单价：</span>
+                <span class="c6">3100.00元/kg</span>
+            </div>
+        </li>
+        <li class="tpm-li two">
+            <div>
+                <span>费率：</span>
+                <span class="c6">0.88</span>
+            </div>
+            <div>
+                <span>订单重量：</span>
+                <span class="c6">500.00kg</span>
+            </div>
+        </li>
+        <li class="tpm-li two">
+            <div>
+                <span>总金额：</span>
+                <span class="c6">5558999.00元</span>
+            </div>
+            <div>
+                <span>状态：</span>
+                <% if(type =="shz"){ %>
+                    <span class="c6">审核中</span>
+                <% } %>
+                <% if(type =="tg"){ %>
+                    <span class="c6">审核通过</span>
+                <% } %>
+                <% if(type =="jj"){ %>
+                    <span class="c6">审核拒绝</span>
+                <% } %>
+            </div>
+        </li>
+        <li class="tpm-li">
+            <div>
+                <span>审核原因：</span>
+                <span class="c6">--------------</span>
+            </div>
+        </li>
+        <li class="tpm-li">
+            <div>
+                <span>审核时间：</span>
+                <span class="c6">2018-08-08 12:12:10</span>
+            </div>
+            <div class="tmp-btnbx">
+                <% if(type =="shz"){ %>
+                    <a href="javascript:void(0)">审核</a>
+                <% } %>
+                
+            </div>
+        </li>
+    </ul>
+</div>

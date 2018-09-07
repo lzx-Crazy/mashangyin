@@ -1,0 +1,31 @@
+<div class="pointprice-management">
+    <ul class="li-menu-list li-menuBox">
+        <li class="active" data-status="0"><a href="javascript:void(0)" >全部</a></li>
+        <li data-status="1"><a href="javascript:void(0)">待审核</a></li>
+        <li data-status="2"><a href="javascript:void(0)">审核通过</a></li>
+        <li data-status="3"><a href="javascript:void(0)">审核拒绝</a></li>
+    </ul>
+    
+     <!-- 全部 -->
+     <div class="li-pagebox active ">
+            <%= pointmanage({type:'shz'}) + pointmanage({type:'shz'}) + pointmanage({type:'tg'}) + pointmanage({type:'jj'}) %>
+      </div>
+      <!-- 全部 -->
+     <div class="li-pagebox  ">
+            <%for(var i=0;i<7;i++){%>
+                <%= pointmanage({type:'shz'}) %>
+            <%}%>
+      </div>
+      <!-- 全部 -->
+     <div class="li-pagebox  ">
+            <%for(var i=0;i<7;i++){%>
+                <%= pointmanage({type:'tg'}) %>
+            <%}%>
+      </div>
+      <!-- 全部 -->
+     <div class="li-pagebox  ">
+            <%for(var i=0;i<7;i++){%>
+                <%= pointmanage({type:'jj'}) %>
+            <%}%>
+      </div>
+</div>

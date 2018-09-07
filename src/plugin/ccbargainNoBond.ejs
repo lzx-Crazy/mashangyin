@@ -1,0 +1,121 @@
+<script>
+    $(function(){
+        jiajianfn();
+        moniselFn();
+    })
+    // 初始化升贴水数据
+    var nums = 11
+    var snstate = "升水"
+  
+    stShui()
+  
+    function shengtieshui(state){
+      if(state == 1){
+        nums+=1
+        stShui()
+        if(nums > 0){
+          $(".snsNum").val(snstate + Math.abs(nums) + "元")
+        }
+      } else if(state == 0){
+        nums-=1
+        stShui()
+        $(".snsNum").val(snstate + Math.abs(nums) + "元")
+      }
+      
+    }
+  
+    function stShui(){
+      if(nums > 0){
+        snstate = "升水"
+        $(".snsNum").removeClass("lv")
+        $(".snsNum").removeClass("hui")
+        $(".snsNum").addClass("red")
+      }else if( nums < 0){
+        snstate = "贴水"
+        $(".snsNum").removeClass("red")
+        $(".snsNum").removeClass("hui")
+        $(".snsNum").addClass("lv")
+      } else if( nums == 0){
+        snstate = "平水"
+        $(".snsNum").removeClass("lv")
+        $(".snsNum").removeClass("red")
+        $(".snsNum").addClass("hui")
+      }
+    }
+
+    function qtnum(){
+        var str = "<div class='bn-qtnumbx'><input type='text' placeholder='请输入洽谈数量'></div>"
+        showConfirm(str,function(){
+         console.log('ok')
+        },function(){
+
+        },undefined,'请输入洽谈数量')
+   }
+
+   function jiajianfn(){
+        // 加减
+    $(".c-jia").on("click",function(){
+        $(this).parent().find(".c-inputGm").val((parseFloat(($(this).parent().find(".c-inputGm").val())*100/100)+0.01).toFixed(2));
+    })
+    $(".c-jian").on("click",function(){
+        if($(this).parent().find(".c-inputGm").val()>0.01){
+            $(this).parent().find(".c-inputGm").val((parseFloat(($(this).parent().find(".c-inputGm").val())*100/100)-0.01).toFixed(2));
+        }else{
+            $(this).parent().find(".c-inputGm").val((0).toFixed(2));
+        }
+    })
+   }
+
+   function moniselFn(){
+    
+  var _btn = $(".sel-curr");
+
+  /* 绑定点击事件 */
+  _btn.each(function (i, el) {
+   
+    $(el).unbind("click").on("click", function (m) {
+      // console.log(_items.length)
+      var _list  = $(el).siblings(".mnlist");
+      var _items = _list.children("li");
+      if (_list.is(":hidden")) {
+        $(".mnlist").slideUp();
+        $(el).parent(".mnselbx").removeClass("active");
+        $(el).parent(".mnselbx").addClass("active");
+        _list.stop(true, false).slideDown();
+        // 调用绑定事件
+        reBindDataChange($(el), _list, _items)
+      } else {
+        $(el).parent(".mnselbx").removeClass("active");
+        _list.stop(true, false).slideUp()
+      }
+      $(document).unbind("click").on("click", function () {
+        $(el).parent(".mnselbx").removeClass("active");
+        _list.stop(true, false).slideUp()
+      });
+      m.stopPropagation();
+    });
+  })
+
+
+/* 绑定下拉菜单选项的点击事件 */
+var reBindDataChange = function (_btn, _list, _items) {
+  _items.each(function (k, ml) {
+    $(ml).unbind("click").on("click", function () {
+      var t_data = $(ml).attr('data-source');
+      var t_text = $(ml).html();
+      $(".selbx").text(t_text);
+      $(".selbx").attr('data-source', t_data);
+    
+      _list.stop(true, false).slideUp();
+      _btn.parent(".mnselbx").removeClass("active");
+      $(ml).addClass("active").siblings().removeClass("active");
+      
+    })
+  })
+  _list.unbind("click").on("click", function (m) {
+    m.stopPropagation();
+  });
+}
+   }
+
+  </script>

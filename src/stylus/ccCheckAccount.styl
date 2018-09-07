@@ -1,0 +1,87 @@
+@import './base'
+
+.check-account
+    .ts-ula
+        background-color #ffffff
+        margin-bottom Rem(5)
+        .ts-lia
+            padding: 0 Rem(15)
+            height Rem(45)
+            border-bottom 1px solid #eeeeee
+            display: flex
+            align-items: center
+            font-size: Rem(12)
+            color #999999
+            .ca-bx
+                display: flex
+                align-items: center
+            &.two
+                justify-content: space-between
+            &.ts-lib
+                height auto
+                padding: Rem(5) Rem(15)
+            &.ts-lic
+                height auto
+                padding: Rem(20) Rem(15)
+                position relative
+                justify-content: center
+                border-bottom none 
+                p
+                    text-align: center
+                .ts-licsp
+                    position: absolute
+                    top: Rem(25)
+                    right Rem(15)
+            &.ts-lid
+                height auto
+                padding: Rem(10)
+                a
+                    width 100%
+                    height Rem(40)
+                    line-height Rem(40)
+                    color: #ffffff
+                    display: inline-block
+                    border-radius: 5px
+                    background-color: $theme-color
+                    text-align: center
+            .c6
+                color: #666666
+            .fs30
+                font-size: Rem(15)
+            .fs48
+                font-size: Rem(24)
+            .fs18
+                font-size: Rem(9)
+            .red
+                color $theme-color
+            .ml10
+                margin-left: Rem(5)
+            .ts-liai
+                width 3px
+                height Rem(14)
+                background-color $theme-color
+                margin-right Rem(5)
+                display: inline-block
+            .ts-lipic
+                img 
+                    width Rem(186/2)
+                    height Rem(145/2)
+                p
+                    margin-top Rem(5)
+            .ca-sjxi
+                display: inline-block
+                vertical-align: middle
+                getBg("c-sjdown")
+                width: Rem(7.5)
+                height: Rem(4)
+                background-size: contain
+        &.hide
+            height Rem(45)
+            overflow hidden
+            .ca-sjxi
+                display: inline-block
+                vertical-align: middle
+                getBg("c-sjup")
+                width: Rem(7.5)
+                height: Rem(4)
+                background-size: contain
