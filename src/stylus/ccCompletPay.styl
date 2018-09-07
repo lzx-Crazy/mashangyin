@@ -1,0 +1,91 @@
+@import './base'
+
+.complet-pay
+    background-color #eeeeee
+    padding-bottom Rem(316/2)
+    .cp-tips
+        background-color #feecbf
+        text-align center
+        font-size: Rem(10)
+        color #999
+        padding Rem(8) Rem(5)
+    .cp-ul
+        background-color: #ffffff
+        li
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height Rem(45)
+            padding 0 Rem(15)
+            color: #999999
+            border-bottom 1px solid #eeeeee
+            font-size: Rem(12)
+            .fs30
+                font-size: Rem(15)
+            .c6
+                color: #666666
+            .red
+                color $theme-color
+    .cp-bt
+        position: fixed
+        left: 0rem
+        bottom: 0rem
+        right: 0rem
+        background-color: #ffffff
+        padding: Rem(15)
+        z-index 99
+        .cp-btp
+            position relative
+            margin-top: Rem(5)
+            text-align: center
+            padding-bottom Rem(10)
+            i 
+                width 90%
+                height 1px
+                background-color: #eeeeee
+                display: inline-block
+            span 
+                font-size: Rem(12)
+                position: absolute
+                top: Rem(-5)
+                left: 50%
+                margin-left: Rem(-41)
+                padding: Rem(10)
+                background-color: #ffffff
+        .cp-btul
+            margin Rem(10) 0
+            display: flex
+            justify-content: space-between
+            li
+                width 33%
+                a 
+                    width 100%
+                    height Rem(50)
+                    line-height: Rem(50)
+                    text-align: center
+                    display: inline-block
+                    .cp-btai
+                        getBg('c-backod')
+                        background-size: Rem(75/2) Rem(48/2);
+                        width: Rem(75/2);
+                        height: Rem(48/2);
+                        display inline-block
+                        vertical-align middle
+                    .cp-btbi
+                        getBg('c-zgpa')
+                        background-size: Rem(152/2) Rem(91/2);
+                        width: Rem(152/2);
+                        height: Rem(91/2);
+                        display inline-block
+                        vertical-align middle
+                    .cp-btci
+                        getBg('c-topay')
+                        background-size: Rem(105/2) Rem(97/2);
+                        width: Rem(105/2);
+                        height: Rem(97/2);
+                        display inline-block
+                        vertical-align middle
+                p
+                    text-align: center
+                    margin-top Rem(10)
+

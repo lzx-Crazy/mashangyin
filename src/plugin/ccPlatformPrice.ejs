@@ -1,0 +1,29 @@
+<script>
+    $(function(){
+        jiajianfn();
+    
+    })
+    function jiajianfn(){
+        // 加减
+    $(".c-jia").on("click",function(){
+        $(this).parent().find(".c-inputGm").val((parseFloat(($(this).parent().find(".c-inputGm").val())*100/100)+1).toFixed(2));
+    })
+    $(".c-jian").on("click",function(){
+        if($(this).parent().find(".c-inputGm").val()>0){
+            $(this).parent().find(".c-inputGm").val((parseFloat(($(this).parent().find(".c-inputGm").val())*100/100)-1).toFixed(2));
+        }else{
+            $(this).parent().find(".c-inputGm").val((0).toFixed(2));
+        }
+    })
+   }
+
+//    弹窗
+function qrtk(){
+        var str = "<p class='pp-tkcon'>您当前的确定的单价为3655.00元/kg，若有错误，请点击”取消“重新修改提交！</p>"
+        showConfirm(str,function(){
+         console.log('ok')
+        },function(){
+
+        },undefined,'二次确认')
+   }
+</script>

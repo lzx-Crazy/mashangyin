@@ -1,0 +1,23 @@
+<script>
+        // TAB切换
+        $(function(){
+          var pageData = {
+            data:{
+              status:0,
+              currPage: 0,
+            }
+          }
+          $(".li-menuBox li").each(function(i,el){
+            $(el).on("click",function(){
+              $(el).addClass("active").siblings().removeClass("active");
+              $(".li-pagebox").eq($(el).data("status")).addClass("active").siblings().removeClass("active");
+              
+              
+              
+            })
+          })
+        })
+      
+    
+        
+      </script>
