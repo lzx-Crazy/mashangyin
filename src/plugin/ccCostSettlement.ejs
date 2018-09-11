@@ -1,0 +1,14 @@
+<script>
+    $('.topay').on('click',function(){
+        $('.topaybx').show()
+    })
+
+    function showyy(){
+        var str = " <div class='cs-yybx'><textarea ></textarea><p><i class='gtIcon'></i><span>温馨提示：收到异议后，马上银会在1个工作日内处理。</span></p></div>"
+        showConfirm(str,function(){
+         console.log('ok')
+        },function(){
+
+        },undefined,'填写异议原因')
+    }
+</script>
