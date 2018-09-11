@@ -1,0 +1,170 @@
+@import './base'
+
+.bargain-nobond
+  padding-bottom: Rem(50)
+  .sn-tips
+    background-color #feecbf
+    text-align center
+    font-size: Rem(10)
+    color #999
+    padding Rem(8) 0
+    em
+      color $theme-color
+      font-size: Rem(14)
+      padding 0 Rem(5)
+  .sn-section
+    background-color #fff
+    .sns-tab
+      display flex
+      justify-content: space-between
+      align-items: center
+      font-size: Rem(12)
+      border-top 1px solid #eee
+      text-align center
+      span
+        display block
+        text-align center
+        height Rem(30)
+        line-height Rem(30)
+        border-right 1px solid #eee
+        &:last-child
+          border-right 0
+        &.weibu
+          flex 1
+          color: #666
+          >a
+            color #666
+      .bn-qtnum
+          color: #ffffff
+          font-size: Rem(12)
+          background-color: #999999
+          padding: Rem(3) Rem(10)
+          position: absolute
+          top: Rem(4)
+          right Rem(10)
+          height Rem(30/2)
+          line-height: Rem(30/2)
+          border-radius: 5px
+      &.sns-tab-four
+        span
+          width 25%
+          color #999
+          &.snss-blod
+            color: #666
+      &.sns-tab-title
+        span
+          background-color #666
+          color #fff
+      &.sns-tab-two
+        .snst-left
+          width 25%
+          color: #999
+          margin-left -1px
+        .snst-right
+          flex 1
+          color #666
+        .sn-inpbx
+            text-align: right 
+            padding 0 Rem(15)
+          .bn-inpa
+            width Rem(285/2)
+            height Rem(43/2)
+            line-height: Rem(43/2)
+            border: 1px solid #eee
+            text-align: center
+          .slc-curr
+            text-align right
+            height Rem(30)
+            line-height Rem(30)
+            border: 0
+            color: #999
+          .slc-list
+            display: none;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            z-index: 66;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+            li
+              line-height: Rem(20);
+              padding: Rem(10) 0;
+              text-align: center;
+              border-bottom 1px solid #eeeeee
+              &.active
+                color $theme-color
+        .snst-stpbox
+          font-size: 0
+          >span 
+            font-size: Rem(14)
+            display inline-block
+            vertical-align middle
+            width Rem(45/2)
+            height Rem(45/2)
+            line-height Rem(45/2)
+            border: 1px solid #eee
+          >input
+            font-size: Rem(13)
+            display inline-block
+            vertical-align middle
+            height Rem(45/2)
+            line-height Rem(45/2)
+            border 1px solid #eee
+            border-left 0
+            border-right 0
+            width Rem(100)
+            text-align center
+            -webkit-appearance: none
+            border-radius: 0
+          .c-inputGm
+            color $theme-color  
+  .sns-foot-bar
+    position fixed
+    bottom 0
+    left 5%
+    width 90%
+    display flex
+    justify-content: space-between
+    align-items: center
+    padding Rem(10) 0
+    >a
+      width 45%
+      height Rem(40)
+      line-height Rem(40)
+      background-color $theme-color
+      color #fff
+      text-align center
+      border-radius: Rem(4)
+      &.sns-kf
+        background-color #ff9d00
+        .kfIcon
+          display: inline-block
+          vertical-align: middle
+          getBg("yiwen")
+          width: Rem(10)
+          height: Rem(15)
+          background-size: contain
+.bn-qtnumbx
+  margin Rem(10) 0
+  text-align: center
+  input 
+    width 80%
+    height Rem(30)
+    line-height: Rem(30)
+    border 1px solid #eee
+    color: #444444
+    font-size: Rem(14)
+    text-indent: Rem(10)
+.red
+  color $theme-color
+.lv
+  color #80c269
+.hui
+  color #666
+.relative
+  position relative
+.fs18
+  font-size: Rem(9)
+
+        

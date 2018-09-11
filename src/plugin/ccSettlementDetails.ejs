@@ -1,0 +1,11 @@
+<script>
+    $('.changeli').on('click',function(){
+        var ulbx = $(this).parent('.ts-ula')
+        var flag = ulbx.hasClass('hide');
+        if(flag){
+            ulbx.removeClass('hide')
+        }else{
+            ulbx.addClass('hide')
+        }
+    })
+</script>

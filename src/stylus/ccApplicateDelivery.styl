@@ -1,6 +1,7 @@
 @import './base'
 
-.delivery-confirm
+.applicate-delivery
+    padding-bottom: Rem(50)
     .cp-tips
         background-color #feecbf
         text-align left
@@ -13,7 +14,7 @@
             margin-left Rem(5)
     .cp-ul
         background-color: #ffffff
-        li
+        >li
             display: flex
             justify-content: space-between
             align-items: center
@@ -50,9 +51,38 @@
                 margin-right: Rem(10)
                 text-align: right 
                 color: #666666
+            .ad-selbx
+                position relative
+                .slc-curr
+                    text-align right
+                    height Rem(30)
+                    line-height Rem(30)
+                    border: 0
+                    color: #666
+                .slc-list
+                    display: none;
+                    position: fixed;
+                    bottom: 0px;
+                    left: 0px;
+                    z-index: 66;
+                    width: 100%;
+                    background: #fff;
+                    box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+                    li
+                        line-height: Rem(20);
+                        padding: Rem(10) 0;
+                        text-align: center;
+                        border-bottom 1px solid #eeeeee
+                        &.active
+                            color $theme-color
     .dc-bt
         padding 0 Rem(15)
         margin Rem(18) 0 Rem(5)
+        position: fixed
+        left 0
+        right 0
+        bottom: 0
+        z-index 11
         .dc-bta
             width 100%
             height Rem(40)

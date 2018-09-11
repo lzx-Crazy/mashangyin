@@ -1,0 +1,47 @@
+@import './base'
+
+.code-build
+  .g-header
+    display flex
+    justify-content: space-between
+    align-content: center
+    color $theme-color
+    font-size: Rem(10)
+    padding Rem(5) Rem(10)
+    background-color #fff
+    line-height Rem(18)
+    >span
+      display: block
+      width Rem(40)
+      text-align right
+    >div
+      flex 1
+  .cb-foot
+    position fixed
+    bottom 0
+    left 0
+    right 0
+    padding: Rem(10) Rem(15)
+    display: flex
+    justify-content: space-between
+    >a
+      width 43%
+      height Rem(40)
+      line-height Rem(40)
+      text-align: center
+      color: #ffffff
+      font-size: Rem(15)
+      border-radius: 5px
+      background-color: $theme-color
+      display: inline-block
+  .g-section
+    text-align center
+    font-size: Rem(12)
+    .gs-img
+      height Rem(125)
+      margin-top 20%
+      img
+        max-height 100%
+    p
+      text-align center
+      padding-top Rem(20)

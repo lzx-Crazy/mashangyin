@@ -1,34 +1,77 @@
 @import './base'
 
-.complet-pay
-    padding-bottom Rem(316/2)
+.two-settlement
     .cp-tips
         background-color #feecbf
         text-align left
         font-size: Rem(10)
         color #999
         padding Rem(8) Rem(5)
-        display flex
-        >span
-            flex 1
-            margin-left Rem(5)
-    .cp-ul
-        background-color: #ffffff
-        li
-            display: flex
-            justify-content: space-between
-            align-items: center
+    .ts-ula
+        background-color #ffffff
+        margin-bottom Rem(5)
+        &:last-child
+            margin-bottom 0
+        .ts-lia
+            padding: 0 Rem(15)
             height Rem(45)
-            padding 0 Rem(15)
-            color: #999999
             border-bottom 1px solid #eeeeee
+            display: flex
+            align-items: center
             font-size: Rem(12)
-            .fs30
-                font-size: Rem(15)
+            color #999999
+            &.two
+                justify-content: space-between
+            &.ts-lib
+                height auto
+                padding: Rem(5) Rem(15)
+            &.ts-lic
+                height auto
+                padding: Rem(20) Rem(15)
+                position relative
+                justify-content: center
+                border-bottom none 
+                p
+                    text-align: center
+                .ts-licsp
+                    position: absolute
+                    top: Rem(25)
+                    right Rem(15)
+            &.ts-lid
+                height auto
+                padding: Rem(10)
+                a
+                    width 100%
+                    height Rem(40)
+                    line-height Rem(40)
+                    color: #ffffff
+                    display: inline-block
+                    border-radius: 5px
+                    background-color: $theme-color
+                    text-align: center
             .c6
                 color: #666666
+            .fs30
+                font-size: Rem(15)
+            .fs48
+                font-size: Rem(24)
+            .fs18
+                font-size: Rem(9)
             .red
                 color $theme-color
+            .ml10
+                margin-left: Rem(5)
+            .ts-liai
+                width 3px
+                height Rem(14)
+                background-color $theme-color
+                margin-right Rem(5)
+            .ts-lipic
+                img 
+                    width Rem(186/2)
+                    height Rem(145/2)
+                p
+                    margin-top Rem(5)
     .cp-bt
         position: fixed
         left: 0rem
@@ -37,6 +80,8 @@
         background-color: #ffffff
         padding: Rem(15)
         z-index 99
+        border-top 1px solid #eeeeee
+        display: none
         .cp-btp
             position relative
             margin-top: Rem(5)
@@ -91,4 +136,16 @@
                 p
                     text-align: center
                     margin-top Rem(10)
-
+.cs-yybx
+    padding: 0 Rem(15)
+    textarea
+        width 96%
+        height Rem(130)
+        padding: 2%
+        border 1px solid #999999
+        background-color: #eeeeee
+        font-size: Rem(14)
+        line-height: Rem(18)
+    p
+        font-size: Rem(9)
+        color: #999999
