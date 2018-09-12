@@ -16,6 +16,7 @@
   function sxAlert(){
     $(".imss-bj").addClass("active")
     $(".im-suosou").animate({right:"0"})
+    $("body").css("overflow","hidden")
   }
   // 关闭搜索
   function closesos(){
@@ -23,6 +24,7 @@
       $(".imss-bj").removeClass("active")
     },500)
     $(".im-suosou").animate({right:"-70%"})
+    $("body").css("overflow","auto")
   }
 
   // 重置

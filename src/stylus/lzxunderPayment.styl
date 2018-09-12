@@ -1,0 +1,69 @@
+@import './base'
+
+
+.under-payment
+  .up-section
+    margin-bottom Rem(5)
+    .ups-list
+      background-color #fff
+      color #666
+      font-size: Rem(12)
+      li
+        padding 0 Rem(15)
+        height Rem(45)
+        line-height: Rem(45)
+        botLine()
+        display flex
+        justify-content: space-between
+        align-items: center
+        >input
+          border 0
+          text-align right
+    .up-tips
+      font-size: Rem(10)
+      background-color #feecbf
+      padding Rem(5) Rem(15)
+      color: #666
+  .up-foot
+    text-align center
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    background-color: #fff
+    box-shadow: 0 0 4px #ccc
+    .ps-xuanze 
+      position: relative
+      border-top: 1px solid #eee
+      width: 80%
+      margin: Rem(20) auto 0
+      >span
+        position: absolute
+        width: 5rem
+        left: 50%
+        margin-left: -2.5rem
+        top: Rem(-8)
+        background-color: #fff
+        text-align: center
+        color: #666
+    .upf-btnbox
+      display flex
+      width 80%
+      margin: 0 auto
+      justify-content: space-between
+      align-items: center
+      margin: Rem(30) auto
+      >a
+        width 45%
+        height Rem(40)
+        line-height Rem(40)
+        border-radius: Rem(6)
+        text-align center
+        background-color #666
+        color #fff
+        font-size Rem(12)
+        &.active
+          background-color $theme-color
+        
+      
+  
