@@ -1,0 +1,89 @@
+<div class="fill-quotation">
+    <ul class="ts-ula">
+        <li class="ts-lia">
+            <i class="ts-liai"></i>
+            <span class="c6 fs30">商品信息</span>
+        </li>
+    </ul>
+    <div class="fq-spbx">
+        <ul class="fq-ula">
+            <li class="top-radius">
+                <span>品名</span>
+                <span class="c6">白银</span>
+            </li>
+            <li>
+                <span>规格</span>
+                <span class="c6">国标1#</span>
+            </li>
+            <li>
+                <span>品牌</span>
+                <span class="c6">金贵</span>
+            </li>
+            <li>
+                <span>商品属性</span>
+                <span class="c6">99.99%</span>
+            </li>
+            <li>
+                <span>数量（±5%）</span>
+                <span class="c6">6666.222kg</span>
+            </li>
+            <li>
+                <span>仓库</span>
+                <span class="c6">郴州-飞平</span>
+            </li>
+            <li>
+                <span>单价</span>
+                <span class="red">3652.00元/kg</span>
+            </li>
+            <li>
+                <span>上架时间</span>
+                <span class="c6">2018/08/09</span>
+            </li>
+            <li>
+                <span>最晚提货时间</span>
+                <span class="c6">2018/10/10</span>
+            </li>
+            <li>
+                <span>结算方式</span>
+                <span class="c6">现款现预付款+多次提货</span>
+            </li>
+        </ul>
+    </div>
+    <ul class="ts-ula">
+        <li class="ts-lia">
+            <i class="ts-liai"></i>
+            <span class="c6 fs30">供需信息</span>
+        </li>
+        <li class="ts-lia two">
+            <span>供方</span>
+            <span class="c6 fs30">湖南正和通银业有限公司</span>
+        </li>
+        <li class="ts-lia two">
+            <span>供方联系电话</span>
+            <div>
+                <span class="red fs30">13800138000</span>
+                <a class="fq-lxa" href="javascript:void(0)">联系商家</a>
+            </div> 
+        </li>
+    </ul>
+    <ul class="ts-ula">
+        <li class="ts-lia">
+            <i class="ts-liai"></i>
+            <span class="c6 fs30">升水贴选择</span>
+        </li>
+        <li class="ts-lia two">
+            <span>升水贴</span>
+            <div class="pp-stpbox">
+                <span class=" lv c-jian" onclick="shengtieshui(0)">-</span>
+                <input type="text" class="snsNum c-inputGm" value="升水11元" readonly onclick="openKp()">
+                <span class=" red c-jia" onclick="shengtieshui(1)">+</span>
+            </div>
+        </li>
+    </ul>
+    <div class="dc-bt">
+        <a class="dc-bta fs30" href="javascript:void(0)">提交报价</a>
+    </div>
+
+    <!-- 升贴水小键盘 -->
+    <%= keypad({data:11}) %>
+</div>

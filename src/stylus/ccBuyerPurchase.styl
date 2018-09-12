@@ -1,0 +1,87 @@
+@import './base'
+
+.buyer-purchase
+    .bp-search
+        height Rem(45)
+        padding: 0  Rem(15)
+        position: fixed
+        left 0
+        right 0
+        top: Rem(44)
+        background-color: #ffffff
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .bp-searchl
+            width 66%
+            height Rem(30)
+            background-color: #eeeeee
+            border-radius: Rem(15)
+            display: flex
+            .bp-searchinp
+                flex: 1
+                height Rem(30)
+                line-height: Rem(30)
+                margin-left:Rem(10)
+                border: none 
+                background: none 
+                color: #666666
+            .bp-searchi
+                getBg('c-searcha')
+                background-size: Rem(38/2) Rem(39/2);
+                width: Rem(38/2);
+                height: Rem(39/2);
+                display inline-block
+                vertical-align middle
+                margin-right: Rem(10)
+                margin-top: Rem(5)
+        .bp-searchr
+            color: $theme-color
+            font-size: Rem(12)
+            i 
+                getBg('saixuan')
+                background-size: Rem(13) Rem(13);
+                width: Rem(13);
+                height: Rem(13);
+                display inline-block
+                vertical-align middle
+                margin-left: Rem(5)
+    .bp-cgbig
+        margin-top Rem(50)
+        padding: 0 Rem(5)
+        .bp-cbbx
+            padding: Rem(10)
+            background-color: #ffffff
+            border-radius: 5px
+            margin-bottom Rem(5)    
+            display: flex
+            align-items: center
+            .bp-cbbxl
+                flex: 1
+                color: #666666
+                font-size: Rem(12)
+                .fs48
+                    font-size: Rem(24)
+                .fs30
+                    font-size: Rem(15)
+                .mt25
+                    margin-top Rem(25/2)
+                .mb25
+                    margin-bottom Rem(25/2)
+                .red
+                    color: $theme-color
+                .c9
+                    columns #999999
+                .lh36
+                    line-height: Rem(18)
+            .bp-cbbxr
+                width Rem(115/2)
+                height Rem(23)
+                line-height Rem(23)
+                display: inline-block
+                text-align: center
+                color: #ffffff
+                font-size: Rem(12)
+                background-color: $theme-color
+                border-radius: 5px
+                margin: 0 Rem(10)
