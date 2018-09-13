@@ -82,15 +82,17 @@
     })
 
   $(function(){
-    $(document).on("click", ".sec-curr", function(e){
-      $(".sec-box").removeClass("active");
-      $(this).parent().find(".sec-box").addClass("active");
-      e.stopPropagation()
-    })
-    $(document).on("click",function(e){
-      $(".sec-box").removeClass("active");
-    })
+    // $(document).on("click", ".sec-curr", function(e){
+    //   $(".sec-box").removeClass("active");
+    //   $(this).parent().find(".sec-box").addClass("active");
+    //   e.stopPropagation()
+    // })
+    // $(document).on("click",function(e){
+    //   $(".sec-box").removeClass("active");
+    // })
 
-    mockSelect();
+    mockSelect(function(){
+      console.log(11)
+    });
   })
 </script>

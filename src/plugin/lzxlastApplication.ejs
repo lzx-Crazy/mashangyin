@@ -1,5 +1,11 @@
 <script>
   $(function(){
-    mockSelect();
+    mockSelect(function(i, e){
+      console.log(e)
+    });
+
+    $(".ad-sublime").on("click",function(){
+      $(".cc-alert-zfbox").css("display","block")
+    })
   })
 </script>
