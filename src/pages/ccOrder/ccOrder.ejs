@@ -1,0 +1,76 @@
+<div class="order">
+    <ul class="o-list">
+        <li class="active" onclick="checkXuList(this)">白银</li>        
+        <li onclick="checkXuList(this,1)">精矿</li>
+    </ul>
+      <!-- 白银-->
+    <div class="o-section active">
+        <ul class="o-fixtop">
+            <li class="active">全部</li>
+            <li>未完成</li>
+            <li>已完成</li>
+            <li>已撤销</li>
+        </ul>
+    </div>
+    <!-- 精矿-->
+    <div class="o-jksection clearfix">
+        <div class="o-zd left">
+            <span class="o-zdsp">整单</span>
+            <i class="o-zdi"></i>
+        </div>
+        <ul class="o-fixtopjk left">
+            <li class="active">全部</li>
+            <li>未完成</li>
+            <li>已完成</li>
+            <li class="ycx">已撤销</li>
+        </ul>
+    </div>
+
+    <div class="o-big">
+        <ul class="o-box">
+
+            <%for(var i=0;i<4;i++){%>
+            <li class="o-boxli">
+                <p class="o-bxp">
+                    <span>湖南马上银工业互联网平台</span>
+                    <span class="fs18">2017-10-21   10:31:11</span>
+                </p>
+                <table class="o-bxtab" cellpadding="0" cellspacing="0" >
+                    <tbody>
+                        <tr>
+                            <td class="o-tda" rowspan="5">
+                                <p class="fs30">白银9999</p>
+                                <span class="o-tdasp">整</span>
+                            </td>
+                            <td class="o-tdb">订单编号</td>
+                            <td class="" colspan="3">XHSH01Ag18030800272018</td>
+                        </tr>
+                        <tr>
+                            <td class="o-tdb">总价</td>
+                            <td class="red o-tdc" >2980600元</td>
+                            <td class=" o-tdd" >数量</td>
+                            <td >500kg</td>
+                        </tr>
+                        <tr>
+                            <td class="o-tdb">单价</td>
+                            <td class="red o-tdc" >29800元</td>
+                            <td class=" o-tdd" >结算方式</td>
+                            <td >现款现货</td>
+                        </tr>
+                        <tr>
+                            <td class="o-tdb">当前状态</td>
+                            <td colspan="3">合同确认成功（等待供方签署合同）</td>
+                        </tr>
+                        <tr>
+                            <td class="o-tde" colspan="4">
+                                <a class="btna" href="javascript:void(0)">需方签署合同</a>
+                                <a class="btnb" href="javascript:void(0)">查看详情</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</div>

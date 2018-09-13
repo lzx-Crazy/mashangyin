@@ -1,0 +1,59 @@
+<div class="tem-financia-voucher">
+        <p class="tpm-p">2018-08-07 08:30:10</p>
+        <ul class="tpm-ul">
+            <li class="tpm-li">
+                <div class="fs30">
+                    <span>订单编号：</span>
+                    <span class="c6">XH011118555552</span>
+                </div>
+            </li>
+            <li class="tpm-li two">
+                <div>
+                    <span>订单单价：</span>
+                    <span class="c6">3100.00元</span>
+                </div>
+                <div>
+                    <span>合同金额：</span>
+                    <span class="c6">3100.00元</span>
+                </div>
+            </li>
+            <li class="tpm-li two">
+                <div>
+                    <span>需支付金额：</span>
+                    <span class="c6">3100.00元</span>
+                </div>
+                <div>
+                    <span>审核人：</span>
+                    <span class="c6">张三</span>
+                </div>
+            </li>
+            <li class="tpm-li two">
+                <div>
+                    <span>支付凭证：</span>
+                    <% if(type =="dqr"){ %>
+                        <span class="c6">待上传</span>
+                    <% } %>
+                    <% if(type =="yqr"){ %>
+                        <img class="img" src="./front/images/c-cwpz.png" alt="">
+                    <% } %>
+                </div>
+                <div>
+                    <span>支付方式：</span>
+                    <span class="c6">线下</span>
+                </div>
+            </li>
+            <li class="tpm-li">
+                <div>
+                    <span>审核时间：</span>
+                    <span class="c6">2018-08-08 12:12:10</span>
+                </div>
+            </li>
+            <% if(type =="dqr"){ %>
+            <li class="tpm-li">
+                <div class="tmp-btnbx">
+                    <a href="javascript:void(0)">审核</a>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>

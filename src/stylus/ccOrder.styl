@@ -1,0 +1,201 @@
+@import './base'
+
+.order
+    padding-top Rem(191/2)
+    .o-list
+        display flex
+        justify-content: space-around
+        align-items: center
+        background-color #fff
+        font-size: Rem(13)
+        padding 0 Rem(5)
+        border-bottom 1px solid #eeeeee
+        position: fixed
+        left 0
+        right 0
+        top: Rem(45)
+        li
+            min-width 20%
+            height Rem(45)
+            line-height Rem(45)
+            color: #666
+            position relative
+            text-align center
+            &.active
+                color: $theme-color
+                &:after
+                    content: ''
+                    position absolute
+                    bottom 0
+                    width 80%
+                    left 10%
+                    border-bottom 2px solid $theme-color
+    .o-section,.o-jksection
+        position fixed
+        left 0
+        right 0
+        top: Rem(181/2)
+        display none
+        &.active
+            display block
+        .o-fixtop
+            display flex
+            justify-content: space-around
+            align-items: center
+            background-color #fff
+            font-size: Rem(13)
+            padding 0 Rem(5)
+            margin-bottom 1px
+            position: fixed
+            left 0
+            right 0
+            top: Rem(181/2)
+            li
+                min-width 20%
+                height Rem(45)
+                line-height Rem(45)
+                color: #666
+                position relative
+                text-align center
+                &.active
+                    color: $theme-color
+                    &:after
+                        content: ''
+                        position absolute
+                        bottom 0
+                        width 80%
+                        left 10%
+                        border-bottom 2px solid $theme-color
+        .o-zd
+            width 20%
+            text-align: center
+            font-size: Rem(12)
+            color #666666
+            .o-zdi
+                getBg("xiala")
+                width Rem(18/2)
+                height Rem(5)
+                background-size contain
+                display inline-block
+                margin-left Rem(5)
+                vertical-align middle
+    .o-jksection
+        background-color #fff
+        .o-zd
+            width 20%
+            height Rem(45)
+            line-height Rem(45)
+        .o-fixtopjk
+            width 80%
+            display flex
+            justify-content: space-around
+            align-items: center
+            background-color #fff
+            font-size: Rem(13)
+            margin-bottom 1px
+            top: Rem(181/2)
+            li
+                min-width 20%
+                height Rem(45)
+                line-height Rem(45)
+                color: #666
+                position relative
+                text-align center
+                &.active
+                    color: $theme-color
+                    &:after
+                        content: ''
+                        position absolute
+                        bottom 0
+                        width 80%
+                        left 10%
+                        border-bottom 2px solid $theme-color
+    .o-box
+        padding 0 Rem(5)
+        .o-boxli
+            width 100%
+            background-color: #ffffff
+            margin-bottom Rem(5)
+            border-radius: 5px
+            color #666666
+            font-size: Rem(12)
+            .o-bxp
+                display: flex
+                justify-content: space-between
+                align-items: center
+                height Rem(58/2)
+                padding: 0 Rem(5)
+            .o-bxtab
+                width 100%
+                td
+                    height Rem(58/2)
+                    border-top 1px solid #eeeeee
+                    border-right: 1px solid #eeeeee
+                    text-align: center
+                    vertical-align: middle
+                    &.o-tda
+                        width 26%
+                        .o-tdasp
+                            width Rem(45/2)
+                            height Rem(45/2)
+                            line-height: Rem(45/2)
+                            border-radius: Rem(45/4)
+                            border 1px solid #999999
+                            display: inline-block
+                            margin-top: Rem(10)
+                    &.o-tdb
+                        width 17.8%
+                        color: #999999
+                    &.o-tdc
+                        width 25%
+                    &.o-tdd
+                        width 11.6%
+                        color: #999999
+                    &.o-tde
+                        text-align: right 
+                        padding-right Rem(5)
+                        .btna
+                            width Rem(133/2)
+                            height Rem(22)
+                            line-height: Rem(22)
+                            text-align: center
+                            color #ffffff
+                            font-size: Rem(9)
+                            border 1px solid $theme-color
+                            background-color $theme-color
+                            display: inline-block
+                            margin-left Rem(10)
+                            vertical-align: middle
+                            border-radius: 5px
+                        .btnb
+                            width Rem(133/2)
+                            height Rem(22)
+                            line-height: Rem(22)
+                            text-align: center
+                            color $theme-color
+                            font-size: Rem(9)
+                            border 1px solid $theme-color
+                            background-color #ffffff
+                            display: inline-block
+                            margin-left Rem(10)
+                            vertical-align: middle
+                            border-radius: 5px
+.c9
+    color #999999
+.fs18
+    font-size: Rem(9)
+.fs30
+    font-size: Rem(15)
+.red
+    color $theme-color
+.left
+    float left
+.clearfix:after
+    content:""
+    clear:both
+    visibility:hidden
+    display:block
+    font-size:0
+    height:0
+    line-height:0
+        
