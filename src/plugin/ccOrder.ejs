@@ -1,0 +1,200 @@
+<script>
+       $(function(){
+          $(".o-fixtop li").each(function(i,el){
+            $(el).on("click",function(){
+                $(el).addClass("active").siblings().removeClass("active");
+            })
+          })
+          $(".o-fixtopjk li").each(function(i,el){
+            $(el).on("click",function(){
+                $(el).addClass("active").siblings().removeClass("active");
+            })
+          })
+          var flaga = true;
+          $('.o-zd').on('click',function(){
+            if(flaga){
+              $(this).find('.o-zdsp').text('子单');
+              $('.ycx').hide();
+              flaga = false;
+            }else{
+              $(this).find('.o-zdsp').text('整单');
+              $('.ycx').show();
+              flaga = true;
+            }
+          })
+
+           // 销售采购切换
+           $(".p-switch").on("click",function(){
+                if($(".p-switch").is(':checked')){
+                    console.log("true")
+                    $(".switch-txt").html("采购")
+                }else{
+                    console.log("false")
+                    $(".switch-txt").html("销售")
+                }
+            })
+       })
+      
+        // 切换
+        function checkXuList(e,ix){
+          $(e).addClass("active").siblings().removeClass("active")
+          if(ix == 1){
+            $(".o-section").removeClass("active")
+            $(".o-jksection").addClass("active")
+            // 调用ajax
+            $(".o-box").html('')
+            getjkData()
+          } else {
+            $(".o-section").addClass("active")
+            $(".o-jksection").removeClass("active")
+            // 调用ajax
+            $(".o-box").html('')
+            getData()
+          }
+      
+          
+        }
+      
+      
+        // 上拉加载html拼接方法
+        function getHtmlTemp(res) {
+          var _html = '<li class="o-boxli">'+
+              '<p class="o-bxp">'+
+                  '<span>湖南马上银工业互联网平台</span>'+
+                  '<span class="fs18">2017-10-21   10:31:11</span>'+
+                  '</p>'+
+                  '<table class="o-bxtab" cellpadding="0" cellspacing="0" >'+
+                      ' <tbody>'+
+                          ' <tr>'+
+                              ' <td class="o-tda" rowspan="5">'+
+                                  ' <p class="fs30">白银9999</p>'+
+                                  '<span class="o-tdasp">整</span>'+
+                                  '</td>'+
+                                  '<td class="o-tdb">订单编号</td>'+
+                                  '<td class="" colspan="3">XHSH01Ag18030800272018</td>'+
+                                  '</tr>'+
+                                  '<tr>'+
+                                      '<td class="o-tdb">总价</td>'+
+                                      '<td class="red o-tdc" >2980600元</td>'+
+                                      '<td class=" o-tdd" >数量</td>'+
+                                      '<td >500kg</td>'+
+                                      '</tr>'+
+                                      '<tr>'+
+                                          '<td class="o-tdb">单价</td>'+
+                                          '<td class="red o-tdc" >29800元</td>'+
+                                          '<td class=" o-tdd" >结算方式</td>'+
+                                          ' <td >现款现货</td>'+
+                                          ' </tr>'+
+                                          '<tr>'+
+                                              ' <td class="o-tdb">当前状态</td>'+
+                                              ' <td colspan="3">合同确认成功（等待供方签署合同）</td>'+
+                                              '</tr>'+
+                                              '<tr>'+
+                                                  '<td class="o-tde" colspan="4">'+
+                                                      '<a class="btna" href="javascript:void(0)">需方签署合同</a>'+
+                                                      ' <a class="btnb" href="javascript:void(0)">查看详情</a>'+
+                                                      ' </td>'+
+                                                      ' </tr>'+
+                                                      ' </tbody>'+
+                                                      ' </table>'+
+                                                      '</li>'
+          return _html;
+        }
+        // 精矿
+        function getjkHtmlTemp(res) {
+          var _html = '<li class="o-boxli">'+
+              '<p class="o-bxp">'+
+                  '<span>湖南马上银工业互联网平台</span>'+
+                  '<span class="fs18">2017-10-21   10:31:11</span>'+
+                  '</p>'+
+                  '<table class="o-bxtab" cellpadding="0" cellspacing="0" >'+
+                      ' <tbody>'+
+                          ' <tr>'+
+                              ' <td class="o-tda" rowspan="5">'+
+                                  ' <p class="fs30">银精矿</p>'+
+                                  '<span class="o-tdasp">整</span>'+
+                                  '</td>'+
+                                  '<td class="o-tdb">订单编号</td>'+
+                                  '<td class="" colspan="3">XHSH01Ag18030800272018</td>'+
+                                  '</tr>'+
+                                  '<tr>'+
+                                      '<td class="o-tdb">总价</td>'+
+                                      '<td class="red o-tdc" >2980600元</td>'+
+                                      '<td class=" o-tdd" >数量</td>'+
+                                      '<td >500kg</td>'+
+                                      '</tr>'+
+                                      '<tr>'+
+                                          '<td class="o-tdb">单价</td>'+
+                                          '<td class="red o-tdc" >29800元</td>'+
+                                          '<td class=" o-tdd" >结算方式</td>'+
+                                          ' <td >现款现货</td>'+
+                                          ' </tr>'+
+                                          '<tr>'+
+                                              ' <td class="o-tdb">当前状态</td>'+
+                                              ' <td colspan="3">合同确认成功（等待供方签署合同）</td>'+
+                                              '</tr>'+
+                                              '<tr>'+
+                                                  '<td class="o-tde" colspan="4">'+
+                                                      '<a class="btna" href="javascript:void(0)">需方签署合同</a>'+
+                                                      ' <a class="btnb" href="javascript:void(0)">查看详情</a>'+
+                                                      ' </td>'+
+                                                      ' </tr>'+
+                                                      ' </tbody>'+
+                                                      ' </table>'+
+                                                      '</li>'
+          return _html;
+        }
+      
+        $(function () {
+          // 初始化上拉加载
+          onReachBottom.init('.o-box',function () {
+            getData()
+          })
+        })
+      
+      
+        function getData(){
+          
+          $.ajax({
+            url: './front/mockdata/lzxinvoiceExpress.json',
+            type: 'GET',
+            success: function (res) {
+              var pages = res.pages;
+              for (var i = 0; i < pages.length; i++) {
+                $(".o-box").append(getHtmlTemp(pages[i]))
+              }
+              // hideReachLoading();
+              hideLoading();
+              onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+              onReachBottom.currPage = res.currPage;//获取当前页数
+              if(!onReachBottom.hasNextPage){
+                showNullReach($(".o-box"))
+              }
+            }
+          })
+        }
+      
+        function getjkData(){
+          console.log(11)
+          $.ajax({
+            url: './front/mockdata/lzxinvoiceExpress.json',
+            type: 'GET',
+            success: function (res) {
+              var pages = res.pages;
+              for (var i = 0; i < pages.length; i++) {
+                $(".o-box").append(getjkHtmlTemp(pages[i]))
+              }
+              // hideReachLoading();
+              hideLoading();
+              onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+              onReachBottom.currPage = res.currPage;//获取当前页数
+              if(!onReachBottom.hasNextPage){
+                showNullReach($(".o-box"))
+              }
+            }
+          })
+        }
+      
+       
+      
+      </script>

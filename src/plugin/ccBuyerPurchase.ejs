@@ -1,0 +1,85 @@
+
+<script>
+    // 上拉加载html拼接方法
+    function getHtmlTemp(res) {
+      var _html = '<div class="bp-cbbx">'+
+        '<div class="bp-cbbxl">'+
+            '<p class="clearfix">'+
+                '<span class="lt">' +res.goods+ '</span>'+
+                '<span class="rt">' +res.nums+ '</span>'+
+                '</p>'+
+                '<p class="clearfix mt25 mb25 lh36">'+
+                    '<span class="lt fs48 ">TD<i class="red">+21</i></span>'+
+                    '<span class="rt fs30 ">' +res.addr+ '</span>'+
+                    '</p>'+
+                    '<p class="clearfix">'+
+                        '<span class="lt c9">' +res.type+ '</span>'+
+                        ' <span class="rt c9">' +res.com+ '</span>'+
+                        '</p>'+
+                        '</div>'+
+                        '<a class="bp-cbbxr" href="javascript:void(0)">购买</a>'+
+                        '</div>'
+      return _html;
+    }
+  
+    $(function () {
+      // 初始化上拉加载
+      onReachBottom.init('.bp-cgbig',function () {
+        $.ajax({
+          url: './front/mockdata/ccBuyerPurchase.json',
+          type: 'GET',
+          success: function (res) {
+            var pages = res.pages;
+            console.log(pages.length)
+            for (var i = 0; i < pages.length; i++) {
+              $(".bp-cgbig").append(getHtmlTemp(pages[i]))
+            }
+            // hideReachLoading();
+            hideLoading();
+            onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+            onReachBottom.currPage = res.currPage;//获取当前页数
+            if(!onReachBottom.hasNextPage){
+              showNullReach($(".bp-cgbig"))
+            }
+          }
+        })
+      })
+    })
+
+
+    $(function(){
+        
+        $(".bp-searchr").on("click",function(){
+            sxAlert()
+        })
+        // 关闭搜索
+        $(".imss-bj").on("click",function(){
+            closesos()
+        })
+
+    })
+   // 选择
+  $(".imsall-btnbox span").on("click",function(){
+    $(this).addClass("active").siblings().removeClass("active")
+  })
+  // 搜索
+  function sxAlert(){
+    $(".imss-bj").addClass("active")
+    $(".im-suosou").animate({right:"0"})
+  }
+  // 关闭搜索
+  function closesos(){
+    setTimeout(function(){
+      $(".imss-bj").removeClass("active")
+    },500)
+    $(".im-suosou").animate({right:"-70%"})
+  }
+
+  // 重置
+  function imReset(){
+    // 筛选变成全部 第一个
+    $(".imsall-btnbox").each(function(i,v){
+      $(".imsall-btnbox").eq(i).find("span").eq(0).addClass("active").siblings().removeClass("active")
+    })
+  }
+  </script>

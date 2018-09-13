@@ -1,0 +1,32 @@
+@import './base'
+
+.financial-voucher
+  .li-menuBox
+    position fixed
+    top: Rem(45)
+    width 100%
+    z-index 9
+  .li-menu-list
+    background-color: #fff
+    font-size: 0
+    display flex
+    align-items: center
+    justify-content: space-around
+    box-shadow 0 0 Rem(1) #eee
+    li
+      font-size: Rem(14)
+      display: block
+      text-align: center
+      a
+        height Rem(38)
+        line-height Rem(38)
+        display: block
+        color #666
+      &.active a
+        border-bottom Rem(2) solid $theme-color
+        color $theme-color
+  .li-pagebox
+    margin-top Rem(45)
+    display none
+    &.active
+      display block

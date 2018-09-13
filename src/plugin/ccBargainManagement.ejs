@@ -1,0 +1,77 @@
+
+<script>
+        // 上拉加载html拼接方法
+        function getHtmlTemp(res) {
+          var _html = '<ul class="bm-ul">'+
+                '<li>合同编号：<i class="fwb">'+ res.ht+'</i></li>'+
+                '<li>'+
+                        '<span class="sp">订单编号：<i class="c6">'+ res.bh+'</i></span>'+
+                        '<span class="sp">查看合同:<i class="c6">/</i></span>'+
+                        '</li>'+
+                        '<li>供方：<i class="fwb">'+ res.gf+'</i></li>'+
+                        '<li>需方：<i class="fwb">'+ res.xf+'</i></li>'+
+                        '<li>'+
+                                '<span class="sp">品名：<i class="c6">'+ res.pname+'</i></span>'+
+                                '<span class="sp">数量:<i class="c6">'+ res.nums+'</i></span>'+
+                                '</li>'+
+                                '<li>'+
+                                        '<span class="sp">基准单价：<i class="c6">3851元/kg</i></span>'+
+                                        '<span class="sp">升水贴:<i class="c6">+2</i></span>'+
+                                        '</li>'+
+                                        '<li>'+
+                                                '<span class="sp">最终单价：<i class="c6">3851元/kg</i></span>'+
+                                                '<span class="sp">预估总价:<i class="c6">3822123.00元</i></span>'+
+                                                '</li>'+
+                                                '<li>'+
+                                                        '<span class="sp">当前议价状态：<i class="c6">报价不合适</i></span>'+
+                                                        '<span class="sp">倒计时议价时间:<i class="c6">10:10</i></span>'+
+                                                        '</li>'+
+                                                        '<li>'+
+                                                                '<span class="sp">当前状态：<i class="c6">卖方不同意</i></span>'+
+                                                                '<span class="sp">'+
+                                                                        '<a class="bm-btna" href="javascript:void(0)">再议价</a>'+
+                                                                        '<a class="bm-btnb" href="javascript:void(0)">签署合同</a>'+
+                                                                        '</span>'+
+                                                                        '</li>'+
+                                                                        '</ul>'
+          return _html;
+        }
+      
+        $(function () {
+          // 初始化上拉加载
+          onReachBottom.init('.bm-big',function () {
+            $.ajax({
+              url: './front/mockdata/ccBargainManagement.json',
+              type: 'GET',
+              success: function (res) {
+                var pages = res.pages;
+                console.log(pages.length)
+                for (var i = 0; i < pages.length; i++) {
+                  $(".bm-big").append(getHtmlTemp(pages[i]))
+                }
+                
+                hideLoading();
+                onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+                onReachBottom.currPage = res.currPage;//获取当前页数
+                if(!onReachBottom.hasNextPage){
+                  showNullReach($(".bm-big"))
+                }
+              }
+            })
+          })
+        })
+
+
+        $(function(){
+            // 销售采购切换
+            $(".p-switch").on("click",function(){
+                if($(".p-switch").is(':checked')){
+                    console.log("true")
+                    $(".switch-txt").html("采购")
+                }else{
+                    console.log("false")
+                    $(".switch-txt").html("销售")
+                }
+            })
+        })
+</script>

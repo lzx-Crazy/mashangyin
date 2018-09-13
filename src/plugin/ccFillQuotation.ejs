@@ -1,0 +1,43 @@
+<script>
+
+    // 初始化升贴水数据
+    var nums = 11
+    var snstate = "升水"
+  
+    stShui()
+  
+    function shengtieshui(state){
+      if(state == 1){
+        nums+=1
+        stShui()
+        if(nums > 0){
+          $(".snsNum").val(snstate + Math.abs(nums) + "元")
+        }
+      } else if(state == 0){
+        nums-=1
+        stShui()
+        $(".snsNum").val(snstate + Math.abs(nums) + "元")
+      }
+      
+    }
+  
+    function stShui(){
+      if(nums > 0){
+        snstate = "升水"
+        $(".snsNum").removeClass("lv")
+        $(".snsNum").removeClass("hui")
+        $(".snsNum").addClass("red")
+      }else if( nums < 0){
+        snstate = "贴水"
+        $(".snsNum").removeClass("red")
+        $(".snsNum").removeClass("hui")
+        $(".snsNum").addClass("lv")
+      } else if( nums == 0){
+        snstate = "平水"
+        $(".snsNum").removeClass("lv")
+        $(".snsNum").removeClass("red")
+        $(".snsNum").addClass("hui")
+      }
+    }
+
+</script>
