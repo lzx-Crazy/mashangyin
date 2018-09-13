@@ -1,0 +1,110 @@
+@import './base'
+
+.delay
+  .d-list
+    li
+      padding Rem(15) Rem(25) Rem(15) Rem(15)
+      botLine()
+      background-color: #fff
+      display flex
+      justify-content: space-between
+      align-items: center
+      font-size: Rem(12)
+      toMore()
+      input
+        font-size: Rem(12)
+        text-align right
+        border 0
+      &.dl-nomore
+        &:after
+          display: none
+      &.dl-red
+        input
+          color $theme-color
+  .d-tips
+    background-color #feecbf
+    padding Rem(10) Rem(15)
+    font-size: Rem(12)
+    color #999
+    display flex
+    justify-content: flex-start
+    line-height Rem(15)
+    .dt-txtbox
+      margin-left Rem(8)
+  .d-foot
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    padding Rem(10) 0
+    background-color #fff
+    box-shadow 0 0 4px #ccc
+    >a
+      bigBtn()
+      
+
+.dialog 
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 9999
+  .dialog-bg 
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: #000
+    opacity: .3
+    z-index: 1
+  .dialog-cont 
+    position: absolute
+    z-index: 2
+    background-color: #ffffff
+    width 90%
+    border-radius: 5px
+    .fc-tkbx
+      padding: Rem(10) Rem(5)
+      .fc-tkbxp
+        color: $theme-color
+        text-align: center
+        font-size: Rem(18)
+        margin Rem(10) 0  Rem(20)
+      .fc-tkxx
+        margin-left Rem(-10)
+        a
+          width 29.5%
+          height Rem(35)
+          line-height Rem(35)
+          text-align: center
+          margin: 0 0 Rem(10) Rem(10)
+          float left
+          border: 1px solid #eeeeee
+          font-size: Rem(12)
+          color #666666
+          border-radius: 4px
+          &.active
+              border: 1px solid $theme-color
+              background-color: $theme-color
+              color #ffffff
+      .fc-btt
+        margin-top: Rem(10)
+        display: flex
+        justify-content: space-between
+        padding: 0 Rem(10)
+        a
+          width: 43%
+          height: Rem(30)
+          line-height: Rem(30)
+          text-align: center
+          color: #fff
+          font-size: Rem(15)
+          -webkit-border-radius: 5px
+          border-radius: 5px
+          background-color: $theme-color
+          display: inline-block
+          &.fc-btta
+            background-color: #999999

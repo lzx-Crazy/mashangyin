@@ -1,0 +1,84 @@
+<div class="delay">
+  <ul class="d-list">
+    <li class="dl-nomore">
+      <span>原提货时间</span>
+      <input type="text" readonly value="2018-01-02">
+    </li>
+    <li>
+      <span>请选择提货时间</span>      <input type="text" readonly placeholder="请选择本次提货时间">
+    </li>
+    <li>
+      <span>选择提货人</span>
+      <input type="text" readonly placeholder="请选择提货人" value="提货人01" onclick="showAlert('thrtk')">
+    </li>
+    <li>
+      <span>选择司机（至多选择两个）</span>
+      <input type="text" readonly placeholder="请选择司机" value="司机01" onclick="showAlert('thrtkSJ')">
+    </li>
+    <li>
+      <span></span>
+      <input type="text" readonly placeholder="请选择司机" value="司机02" onclick="showAlert('thrtkSJ')">
+    </li>
+    <li class="dl-nomore dl-red">
+      <span>当前产生的仓储费</span>
+      <input type="text" readonly value="1000元">
+    </li>
+  </ul>
+
+  <div class="d-tips">
+    <i class="gtIcon"></i>
+    <div class="dt-txtbox">
+      <p>温馨提示： </p>
+      <p>①当前提货时间为发起申请当日（包含当天）之后某一日；</p>
+      <p>②当前的仓储费自动累计到二次结算中；</p>
+    </div>
+  </div>
+
+  <div class="d-foot">
+    <a href="javascript:;;">提交</a>
+  </div>
+</div>
+
+
+<!-- 弹框 -->
+<div class="dialog thrtk">
+  <div class="dialog-bg dialog-close"></div>
+  <div class="dialog-cont   ">
+    <div class="fc-tkbx">
+      <p class="fc-tkbxp">添加提货人信息</p>
+      <div class="clearfix fc-tkxx">
+        <a class="active" href="javascript:void(0)">张三丰</a>
+        <a href="javascript:void(0)">张无忌</a>
+        <a href="javascript:void(0)">如花</a>
+        <a href="javascript:void(0)">张三丰</a>
+        <a href="javascript:void(0)">张三丰</a>
+        <a href="javascript:void(0)">张三丰</a>
+        <a href="javascript:void(0)">张三丰</a>
+      </div>
+      <div class="fc-btt">
+        <a class="" href="javascript:void (0)">确定</a>
+        <a class="dialog-close fc-btta" href="javascript:void (0)">取消</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dialog thrtkSJ">
+    <div class="dialog-bg dialog-close"></div>
+    <div class="dialog-cont   ">
+      <div class="fc-tkbx">
+        <p class="fc-tkbxp">添加司机信息</p>
+        <div class="clearfix fc-tkxx">
+          <a class="active" href="javascript:void(0)">司机1</a>
+          <a href="javascript:void(0)">司机2</a>
+          <a href="javascript:void(0)">司机3</a>
+          <a href="javascript:void(0)">司机4</a>
+          <a href="javascript:void(0)">司机5</a>
+        </div>
+        <div class="fc-btt">
+          <a class="" href="javascript:void (0)" >确定</a>
+          <a class="dialog-close fc-btta" href="javascript:void (0)">取消</a>
+        </div>
+      </div>
+    </div>
+  </div>
