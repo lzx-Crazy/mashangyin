@@ -1,0 +1,162 @@
+@import './base'
+
+.order-details
+    padding-bottom: Rem(50)
+    .od-t
+        background-color: #ffffff
+        margin-bottom Rem(10)
+        color: #666666
+        font-size Rem(12)
+        .od-tp
+            padding 0 Rem(10)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height Rem(30)
+        .od-table
+            width 100%
+            td
+                height Rem(58/2)
+                border-top 1px solid #eeeeee
+                border-right: 1px solid #eeeeee
+                text-align: center
+                vertical-align: middle
+                &.o-tda
+                    width 17.8%
+                &.o-tdb
+                    width 30%
+    .od-ula
+        margin-bottom Rem(5)
+        .od-lia
+            font-size: Rem(12)
+            color #666666
+            .od-libx
+                padding: 0 Rem(15)
+                background-color: #ffffff
+                height Rem(45)
+                padding: 0 Rem(15)
+                display: flex
+                justify-content: space-between
+                align-items: center
+                position relative
+                border-bottom 1px solid #eeeeee
+                .od-ckia
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-oda")
+                    width: Rem(15)
+                    height: Rem(20)
+                    background-size: contain
+                .od-ckib
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-odb")
+                    width: Rem(15)
+                    height: Rem(20)
+                    background-size: contain
+                .od-ckic
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-odc")
+                    width: Rem(15)
+                    height: Rem(20)
+                    background-size: contain
+                .od-ckid
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-odd")
+                    width: Rem(15)
+                    height: Rem(20)
+                    background-size: contain
+                .od-ckie
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-ode")
+                    width: Rem(15)
+                    height: Rem(20)
+                    background-size: contain
+                .od-arrr
+                    beMore()
+                .od-liai
+                    width 3px
+                    height Rem(14)
+                    background-color $theme-color
+                    margin-right Rem(5)
+                    display: inline-block
+                    vertical-align: middle
+                .od-arr
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-sjup")
+                    width: Rem(7.5)
+                    height: Rem(4)
+                    background-size: contain
+            &.hide
+                .od-arr
+                    display: inline-block
+                    vertical-align: middle
+                    getBg("c-sjdown")
+                    width: Rem(7.5)
+                    height: Rem(4)
+                    background-size: contain
+                .od-md
+                    display: none
+            .od-md
+                margin-top Rem(15/2)
+                padding 0 Rem(5)
+                .od-mda
+                    padding 0 Rem(15)
+                    margin-bottom Rem(15/2)
+                    background-color: #ffffff
+                    border-radius: 5px
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    height: Rem(45)
+                    position relative
+                    .od-mdai
+                        display: inline-block
+                        vertical-align: middle
+                        getBg("c-odrr")
+                        width: Rem(4)
+                        height: Rem(15/2)
+                        background-size: contain
+                    .od-arrr
+                        beMore()
+            .od-bxb
+                padding Rem(5) Rem(15) 
+                >p
+                    width 90%
+                    height Rem(30)
+                    line-height Rem(30)
+                    border-bottom 1px solid #cccccc
+                    overflow hidden
+                    text-overflow: ellipsis
+                    white-space:nowrap
+    .dc-bt
+        padding Rem(5) Rem(15)
+        position: fixed
+        left 0
+        right 0
+        bottom: 0
+        z-index 11
+        background-color: #f4f4f4
+        .dc-bta
+            width 100%
+            height Rem(40)
+            line-height: Rem(40)
+            text-align: center
+            color: #ffffff
+            background-color: $theme-color
+            border-radius: 5px
+            display: inline-block
+.c9
+    color: #999999
+.red
+    color $theme-color
+.fs18
+    font-size Rem(9)
+ .fs30
+    font-size: Rem(15)
+.mr20
+    margin-right Rem(10)

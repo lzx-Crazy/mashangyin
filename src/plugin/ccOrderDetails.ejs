@@ -1,0 +1,11 @@
+<script>
+    $('.mdshow').on('click',function(){
+        var ulbx = $(this).parent('.od-lia')
+        var flag = ulbx.hasClass('hide');
+        if(flag){
+            ulbx.removeClass('hide')
+        }else{
+            ulbx.addClass('hide')
+        }
+    })
+</script>
