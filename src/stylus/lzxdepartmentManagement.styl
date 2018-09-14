@@ -1,0 +1,23 @@
+@import './base'
+
+
+.department-management
+  .dm-list-box
+    >li
+      display flex
+      justify-content: space-between
+      align-items: center
+      background-color #fff
+      botLine()
+      padding Rem(15) Rem(2)
+      font-size: Rem(12)
+      >div
+        width 28%
+        text-align: center
+        &:first-child
+          width 15%
+        a
+          color #666
+          padding 0 Rem(3)
+          &.dml-red
+            color $theme-color
