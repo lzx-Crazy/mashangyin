@@ -1,0 +1,46 @@
+@import './base'
+
+.order-detailed
+    padding-top Rem(50)
+    .od-fixtop
+        display flex
+        justify-content: space-between
+        align-items: center
+        background-color #fff
+        font-size: Rem(13)
+        padding 0 Rem(5)
+        margin-bottom 1px
+        position: fixed
+        left 0
+        right 0
+        top: Rem(45)
+        overflow-x: auto
+        li
+            //min-width 20%
+            height Rem(45)
+            line-height Rem(45)
+            color: #666
+            position relative
+            text-align center
+            flex: 0 0 25%
+            &.active
+                color: $theme-color
+                &:after
+                    content: ''
+                    position absolute
+                    bottom 0
+                    width 80%
+                    left 10%
+                    border-bottom 2px solid $theme-color
+    .od-bx
+        padding 0 Rem(10)
+        >li
+            width 100%
+            height Rem(40)
+            line-height Rem(40)
+            border-bottom 1px solid #cccccc
+            overflow hidden
+            text-overflow: ellipsis
+            white-space:nowrap
+            color #666666
+            font-size: Rem(12)
