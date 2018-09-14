@@ -1,5 +1,23 @@
 
 <script>
+    var getId = ''  // id
+    function openAlert(id,money){
+      getId = id
+      $(".ooaInput").val(money)
+      $(".oo-alert").fadeIn(300)
+    }
+    
+    function closeAlert(){
+      $(".oo-alert").fadeOut(300)
+    }
+
+    function gotoKp(){
+      console.log(getId)
+      console.log($(".ooaInput").val())
+      // 关闭弹窗
+      closeAlert()
+    }
+
     // 上拉加载html拼接方法
     function getHtmlTemp(res) {
       var _html = '<li>'+
