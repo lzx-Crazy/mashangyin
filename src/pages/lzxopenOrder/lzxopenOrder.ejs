@@ -7,14 +7,16 @@
   <ul class="oo-list">
     <%for(var i=0;i<7;i++){%>
     <li>
-      <div>可开票金额：<em class="ool-money">500,000,000.0元</em></div>
-      <div class="ool-page">
-        <div>已开票金额：<em>500,000.0元</em></div>
-        <div>合同金额：<em>3,876,123,00元</em></div>
-      </div>
-      <div class="ool-page">
-        <div>订单编号：<span>AG9999</span> </div>
-        <div>合同编号：<span>FP-20180102201</span> </div>
+      <div onclick="openAlert(1,5000)">
+        <div>可开票金额：<em class="ool-money">500,000,000.0元</em></div>
+        <div class="ool-page">
+          <div>已开票金额：<em>500,000.0元</em></div>
+          <div>合同金额：<em>3,876,123,00元</em></div>
+        </div>
+        <div class="ool-page">
+          <div>订单编号：<span>AG9999</span> </div>
+          <div>合同编号：<span>FP-20180102201</span> </div>
+        </div>
       </div>
       <div class="ool-btnbox">
         <a href="javascript:;;" class="on">查看订单</a>
@@ -37,6 +39,20 @@
     <div class="cr-footbox">
       <a href="javascript:;;">取消操作</a>
       <a href="javascript:;;" class="cr-qed">去确认订单</a>
+    </div>
+  </div>
+
+  <!-- 弹窗 -->
+  <div class="oo-alert">
+    <div class="ooa-zz"></div>
+    <div class="ooa-box">
+      <p class="ooa-title">请输入你需要开票的金额</p>
+      <input type="text" class="ooaInput">
+      <span>元</span>
+      <div class="ooa-btn-box">
+        <a href="javascript:;;" onclick="closeAlert()">取消开票</a>
+        <a href="javascript:;;" class="ooa-red" onclick="gotoKp()">加入开票清单</a>
+      </div>
     </div>
   </div>
 </div>
