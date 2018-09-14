@@ -1,0 +1,56 @@
+@import './base'
+
+.refundable-details
+    padding-bottom: Rem(50)
+    .rd-top
+        height Rem(40)
+        padding 0 Rem(15)
+        display: flex
+        align-items: center
+        color #999999
+        font-size Rem(15)
+        background-color #ffffff
+        .rd-topi
+            width 2px
+            height Rem(14)
+            display: inline-block
+            vertical-align: middle
+            background-color: $theme-color
+            margin-right Rem(5)
+    .rd-bx
+        margin-top Rem(10)
+        padding: 0 Rem(10)
+        >ul
+            background-color: #ffffff
+            border-radius: 5px
+            padding Rem(15/2)
+            margin-bottom Rem(10)
+            >li
+                height Rem(30)
+                display: flex
+                align-items: center
+                border-bottom: 1px solid #eeeeee
+                justify-content space-between
+                color #666666
+                font-size: Rem(12)
+                &:last-child
+                    border-bottom: none
+    .dc-bt
+            padding Rem(5) Rem(15)
+            position: fixed
+            left 0
+            right 0
+            bottom: 0
+            z-index 11
+            background-color: #f4f4f4
+            .dc-bta
+                width 100%
+                height Rem(40)
+                line-height: Rem(40)
+                text-align: center
+                color: #ffffff
+                background-color: #666666
+                border-radius: 5px
+                display: inline-block
+.c3
+    color #333333
