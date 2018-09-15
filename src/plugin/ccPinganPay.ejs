@@ -1,0 +1,32 @@
+
+<script src="front/js/clipboard.js"></script>
+<script>
+
+    function copyFn(){
+        showTips('复制成功')
+    }
+
+
+    /* tips消息显示 */
+    function showTips(msg, sec) {
+        var speed = sec != undefined ? sec : 2;
+        var _html = "<div class='show-tips'></div>";
+        var _el = $(_html);
+        $("body").append(_el);
+        _el.html("<p>" + msg + "</p >");
+        var tipsTimed = setTimeout(function () {
+            _el.fadeOut(function () {
+                _el.remove();
+
+            })
+            clearTimeout(tipsTimed)
+        }, speed * 1000)
+    }
+    $(function(){
+        var clipboard = new ClipboardJS('.pp-copya').on('success', function(e) {
+        var e = e || window.event;
+        console.log(e);
+        }).on('error', function(e) {});
+    })
+   
+</script>
