@@ -1,0 +1,129 @@
+@import './base'
+
+.register-list
+    .rl-box
+        .rl-boxli
+            width 100%
+            background-color: #ffffff
+            margin-bottom Rem(10)
+            color #666666
+            font-size: Rem(12)
+            position relative
+            .rl-bxtab
+                width 100%
+                td
+                    height Rem(58/2)
+                    border-bottom 1px solid #eeeeee
+                    border-right: 1px solid #eeeeee
+                    text-align: center
+                    vertical-align: middle
+                    &.rl-tda
+                        width 26%
+                    &.rl-tdb
+                        width 17.8%
+                        color: #999999
+                    &.rl-tdc
+                        width 25%
+                    &.rl-tdd
+                        width 11.6%
+                        color: #999999
+                    &.rl-tde
+                        text-align: left
+                        padding-left Rem(5)
+            .rl-btnbx
+                height Rem(35)
+                display: flex
+                justify-content: space-around
+                align-items: center
+                .btnb
+                    width Rem(133/2)
+                    height Rem(22)
+                    line-height: Rem(22)
+                    text-align: center
+                    color #ffffff
+                    font-size: Rem(9)
+                    border 1px solid $theme-color
+                    background-color $theme-color
+                    display: inline-block
+                    margin-left Rem(10)
+                    vertical-align: middle
+                    border-radius: 5px
+                .btna
+                    width Rem(133/2)
+                    height Rem(22)
+                    line-height: Rem(22)
+                    text-align: center
+                    color $theme-color
+                    font-size: Rem(9)
+                    border 1px solid $theme-color
+                    background-color #ffffff
+                    display: inline-block
+                    margin-left Rem(10)
+                    vertical-align: middle
+                    border-radius: 5px
+            .rl-zzpage
+                position absolute
+                top: 0
+                left 0
+                width 100%
+                height 100%
+                background-color rgba(0,0,0,0.5)
+                &:after
+                    content: ''
+                    display: block
+                    position absolute
+                    getBg("xuanzhong")
+                    width Rem(30)
+                    height Rem(43/2)
+                    background-size contain
+                    left 50%
+                    top: 50%
+                    margin-top Rem(-43/4)
+                    margin-left Rem(-30)
+    .rl-bbtn
+        width 100%
+        height Rem(50)
+        line-height Rem(50)
+        text-align: center
+        font-size: Rem(15)
+        color #ffffff
+        background-color #cccccc
+        position: fixed
+        left 0
+        bottom 0
+        display: none
+        &.bgred
+            background-color $theme-color
+.rl-tkp
+    font-size Rem(12)
+    color #666666
+    padding 0 Rem(10)
+    text-align: center
+.c9
+    color #999999
+.fs18
+    font-size: Rem(9)
+.fs30
+    font-size: Rem(15)
+.fs48
+    font-size: Rem(24)
+.red
+    color $theme-color
+.lv
+    color #80c269
+.left
+    float left
+.tl
+    text-align: left 
+.mt15
+    margin-top Rem(15/2)
+.mb5
+    margin-bottom Rem(5/2)
+.clearfix:after
+    content:""
+    clear:both
+    visibility:hidden
+    display:block
+    font-size:0
+    height:0
+    line-height:0

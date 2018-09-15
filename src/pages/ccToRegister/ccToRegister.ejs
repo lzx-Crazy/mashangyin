@@ -1,0 +1,103 @@
+<div class="to-register">
+
+    <ul class="tr-ula">
+        <li class="tr-lia ">
+            <span><i class="red">*</i>产品品名</span>
+            <div class="tr-fillbx"><input class="tr-inpa" type="text" value="白银"></div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>规格</span>
+            <div class="slc-box active">
+                <input type="text" readonly data-source="" class="slc-curr" value="" placeholder="请选择">
+                <ul class="slc-list">
+                  <li data-source="0" class="">国标1#</li>
+                  <li data-source="1">国标2#</li>
+                </ul>
+              </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>单价(元/kg)</span>
+            <div class="tr-fillbx clearfix radiobx">
+                <span class="left mt20 mr30"><input class="p-point mr10" name="dj" type="radio" >现货</span>
+                <span class="left mt20 mr30"><input class="p-point mr10" name="dj" type="radio" >期货</span>
+                <span class="left mt20 djsp">
+                    <input class="p-point mr10 showinp" name="dj" type="radio" >单价
+                    <input class="tr-djinp" placeholder="请输入白银单价">
+                </span>
+            </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>当前升贴水</span>
+            <div class="snst-stpbox">
+                <span class="snst-jian lv" onclick="shengtieshui(0)">-</span>
+                <input type="text" class="snsNum" value="升水11元" readonly onclick="openKp()">
+                <span class="snst-jia red" onclick="shengtieshui(1)">+</span>
+            </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>数量(重量)</span>
+            <div class="tr-fillbx"><input class="tr-inpa" type="text" value="" placeholder="请输入白银重量"></div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>商品属性</span>
+            <span>99.99%</span>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>商品类型</span>
+            <span>现货</span>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>品牌</span>
+            <div class="slc-box active">
+                <input type="text" readonly data-source="" class="slc-curr" value="" placeholder="请选择">
+                <ul class="slc-list">
+                    <li data-source="0" class="">金贵</li>
+                    <li data-source="1">宇腾</li>
+                </ul>
+            </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>分类</span>
+            <div class="slc-box active">
+                <input type="text" readonly data-source="" class="slc-curr" value="" placeholder="请选择">
+                <ul class="slc-list">
+                    <li data-source="0" class="">整单</li>
+                    <li data-source="1">散单</li>
+                </ul>
+            </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>交货地</span>
+            <div>
+                <select>
+                    <option>省份</option>
+                </select>
+                <select>
+                    <option>地级市</option>
+                </select>
+            </div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>最晚提货时间</span>
+            <span>请选择最晚提货时间></span>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>提货仓库</span>
+            <div class="tr-fillbx"><input class="tr-inpa" type="text" placeholder="请输入提货仓库"></div>
+        </li>
+        <li class="tr-lia ">
+            <span><i class="red">*</i>结算方式</span>
+            <span><input type="checkbox" class="p-hook" checked="">现款现货</span>
+        </li>
+    </ul>
+    <div class="cp-tips">
+        <i class="gtIcon"></i>
+        <span>温馨提示：如需上传码单信息，请在PC端下载Excel表格后在PC端上传。</span>
+    </div>
+    <div class="fc-btn">
+        <a class="fc-btna" href="javascript:void(0)">重置</a>
+        <a class="" href="javascript:void(0)">保存</a>
+    </div>
+      <!-- 升贴水小键盘 -->
+      <%= keypad({data:11}) %>
+</div>
