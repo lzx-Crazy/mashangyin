@@ -4,7 +4,7 @@
   })
   // 初始化升贴水数据
   var nums = 11
-  var snstate = "升水"
+  var snstate = ""
 
   stShui()
 
@@ -24,6 +24,7 @@
   }
 
   function stShui(){
+    console.log(nums)
     if(nums > 0){
       snstate = "升水"
       $(".snsNum").removeClass("lv")
@@ -31,6 +32,7 @@
       $(".snsNum").addClass("red")
     }else if( nums < 0){
       snstate = "贴水"
+      console.log(snstate)
       $(".snsNum").removeClass("red")
       $(".snsNum").removeClass("hui")
       $(".snsNum").addClass("lv")
