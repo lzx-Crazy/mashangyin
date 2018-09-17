@@ -463,10 +463,10 @@ var mockSelect = function (callback) {
 var reBindDataChange = function (_btn, _list, _items, callback) {
   _items.each(function (k, ml) {
     $(ml).unbind("click").on("click", function () {
-      var t_data = $(ml).data("source");
-      var t_text = $(ml).html();
+      var t_data = $(ml).attr("data-source");
+      var t_text = $(ml).text();
       _btn.val(t_text);
-      _btn.data("source", t_data);
+      _btn.attr("data-source", t_data);
       if (_btn.siblings(":hidden").length > 0) {
         _btn.siblings(":hidden").val(t_data)
       }
