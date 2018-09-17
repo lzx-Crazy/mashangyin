@@ -1,0 +1,15 @@
+<div class="department-management">
+  <ul class="dm-list-box">
+    <%for(var i=0;i<6;i++){%>
+      <li>
+        <div><%= (i+1)%></div>
+        <div>市场部</div>
+        <div>总监</div>
+        <div>
+          <a href="javascript:;;" class="dml-red">编辑</a>
+          <a href="javascript:;;" onclick="closeDm(1)">删除</a>
+        </div>
+      </li>
+    <%}%>
+  </ul>
+</div>

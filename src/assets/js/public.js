@@ -154,6 +154,7 @@ var onReachBottom = {
       }, 0)
 
     })
+    callback()
   }
 }
 
@@ -240,6 +241,13 @@ function showConfirm(str, cbAccept, cbCancel, btnOpt, title) {
   $(".show-confirm .btn-accept").on("click", function () {
     if (cbAccept) {
       cbAccept();
+      $(".bg-drop").fadeOut();
+      $(".show-confirm").fadeOut(
+        function () {
+          _dl.remove();
+          _el.remove();
+        }
+      );
     } else {
       $(".bg-drop").fadeOut();
       $(".show-confirm").fadeOut(

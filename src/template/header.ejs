@@ -19,7 +19,13 @@
   <% if(rtBtn1 != false){ %>
     <div class="rt-btn-box">
       <% if(rtBtn1 != false){ %>
-        <button type="button" class="<%= rtBtn1 %>"><%= rtStr1 %></button>
+        <% if(rtBtn1 == 'qgdBtn'){%>
+        <div class="nav-qgdBtn">
+            <button type="button" class="<%= rtBtn1 %>"><%= rtStr1 %></button>
+        </div>
+        <% }else{ %>
+          <button type="button" class="<%= rtBtn1 %>"><%= rtStr1 %></button>
+        <%}%>
       <% } %>
       <% if(rtBtn2 != false){ %>
         <button type="button" class="<%= rtBtn2 %>">
