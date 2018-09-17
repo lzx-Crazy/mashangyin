@@ -1,0 +1,30 @@
+<script>
+    // 绑定数据筛选下拉
+    $(function(){
+        $(".md-top li").each(function(i){
+            $(this).on('click',function(e){
+                $('.md-tbig').find('.md-tbx').hide();
+                $('.md-tbig').find('.md-tbx').eq(i).fadeIn();
+                e.stopPropagation();
+                $(document).on("click", function (e) {
+                    $(".md-tbx").fadeOut();
+                    e.stopPropagation();
+                });
+            })
+        })
+        $(".md-tbig").on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+           
+        })
+        $(".md-tbxb").find('a').each(function(){
+            $(this).on('click',function(){
+                $(".md-tbxb").find('a').removeClass('active');
+                $(this).addClass('active');
+              
+            
+            })
+            
+        })
+    })
+</script>
