@@ -22,6 +22,8 @@ const pf = {
   // rtStr1: '消息',
   // rtBtn1: 'nav-set',
   // rtStr1: '设置',
+  // rtBtn1: 'qgdBtn',
+  // rtStr1: '去挂单',
   // rtBtn2: 'nav-msg-l',
   // rtStr2: '消息',
   // rtTxt2: '12',
