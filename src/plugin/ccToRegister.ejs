@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="front/iosSelect/iosSelect.css">
+<script src="front/iosSelect/iosSelect.js"></script>
+<script src="front/iosSelect/areaData_v2.js"></script>
 <script>
     $(function(){
       mockSelect();
@@ -53,4 +56,38 @@
         $(".snsNum").addClass("hui")
       }
     }
+
+
+    //地址选择
+    $(function(){
+
+
+    var showContactDom = $('#show_addr');
+    showContactDom.bind('click', function () {
+        var sccode = showContactDom.attr('data-city-code');
+        var scname = showContactDom.attr('data-city-name');
+
+        var oneLevelId = showContactDom.attr('data-province-code');
+        var twoLevelId = showContactDom.attr('data-city-code');
+        var iosSelect = new IosSelect(2, 
+            [iosProvinces, iosCitys],
+            {
+                title: '地址选择',
+                itemHeight: 35,
+                relation: [1, 1],
+                oneLevelId: oneLevelId,
+                twoLevelId: twoLevelId,
+                callback: function (selectOneObj, selectTwoObj) {
+                    
+                    showContactDom.attr('data-province-code', selectOneObj.id);
+                    showContactDom.attr('data-city-code', selectTwoObj.id);
+                    showContactDom.html(selectOneObj.value + ' ' + selectTwoObj.value );
+                }
+        });
+    });
+      
+     
+    })
+
+
   </script>
