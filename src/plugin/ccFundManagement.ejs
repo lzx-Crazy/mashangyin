@@ -1,4 +1,17 @@
+<link rel="stylesheet" href="front/css/selcetData.css">
+<script src="front/js/selcetData.js"></script>
 <script>
+    //时间日历
+    getSelectTimes("2015-1-1", "2020-12-30", "starDay")
+    getSelectTimes("2015-1-1", "2020-12-30", "endDay")
+    $('.selTbtn').on('click',function(){
+        var starD = $('.starDay').val()
+        var endD = $('.endDay').val()
+        if(starD && endD){
+            $('.showtime').text(starD+'-'+endD);
+            $(".md-tbx").fadeOut();
+        }
+    })
     // 绑定数据筛选下拉
     $(function(){
         $(".md-top li").each(function(i){
