@@ -313,9 +313,9 @@ function getSelectTimes(oldData, newData, className){
 		}
 		return arr;
 	}
-	function formatMonth () {
-		var arr = [];
-		for (var i = minMonth; i <= maxMonth; i++) {
+	function formatMonth (minM,maxM) {
+    var arr = [];
+		for (var i = minM; i <= maxM; i++) {
 			arr.push({
 				id: i + '',
 				value: i
@@ -323,9 +323,9 @@ function getSelectTimes(oldData, newData, className){
 		}
 		return arr;
 	}
-	function formatDate (count) {
+	function formatDate (mincount,maxcount) {
 		var arr = [];
-		for (var i = minDate; i <= maxDate; i++) {
+		for (var i = mincount; i <= maxcount; i++) {
 			arr.push({
 				id: i + '',
 				value: i
@@ -340,31 +340,204 @@ function getSelectTimes(oldData, newData, className){
 		// }, 2000)
 	}
 	var monthData = function (year, callback) {
+    console.log(year)
 		// settimeout只是模拟异步请求，真实情况可以去掉
-		// setTimeout(function() {
-			callback(formatMonth());
+		// setTimeout(function() {      
+      if(minYear == maxYear){
+        callback(formatMonth(minMonth, maxMonth));
+      }else {
+        
+        if(parseInt(year) == minYear){
+          callback(formatMonth(minMonth, 12));
+        } else if(parseInt(year) == maxYear){
+          console.log(11111111111)
+          console.log('maxYear',maxYear)
+          console.log('year',parseInt(year) )
+          
+          callback(formatMonth(1, maxMonth));
+        }else{
+          console.log("2222")
+          callback(formatMonth(1, 12));
+        }
+        
+      }
 		// }, 2000);
 	};
 	var dateData = function (year, month, callback) {
 		// settimeout只是模拟异步请求，真实情况可以去掉
 		// setTimeout(function() {
-			if (/^(1|3|5|7|8|10|12)$/.test(month)) {
-				callback(formatDate(31));
-			}
-			else if (/^(4|6|9|11)$/.test(month)) {
-				callback(formatDate(30));
-			}
-			else if (/^2$/.test(month)) {
-				if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
-					callback(formatDate(29));
-				}
-				else {
-					callback(formatDate(28));
-				}
-			}
-			else {
-				throw new Error('month is illegal');
-			}
+      if(minYear == maxYear){
+        if(minMonth == maxMonth){
+          callback(formatDate(minDate, maxDate));
+        } else {
+          if(month == minMonth){
+            if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+              callback(formatDate(minDate, 31));
+            }
+            else if (/^(4|6|9|11)$/.test(month)) {
+              callback(formatDate(minDate,30));
+            }
+            else if (/^2$/.test(month)) {
+              if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+                callback(formatDate(minDate,29));
+              }
+              else {
+                callback(formatDate(minDate,28));
+              }
+            }
+            else {
+              throw new Error('month is illegal');
+            }
+          } else if(month == maxMonth) {
+            if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+              callback(formatDate(1, maxDate));
+            }
+            else if (/^(4|6|9|11)$/.test(month)) {
+              callback(formatDate(1,maxDate));
+            }
+            else if (/^2$/.test(month)) {
+              if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+                callback(formatDate(1,maxDate));
+              }
+              else {
+                callback(formatDate(1,maxDate));
+              }
+            }
+            else {
+              throw new Error('month is illegal');
+            }
+          } else {
+            if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+              callback(formatDate(1, 31));
+            }
+            else if (/^(4|6|9|11)$/.test(month)) {
+              callback(formatDate(1,30));
+            }
+            else if (/^2$/.test(month)) {
+              if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+                callback(formatDate(1,29));
+              }
+              else {
+                callback(formatDate(1,28));
+              }
+            }
+            else {
+              throw new Error('month is illegal');
+            }
+          }
+        }
+      } else if(minYear == year){
+        if(month == minMonth){
+          if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+            callback(formatDate(minDate, 31));
+          }
+          else if (/^(4|6|9|11)$/.test(month)) {
+            callback(formatDate(minDate,30));
+          }
+          else if (/^2$/.test(month)) {
+            if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+              callback(formatDate(minDate,29));
+            }
+            else {
+              callback(formatDate(minDate,28));
+            }
+          }
+          else {
+            throw new Error('month is illegal');
+          }
+        } else if(month == maxMonth) {
+          if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+            callback(formatDate(1, maxDate));
+          }
+          else if (/^(4|6|9|11)$/.test(month)) {
+            callback(formatDate(1,maxDate));
+          }
+          else if (/^2$/.test(month)) {
+            if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+              callback(formatDate(1,maxDate));
+            }
+            else {
+              callback(formatDate(1,maxDate));
+            }
+          }
+          else {
+            throw new Error('month is illegal');
+          }
+        } else {
+          if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+            callback(formatDate(1, 31));
+          }
+          else if (/^(4|6|9|11)$/.test(month)) {
+            callback(formatDate(1,30));
+          }
+          else if (/^2$/.test(month)) {
+            if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+              callback(formatDate(1,29));
+            }
+            else {
+              callback(formatDate(1,28));
+            }
+          }
+          else {
+            throw new Error('month is illegal');
+          }
+        } 
+      } else  if(maxYear == year){
+       if(month == maxMonth) {
+         console.log("MaxYear", month)
+          if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+            callback(formatDate(1, maxDate));
+          }
+          else if (/^(4|6|9|11)$/.test(month)) {
+            callback(formatDate(1,maxDate));
+          }
+          else if (/^2$/.test(month)) {
+            if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+              callback(formatDate(1,maxDate));
+            }
+            else {
+              callback(formatDate(1,maxDate));
+            }
+          }
+          else {
+            throw new Error('month is illegal');
+          }
+        }  else {
+          if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+            callback(formatDate(1, 31));
+          }
+          else if (/^(4|6|9|11)$/.test(month)) {
+            callback(formatDate(1,30));
+          }
+          else if (/^2$/.test(month)) {
+            if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+              callback(formatDate(1,29));
+            }
+            else {
+              callback(formatDate(1,28));
+            }
+          }
+        }
+      } else {
+        if (/^(1|3|5|7|8|10|12)$/.test(month)) {
+          callback(formatDate(1, 31));
+        }
+        else if (/^(4|6|9|11)$/.test(month)) {
+          callback(formatDate(1,30));
+        }
+        else if (/^2$/.test(month)) {
+          if (year % 4 === 0 && year % 100 !==0 || year % 400 === 0) {
+            callback(formatDate(1,29));
+          }
+          else {
+            callback(formatDate(1,28));
+          }
+        }
+        else {
+          throw new Error('month is illegal');
+        }
+      }
+			
 		// }, 2000);
 		// ajax请求可以这样写
 		/*
