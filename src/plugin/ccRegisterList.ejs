@@ -1,0 +1,76 @@
+
+<script>
+    $(function(){
+      // 编辑
+      $(document).on("click", ".nav-xiu", function(){
+        $(this).addClass("btn-string")
+        $(this).removeClass("nav-xiu");
+        $(this).html("完成")
+        $('.rl-bbtn').show();
+        $('.qgdBtn').hide();
+        $('.register-list').css('padding-bottom','50px')
+      })
+      // 点击完成
+      $(document).on("click", ".btn-string", function(){
+        $(this).addClass("nav-xiu")
+        $(this).removeClass("btn-string")
+        $(".rl-zzpage").remove()
+        $(this).html("编辑")
+        $('.rl-bbtn').hide();
+        $('.qgdBtn').show();
+        $('.register-list').css('padding-bottom','0')
+      })
+      // 选择订单
+      var _htmls = '<div class="rl-zzpage"></div>'
+      $(document).on("click", ".rl-box li", function(){
+        if($(".rt-btn-box button").hasClass("btn-string")){
+          if($(this).find("div").hasClass("rl-zzpage")){
+            $(this).removeClass("active")
+            $(this).find(".rl-zzpage").remove()
+          } else {
+            $(this).addClass("active")
+            $(this).append(_htmls)
+          }
+        }else{
+          return;
+        }
+        var sleng = $(".rl-box li").find(".rl-zzpage").length;
+        if(sleng>0){
+            $('.rl-bbtn').addClass('bgred')
+        }else{
+            $('.rl-bbtn').removeClass('bgred')
+        }
+      })
+
+    
+
+    })
+      //删除 弹框
+      function delfn(){
+        var str = "<p class='rl-tkp'>您确定删除当前挂单信息？</p>"
+        showConfirm(str,function(){
+        console.log('ok')
+        },function(){
+
+        },undefined,'温馨提示')
+    }
+     //上架 弹框
+     function sjfn(){
+        var str = "<p class='rl-tkp'>您确定上架当前挂单信息？</p>"
+        showConfirm(str,function(){
+        console.log('ok')
+        },function(){
+
+        },undefined,'温馨提示')
+    }
+
+    //填写码单 弹框
+    function mdfn(){
+        var str = "<p class='rl-tkp'>如需上传码单信息，请在PC端下载Excel表格后在PC端上传</p>"
+        showConfirm(str,function(){
+        console.log('ok')
+        },function(){
+
+        },undefined,'温馨提示')
+    }
+  </script>
