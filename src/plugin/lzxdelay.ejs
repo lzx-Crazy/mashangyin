@@ -10,18 +10,38 @@
   }
 
   $(function(){
-
     // 选择
-    $(".fc-tkxx").find('a').each(function(){
+    $(".thrtk .fc-tkxx").find('a').each(function(){
       $(this).on('click',function(){
         var flagb = $(this).hasClass('active');
         if(flagb){
           $(this).removeClass('active')
         }else{
-          $(this).addClass('active')
+          if($(".thrtk .fc-tkxx a.active").length>=2){
+            showTips("最多选择两个")
+            // return ;
+          }else{
+            $(this).addClass('active')
+          }
+          
         }
       })
-      
+    })
+    // 选择
+    $(".thrtkSJ .fc-tkxx").find('a').each(function(){
+      $(this).on('click',function(){
+        var flagb = $(this).hasClass('active');
+        if(flagb){
+          $(this).removeClass('active')
+        }else{
+          if($(".thrtkSJ .fc-tkxx a.active").length>=2){
+            showTips("最多选择两个")
+            // return ;
+          }else{
+            $(this).addClass('active')
+          }
+        }
+      })
     })
 
     // 初始化 弹窗
