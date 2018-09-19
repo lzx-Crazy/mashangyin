@@ -13,9 +13,11 @@ function getTop(e) {
 var getMsgCode = function (elem) {
   var el       = $(elem);
   var count    = 60;
+  el.text(count + '秒后重发');
+  count--;
   var msgTimed = setInterval(function () {
     el.prop("disabled", true);
-    el.text(count + 's');
+    el.text(count + '秒后重发');
     count--;
     if (count <= 0) {
       el.prop("disabled", false);
