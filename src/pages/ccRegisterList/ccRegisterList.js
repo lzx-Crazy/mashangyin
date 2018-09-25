@@ -6,8 +6,8 @@ const pf = {
   pageTitle: '挂单列表',
   rtBtn1: 'qgdBtn',
   rtStr1: '去挂单',
-  rtBtn1: 'nav-xiu',
-  rtStr1: '修改',
+  rtBtn2: 'nav-xiu',
+  rtStr2: '修改',
 
 }
 

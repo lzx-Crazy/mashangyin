@@ -1,6 +1,8 @@
-<link rel="stylesheet" href="front/iosSelect/iosSelect.css">
+<!-- <link rel="stylesheet" href="front/iosSelect/iosSelect.css">
 <script src="front/iosSelect/iosSelect.js"></script>
-<script src="front/iosSelect/areaData_v2.js"></script>
+<script src="front/iosSelect/areaData_v2.js"></script> -->
+<link rel="stylesheet" href="front/css/selcetData.css">
+<script src="front/js/selcetData.js"></script>
 <script>
     $(function(){
       mockSelect();
@@ -60,34 +62,59 @@
 
     //地址选择
     $(function(){
+      var getProvinces = [];
+      var getCitys = [];
+      getCtity()
+      if(getProvinces!= null || getProvinces!= ''){
+        var showContactDom = $('#show_addr');
+        showContactDom.bind('click', function () {
+          var sccode = showContactDom.attr('data-city-code');
+          var scname = showContactDom.attr('data-city-name');
 
-
-    var showContactDom = $('#show_addr');
-    showContactDom.bind('click', function () {
-        var sccode = showContactDom.attr('data-city-code');
-        var scname = showContactDom.attr('data-city-name');
-
-        var oneLevelId = showContactDom.attr('data-province-code');
-        var twoLevelId = showContactDom.attr('data-city-code');
-        var iosSelect = new IosSelect(2, 
-            [iosProvinces, iosCitys],
-            {
+          var oneLevelId = showContactDom.attr('data-province-code');
+          var twoLevelId = showContactDom.attr('data-city-code');
+          var iosSelect = new IosSelect(2, 
+              [getProvinces, getCitys],
+              {
                 title: '地址选择',
                 itemHeight: 35,
                 relation: [1, 1],
                 oneLevelId: oneLevelId,
                 twoLevelId: twoLevelId,
                 callback: function (selectOneObj, selectTwoObj) {
-                    
-                    showContactDom.attr('data-province-code', selectOneObj.id);
-                    showContactDom.attr('data-city-code', selectTwoObj.id);
-                    showContactDom.html(selectOneObj.value + ' ' + selectTwoObj.value );
+                  showContactDom.attr('data-province-code', selectOneObj.id);
+                  showContactDom.attr('data-city-code', selectTwoObj.id);
+                  showContactDom.html(selectOneObj.name + ' ' + selectTwoObj.name );
                 }
+          });
         });
-    });
+      }
       
-     
+
+      // 获取城市信息
+      function getCtity(){
+        $.ajax({
+          url:"http://d7.cto.shovesoft.com/msyapp/msyApp/appAddTicketAddressInfoInit.do",
+          success:function(res){
+            getProvinces = res.returnMap.provinces;
+            getCitys = res.returnMap.citys;
+            // for(var i = 0;i<res.returnMap.provinces.length; i++){
+            //   getProvinces[i].value = res.returnMap.provinces[i].name;
+            // }
+            
+            
+            // for(var k = 0;k<res.returnMap.citys.length; k++){
+            //   getCitys[k].value = res.returnMap.citys[k].name;
+            // }
+          },
+          error:function(){
+            console.log('======================')
+          }
+        })
+      }
     })
+
+    
 
 
   </script>

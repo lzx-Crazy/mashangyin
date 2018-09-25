@@ -37,7 +37,10 @@
       <span class="mim-nums">3870</span>
     </div>
     <div class="mim-jg">
-      <div>白银价格</div>
+      <div>
+        <p>白银价格</p>
+        <a href="javascript:;;" class="min-more">查看更多&gt;</a>
+      </div>
       <div>
         <p>白银(T+D)</p>
         <p class="min-weid">3812</p>
@@ -61,7 +64,7 @@
         <% for(var i =0;i<5;i++){%>
           <li>
             <a href="javascript:;" class="notice-new">
-              <%= i+1 %>北京市海淀法院10月告拍品日预北京市海淀法院10月告拍品日预告告
+              <%= i+1 %>北京市海
             </a>
           </li>
         <%}%>
@@ -111,7 +114,7 @@
       <li>
         <div class="mizl-zs">
           <em class="miz-yuan">整</em>
-          <span class="miz-jgs">TD<em class="miz-red">+1</em></span>
+          <span class="miz-jgs">TD<em class="miz-red">+123</em></span>
         </div>
         <div>
           <p>白银1</p>
@@ -181,9 +184,9 @@
     <div class="miz-title">
       <span class="mizt-bl">自营-最新热门(精矿)</span>
       <div class="mizt-more">
-        <div class="mizt-qieh">
-          <span class="active" onclick="tabMizt(this)">整单</span>
-          <span onclick="tabMizt(this)">子单</span>
+        <div class="mizt-qieh" onclick="tabMizt()">
+          <span class="active">整单</span>
+          <span>子单</span>
         </div>
         <a href="#">查看更多</a>
       </div>
@@ -388,7 +391,7 @@
     </ul>
   </div>
   <div class="mi-zybox">
-    <div class="miz-title">
+    <div class="miz-title miz-title-nomore" >
       <span class="mizt-bl">合作单位</span>
       <!-- <span class="mizt-more">查看更多</span> -->
     </div>

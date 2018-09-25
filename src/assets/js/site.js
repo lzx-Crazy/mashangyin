@@ -271,8 +271,8 @@ function openKp(){
 
 // 小能客服
 $(function(){
-  $(".nav-yiwen").on("click",function(){
-    console.log("客服")
+  $(".nav-yiwen,.nav-kefu").on("click",function(){
+    NTKF.im_openInPageChat('kf_10119_1519629930437');
   })
 })
 
@@ -682,3 +682,12 @@ function nowDataTime(className){
         });
     });
 }
+
+// 底部切换
+$(function(){
+  $(".page-footer .f-item").each(function(i,e){
+    $(e).on("click",function(){
+      $(this).addClass("active").siblings().removeClass("active")
+    })
+  })
+})

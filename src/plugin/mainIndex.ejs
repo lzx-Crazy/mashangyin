@@ -60,7 +60,8 @@ function getDataByAjax() {
 
 // 整单子单切换
 function tabMizt(e){
-    $(e).addClass("active").siblings().removeClass("active");
+    $(".mizt-qieh").find(".active").removeClass("active").siblings().addClass("active");
+    // $(e).addClass("active").siblings().removeClass("active");
 }
 // TD期切换
 function tabTd(e){

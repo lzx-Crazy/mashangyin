@@ -1536,7 +1536,7 @@
 			else if (renderMap.relation === 1) {
 				var pid = arguments[index - 1];
 				this.data[index - 1].forEach(function (v, i, o) {
-					if (v['parentId'] == pid) {
+					if (v['parentid'] == pid) {
 						levelData.push(v);
 					}
 				});
@@ -1576,11 +1576,11 @@
 			tmpHtml += this.getWhiteItem();
 			levelData.forEach(function (v, i, o) {
 				if (v.id == curLevelId) {
-					tmpHtml += '<li style="height: ' + itemHeightStyle + '; line-height: ' + itemHeightStyle +';"' + iosSelectUtil.attrToHtml(v) + ' class="at">' + v.value + '</li>';
+					tmpHtml += '<li style="height: ' + itemHeightStyle + '; line-height: ' + itemHeightStyle +';"' + iosSelectUtil.attrToHtml(v) + ' class="at">' + v.name + '</li>';
 					plast = i + 1;
 				}
 				else {
-					tmpHtml += '<li style="height: ' + itemHeightStyle + '; line-height: ' + itemHeightStyle +';"' + iosSelectUtil.attrToHtml(v) + '>' + v.value + '</li>';
+					tmpHtml += '<li style="height: ' + itemHeightStyle + '; line-height: ' + itemHeightStyle +';"' + iosSelectUtil.attrToHtml(v) + '>' + v.name + '</li>';
 				}
 			});
 			tmpHtml += this.getWhiteItem();

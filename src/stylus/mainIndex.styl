@@ -29,7 +29,7 @@
   // 价格
   .mi-moneybox
     display flex
-    justify-content space-between
+    justify-content flex-start
     align-items center
     margin-top Rem(5)
     background-color #fff
@@ -55,6 +55,10 @@
       justify-content space-between
       align-items center
       color: #666
+      flex 1
+      .min-more
+        color #999
+        font-size: Rem(10)
       div
         vertical-align middle
         font-size: Rem(12)
@@ -67,9 +71,9 @@
           font-size: Rem(18)
           font-weight: bold
           color: #666
-        .min-green
+        .min-green,.lv
           color: #80c269
-        .min-red
+        .min-red,.red
           color: $theme-color
   .mi-zxbox
     height Rem(40)
@@ -77,10 +81,10 @@
     color: #666
     display flex
     align-items: center
-    justify-content space-between
+    justify-content flex-start
     botLine()
     .miz-qian
-      width Rem(115)
+      width Rem(85)
       text-align right 
       font-weight: bold
       font-size: Rem(15)
@@ -126,23 +130,35 @@
         .mizt-qieh
           display inline-block
           vertical-align middle
-          background-color #eee
-          color #666
-          height Rem(30)
-          line-height Rem(30)
-          border-radius: Rem(4)
-          padding 0 Rem(4)
+          background-color $theme-color
+          color $theme-color
+          height Rem(26)
+          line-height Rem(26)
+          border-radius: Rem(30)
+          padding Rem(2) Rem(2) 0
           margin-right Rem(5)
+          font-size: 0
           >span
-            padding 0 Rem(12)
-            height Rem(26)
-            line-height Rem(26)
-            margin: Rem(2) 0
-            border-radius: Rem(4)
+            font-size: Rem(10)
+            width: Rem(24)
+            text-align: center
+            height Rem(24)
+            line-height Rem(24)
+            margin: 0
+            border-radius: Rem(24)
             display inline-block
             &.active
-              background-color $theme-color
-              color #fff
+              background-color #fff
+              color $theme-color
+      &.miz-title-nomore
+        height Rem(40)
+        line-height: Rem(40)
+        background-color #fff
+        padding 0 Rem(15)
+        color: #666
+        font-size: Rem(15)
+        &:after
+          display none
     .miz-swiperbox
       margin Rem(5) 0
       width 100%
@@ -272,7 +288,7 @@
             vertical-align middle
             border-radius: 50%
           .miz-jgs
-            font-size: Rem(18)
+            font-size: Rem(14)
             vertical-align middle
             &.miz-hyzl
               font-size: Rem(10)
